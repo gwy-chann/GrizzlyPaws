@@ -1,0 +1,753 @@
+/* ==========================================================================
+   1. Base & Reset
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 15px 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+      2. Layout & Container
+========================================================================== */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.wrapper {
+  margin: 40px auto;
+  padding: 0 81px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: max-height 0.3s ease, padding 0.15s ease, margin 0.15s ease;
+}
+
+/* ==========================================================================
+      4. Header
+      ========================================================================== */
+
+header {
+  background-color: #d8ebd0;
+  text-align: center;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+}
+
+.mobile-menu-button {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+/* Search */
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.search-container form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  padding: 5px;
+  z-index: 1;
+}
+
+/* Basket */
+.basket-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.basket-button {
+  background-color: #ffd466;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 50px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.basket-button:hover {
+  background-color: #ffc933;
+}
+
+.account-button {
+  font-size: 28px;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.account-button:hover {
+  color: #333333;
+}
+
+/* ==========================================================================
+      5. Navigation
+      ========================================================================== */
+nav {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #f3f3f3ec;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin: 0;
+  min-width: max-content;
+}
+
+nav ul li {
+  display: inline-block;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  padding: 1px 10px;
+  padding-top: 15px;
+}
+
+nav ul li:hover {
+  transform: translateY(-2px);
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* ==========================================================================
+      13. Newsletter Banner
+      ========================================================================== */
+.newsletter-banner {
+  background-color: #006400;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+.years-badge {
+  background-color: #ffd700;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.years-number {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.years-text {
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 0 10px;
+}
+
+.paw-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paw-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #006400;
+}
+
+.newsletter-content {
+  flex-grow: 1;
+  max-width: 800px;
+}
+
+.newsletter-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: white;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.select-container {
+  position: relative;
+  min-width: 200px;
+  flex-grow: 1;
+}
+
+.pet-type-select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.email-input {
+  flex-grow: 2;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  min-width: 250px;
+}
+
+.subscribe-btn {
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 2px solid white;
+  background-color: #006400;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: white;
+  color: #006400;
+}
+
+/* ==========================================================================
+         14. Footer
+         ========================================================================== */
+.footer {
+  background-color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #006400;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   15. Media Queries
+   ========================================================================== */
+
+/* Large tablets and small desktops */
+@media (max-width: 1100px) {
+  /* Container adjustments */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Header modifications */
+  header {
+    border-radius: 0;
+    padding: 10px 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .header-top {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+  }
+
+  /* Logo and mobile menu */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-button {
+    display: flex; /* Show on mobile */
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-left: 30px;
+  }
+
+  /* Search bar styling */
+  .search-container {
+    grid-column: 1 / -1;
+    order: 2;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .search-container form {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Mobile navigation */
+  nav {
+    display: none; /* Hidden by default, shown via JS */
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 15px 20px;
+  }
+
+  /* User account and basket buttons */
+  .basket-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .account-button {
+    font-size: 24px;
+  }
+
+  .basket-button {
+    background-color: #ffd466;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+  }
+
+  .basket-button span {
+    display: none; /* Hide text */
+  }
+}
+
+/* Medium tablets and small desktops */
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 25px;
+    max-width: 100%;
+  }
+
+  .header-top {
+    padding: 0 30px;
+  }
+
+  nav ul {
+    gap: 40px;
+  }
+}
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .header-top {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .search-container {
+    order: 3;
+    width: 100%;
+  }
+
+  .basket-container {
+    order: 2;
+  }
+
+  .logo-container {
+    order: 1;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+
+  .features-container {
+    flex-wrap: wrap;
+  }
+
+  .feature-box {
+    flex: 1 0 calc(50% - 20px);
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smaller tablets and large phones */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .wrapper {
+    padding: 0 15px;
+    margin: 25px auto;
+  }
+
+  .newsletter-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-categories {
+    gap: 10px;
+  }
+
+  .pet-category {
+    min-width: 140px;
+  }
+
+  .pet-image-container {
+    height: 100px;
+  }
+
+  .offer-title {
+    font-size: 20px;
+  }
+
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Improve product slider on mobile */
+  .product-slider {
+    margin: 0 -15px;
+    padding: 0 15px;
+    width: calc(100% + 30px);
+  }
+
+  .product-card {
+    min-width: 160px;
+    max-width: 160px;
+  }
+
+  .section-header {
+    font-size: 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .header-top {
+    padding: 0 10px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .basket-button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .account-button {
+    font-size: 22px;
+  }
+
+  nav ul {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero-container,
+  .discount-container {
+    height: 200px;
+  }
+
+  .pet-categories {
+    justify-content: center;
+  }
+
+  .pet-category {
+    flex: 0 0 calc(50% - 10px);
+    min-width: 120px;
+  }
+
+  /* Stack feature boxes vertically on small screens */
+  .feature-box {
+    flex: 1 0 100%;
+  }
+
+  /* Adjust offer cards for smaller screens */
+  .offer-card {
+    height: 180px;
+    padding: 0 10px;
+  }
+
+  .offer-content {
+    width: 60%;
+  }
+
+  .offer-image {
+    width: 40%;
+  }
+
+  .product-card {
+    min-width: 140px;
+    max-width: 140px;
+  }
+
+  .product-img {
+    height: 120px;
+  }
+
+  .years-badge {
+    width: 100px;
+    height: 100px;
+  }
+
+  .years-number {
+    font-size: 26px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+    margin: 15px auto;
+  }
+
+  .pet-category {
+    flex: 0 0 100%;
+  }
+
+  .basket-button {
+    padding: 6px 10px;
+  }
+
+  .search-input {
+    padding: 8px 35px 8px 10px;
+    font-size: 14px;
+  }
+}

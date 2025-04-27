@@ -49,7 +49,7 @@
       2. Layout & Container
       ========================================================================== */
    .container {
-     max-width: 1200px;
+     max-width: 1300px;
      margin: 0 auto;
      padding: 0.5rem;
    }
@@ -953,22 +953,25 @@
      text-decoration: underline;
    }
    
-  /* ==========================================================================
+/* ==========================================================================
    15. Media Queries
    ========================================================================== */
 
-/* Mobile Header Styles */
+/* Large tablets and small desktops */
 @media (max-width: 1100px) {
-  /* Create curved green background */
-    header {
-    border-radius: 0 0 0 0;
+  /* Container adjustments */
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Header modifications */
+  header {
+    border-radius: 0;
     padding: 10px 0;
     position: relative;
     overflow: visible;
   }
 
-
-  /* Header layout */
   .header-top {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -977,62 +980,44 @@
     gap: 10px;
   }
   
-  /* Mobile menu hamburger */
+  /* Logo and mobile menu */
   .logo-container {
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: flex-start;
   }
   
-  /* Add hamburger menu button */
   .mobile-menu-button {
+    display: flex; /* Show on mobile */
     background: none;
     border: none;
     color: #333;
     font-size: 24px;
-    display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
     cursor: pointer;
     padding-left: 30px;
   }
   
-
-
   /* Search bar styling */
   .search-container {
     grid-column: 1 / -1;
     order: 2;
     margin-top: 10px;
     width: 100%;
+    padding: 0 10px;
   }
   
   .search-container form {
     width: 100%;
     max-width: none;
-    display: flex;
   }
   
-  .search-input {
-    width: 100%;
-    border-radius: 25px;
-    padding: 10px 40px 10px 15px;
-    border: none;
-    font-size: 16px;
+  /* Mobile navigation */
+  nav {
+    display: none; /* Hidden by default, shown via JS */
   }
   
-  .search-button {
-    background: none;
-    border: none;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-  }
-
-  /* when nav is :active */
   nav.active {
     display: block;
   }
@@ -1043,7 +1028,9 @@
   }
   
   nav li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    padding: 0;
   }
   
   nav a {
@@ -1051,7 +1038,7 @@
     padding: 15px 20px;
   }
   
-  /* User and cart buttons */
+  /* User account and basket buttons */
   .basket-container {
     display: flex;
     justify-content: flex-end;
@@ -1064,7 +1051,7 @@
   }
   
   .basket-button {
-    background-color: #ffd466; /* Yellow color like in the image */
+    background-color: #ffd466;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -1078,23 +1065,15 @@
   .basket-button span {
     display: none; /* Hide text */
   }
-  
-  /* Hide navigation on mobile - will be part of hamburger menu */
-  nav {
-    display: none;
-  }
-  
-  .search-container {
-    grid-row: 2;
-    grid-column: 1 / -1;
-    margin-top: 10px;
-  }
 }
-   
 
-
-/* Large tablets and small desktops */
-@media (max-width: 1200px) {
+/* Medium tablets and small desktops */
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 25px;
+    max-width: 100%;
+  }
+  
   .wrapper {
     padding: 0 40px;
   }
@@ -1110,8 +1089,13 @@
 
 /* Tablets and smaller desktops */
 @media (max-width: 992px) {
+  .container {
+    padding: 0 20px;
+  }
+  
   .wrapper {
     padding: 0 20px;
+    margin: 30px auto;
   }
   
   .main-content {
@@ -1147,12 +1131,9 @@
     gap: 20px;
   }
 
-  /* .basket-button {
-    padding: 8px 30px;
-  } */
-
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
   }
   
   .features-container {
@@ -1170,10 +1151,19 @@
 
 /* Smaller tablets and large phones */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+    margin: 25px auto;
+  }
+  
   .newsletter-banner {
     flex-direction: column;
     text-align: center;
-    padding: 20px 10px;
+    padding: 20px 15px;
   }
   
   .newsletter-form {
@@ -1212,6 +1202,12 @@
   }
   
   /* Improve product slider on mobile */
+  .product-slider {
+    margin: 0 -15px;
+    padding: 0 15px;
+    width: calc(100% + 30px);
+  }
+  
   .product-card {
     min-width: 160px;
     max-width: 160px;
@@ -1224,6 +1220,15 @@
 
 /* Small phones */
 @media (max-width: 576px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .wrapper {
+    padding: 0 12px;
+    margin: 20px auto;
+  }
+  
   .header-top {
     padding: 0 10px;
   }
@@ -1235,6 +1240,7 @@
   .footer-container {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 0 12px;
   }
   
   .basket-button {
@@ -1269,7 +1275,7 @@
     min-width: 120px;
   }
 
-  /* Stack feature boxes vertically on mobile */
+  /* Stack feature boxes vertically on small screens */
   .feature-box {
     flex: 1 0 100%;
   }
@@ -1309,6 +1315,15 @@
 
 /* Extra small phones */
 @media (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .wrapper {
+    padding: 0 10px;
+    margin: 15px auto;
+  }
+  
   .pet-category {
     flex: 0 0 100%;
   }

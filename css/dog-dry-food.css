@@ -1,0 +1,262 @@
+/* Base layout*/
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Title section */
+.title-category {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.description a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.description a:hover .highlight {
+    text-decoration: underline;
+    color: #076d37;
+}
+
+.highlight {
+    color: #0a8d48;
+}
+
+/* Products list styles - Updated with shop layout responsiveness */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%; /* Ensure equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card a {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Fill available space */
+    z-index: 1; /* Ensure click works properly */
+}
+
+/* Ensure add-to-basket button stays above product link */
+.product-card .add-to-basket-button {
+    z-index: 2;
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.add-to-basket-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.add-to-basket-button:hover {
+    background-color: #f0c000;
+    transform: scale(1.1);
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+    height: 2.6em; /* Fixed height for title */
+    text-decoration: none; /* Remove underline */
+}
+
+.product-weight {
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: auto; /* Push pricing info to bottom */
+}
+
+.price-per-kg {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.discount-price {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.discount-icon {
+    color: #2e7d32;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.stars {
+    color: #ffb100;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.review-count {
+    color: #666;
+    font-size: 14px;
+}
+
+.delivery {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Updated responsive styles to match shop layout approach */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .main-content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .main-content {
+        padding: 0 10px;
+    }
+}
+
+/* Ensure product card takes full width on small screens */
+@media (max-width: 480px) {
+    .products-grid {
+        display: flex; /* Switch to flex for better control */
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .product-card {
+        width: 100%;
+        margin: 0 0 12px 0; /* Add bottom margin instead of gap */
+        border-radius: 0; /* Optional: remove rounded corners for full-width look */
+    }
+    
+    /* Make images fill width better */
+    .product-image {
+        width: 100%;
+    }
+    
+    .product-image img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+    }
+    
+    /* Reset any container padding that might be limiting width */
+    .main-content {
+        padding: 0;
+    }
+    
+    /* Ensure any parent containers don't limit width */
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
