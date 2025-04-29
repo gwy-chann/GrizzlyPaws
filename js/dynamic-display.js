@@ -18,35 +18,47 @@ navigationDisplay += '</ul>'
 navigation.innerHTML = navigationDisplay
 
 const categoryList = document.getElementById('categoryList')
-subCategory[paramValue].forEach((subItem) => {
-    const subCategoryDisplay = `
-        <li>
-            <a href="${subItem.link}">${subItem.name}</a>
-        </li>
-    `
-    categoryList.innerHTML += subCategoryDisplay
-})
+
+if(categoryList) {
+
+    subCategory[paramValue].forEach((subItem) => {
+        const subCategoryDisplay = `
+            <li>
+                <a href="${subItem.link}">${subItem.name}</a>
+            </li>
+        `
+        categoryList.innerHTML += subCategoryDisplay
+    })
+}
+
 
 const categoryCard = document.getElementById('categoriesGrid')
-subCategory[paramValue].forEach((subItem) => {
-    const subCategoryCardDisplay = `
-        <a href="${subItem.link}" class="category-card">
-            <div class="title">${subItem.name}</div>
-            <div class="category-image">
-                <img src="${subItem.img}" alt="${subItem.name}">
-            </div>
-        </a>
-    `
-    categoryCard.innerHTML += subCategoryCardDisplay
-})
+
+if (categoryCard) {
+
+    subCategory[paramValue].forEach((subItem) => {
+        const subCategoryCardDisplay = `
+            <a href="${subItem.link}" class="category-card">
+                <div class="title">${subItem.name}</div>
+                <div class="category-image">
+                    <img src="${subItem.img}" alt="${subItem.name}">
+                </div>
+            </a>
+        `
+        categoryCard.innerHTML += subCategoryCardDisplay
+    })
+    
+}
 
 const categoryTitle = document.getElementById('categoryTitle')
 const categoryDescription = document.getElementById('categoryDescription')
 
 
+if (categoryTitle || categoryDescription) {
 
-categoryTitle.innerHTML  = pageDetails[paramValue].title
-categoryDescription.innerHTML = pageDetails[paramValue].description
+    categoryTitle.innerHTML  = pageDetails[paramValue].title
+    categoryDescription.innerHTML = pageDetails[paramValue].description
+}
 
 // function getPageTitle(url) {
 //     const regex = /category\/([a-zA-Z]+)\.html/;

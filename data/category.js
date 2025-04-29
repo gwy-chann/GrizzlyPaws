@@ -30,7 +30,7 @@ const pageDetails = {
 
 const subCategory = {
   dog: [
-    { link: '../category products/dog-dry-food-products.html', id: 1, img: "", name: "Dry Dog Food" },
+    { link: '/pages/products/index.html?sub-cat-id=1', id: 1, img: "", name: "Dry Dog Food" },
     { link: '#', id: 2, img: "", name: "Wet Dog Food" },
     { link: '#', id: 3, img: "", name: "Dog Treats & Dog Bones" },
     { link: '#', id: 4, img: "", name: "Dog Supplements & Special Food" },

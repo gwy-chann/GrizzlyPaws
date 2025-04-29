@@ -1,10 +1,9 @@
-const urlString = window.location.search;
-const urlParams = new URLSearchParams(urlString);
+const productUrlString = window.location.search;
+const prodUrlParams = new URLSearchParams(productUrlString);
 
-const paramValue = urlParams.get('id')
+const prodParamValue = prodUrlParams.get('id')
 
-const product = products.find((product)=> parseInt(paramValue) ===  product.id)
-
+const product = products.find((product)=> parseInt(prodParamValue) ===  product.id)
 
 
 if (product) {

@@ -2,7 +2,7 @@ const products = [{
   id: 1,
   category: "dog",
   sub_category: "dry dog food",
-  images: ["../../Hill'sPrescriptionDietCanineDigestiveCare1.jpg", "../../hillsPrescriptionDiet1.jpg", "../../RoyalCaninMediumAdult1.jpg"],
+  images: ["../../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg", "../../hillsPrescriptionDiet1.jpg", "../../RoyalCaninMediumAdult1.jpg"],
   name: "",
   description: 'Balanced dry food for adult dogs of medium-sized breeds, provides high-quality proteins, highly-digestible ingredients, source of antioxidants, with a tailored kibble size.',
   variations: [
