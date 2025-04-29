@@ -1,5 +1,3 @@
-<!-- delete -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,8 +8,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css category/header&footer.css" />
-    <link rel="stylesheet" href="../css category items/dogItem.css">
+    <link rel="stylesheet" href="../../css category/header&footer.css" />
+    <link rel="stylesheet" href="../../css category items/dogItem.css">
   </head>
   <body>
     <header>
@@ -19,7 +17,7 @@
           <div class="logo-container">
             <button class="mobile-menu-button">☰</button>
             <a href="index.html" title="Return to Homepage" aria-label="Go to Homepage">
-              <img src="../images/logo2.png" alt="Logo" class="logo">
+              <img src="../../images/logo2.png" alt="Logo" class="logo">
             </a>
           </div>
 
@@ -61,29 +59,23 @@
                 <path d="M15 18l-6-6 6-6"/>
               </svg>
             </div>
-            <img src="../Hill'sPrescriptionDietCanineDigestiveCare1.jpg" alt="Royal Canin Medium Adult dog food">
+            <img src="../../Hill'sPrescriptionDietCanineMetabolic1.jpg" alt="Royal Canin Medium Adult dog food" id="display_image">
             <div class="navigation-arrow next">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6"/>
               </svg>
             </div>
           </div>
-          <div class="thumbnail-container">
-            <div class="thumbnail active">
-              <img src="../Hill'sPrescriptionDietCanineMetabolic1.jpg" alt="Thumbnail 1">
-            </div>
-            <div class="thumbnail">
-              <img src="../hillsPrescriptionDiet1.jpg" alt="Thumbnail 2">
-            </div>
-            <div class="thumbnail">
-              <img src="../RoyalCaninMediumAdult1.jpg" alt="Thumbnail 3">
-            </div>
+          <div class="thumbnail-container" id="thumbnail-container">
+            <!-- <div class="thumbnail active">
+              <img src="../../Hill'sPrescriptionDietCanineMetabolic1.jpg" alt="Thumbnail 1">
+            </div> -->
           </div>
         </div>
     
         <div class="product-info">
           <div class="product-title">
-            Royal Canin Medium Adult
+            <span id="product_title"></span>
             <span class="favorite-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -115,17 +107,15 @@
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
             </div>
-            <span class="review-count">(52)</span>
+            <span class="review-count">4.5</span>
           </div>
 
-          <p class="product-description">
-            Balanced dry food for adult dogs of medium-sized breeds, provides high-quality proteins, 
-            highly-digestible ingredients, source of antioxidants, with a tailored kibble size.
+          <p class="product-description" id="product_description">
           </p>
     
-          <label class="options-label">Choose item (4 options)</label>
+          <label class="options-label">Choose item</label>
           <div class="select-wrapper">
-            <select class="custom-select">
+            <select class="custom-select" id="custom_select">
               <option value="15kg" data-price="2,500">15kg</option>
               <option value="10kg" data-price="1,700">10kg</option>
               <option value="7kg" data-price="1,500">7kg</option>
@@ -331,9 +321,11 @@
         </div>
       </div>
     </footer>
-    <script src="../js/header.js"></script>
-    <script src="../data/category.js"></script>
-    <script src="../js/dynamic-display.js"></script>
-    <script src="../js/dogItem.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../data/category.js"></script>
+    <script src="../../data/products.js"></script>
+    <script src="../../js/dynamic-display.js"></script>
+    <script src="../../js/dogItem.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
