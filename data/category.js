@@ -1,18 +1,18 @@
 const category = [
   {
-    id: 1, name: "Dog", link: "/category/dog.html",
+    id: 1, name: "Dog", link: "/pages/category/index.html?cat-id=dog",
   },
   {
-    id: 2, name: "Cat", link: "/category/cat.html",
+    id: 2, name: "Cat", link: "/pages/category/index.html?cat-id=cat",
   },
   {
-    id: 3, name: "Small Pet", link: "/category/small_pet.html",
+    id: 3, name: "Small Pet", link: "/pages/category/index.html?cat-id=small-pet",
   },
   {
-    id: 4, name: "Feathered", link: "/category/feathered.html",
+    id: 4, name: "Feathered", link: "/pages/category/index.html?cat-id=feathered",
   },
   {
-    id: 5, name: "Aquatic", link: "/category/aquatic.html",
+    id: 5, name: "Aquatic", link: "/pages/category/index.html?cat-id=aquatic",
   },
 ];
 
@@ -54,6 +54,3 @@ cat: [
     { link: '#', id: 10, img: "", name: "Cat Leads & Cat Collars" },
 ],
 };
-
-
-

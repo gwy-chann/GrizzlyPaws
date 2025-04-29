@@ -3,32 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat</title>
+    <title>Dog Food & Supplies | PetStore</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../css category/header&footer.css" />
+    <link rel="stylesheet" href="../../styles/css category/header&footer.css" />
+    <link rel="stylesheet" href="../../styles/css sub category/dog-dry-food.css" />
   </head>
   <body>
     <header>
       <div class="header-top">
-          <div class="logo-container">
-            <button class="mobile-menu-button">☰</button>
-            <a href="index.html" title="Return to Homepage" aria-label="Go to Homepage">
-              <img src="../images/logo2.png" alt="Logo" class="logo">
-            </a>
-          </div>
+        <div class="logo-container">
+          <button class="mobile-menu-button" aria-label="Open mobile menu">
+            ☰
+          </button>
+          <a
+            href="/index.html"
+            title="Return to Homepage"
+            aria-label="Go to Homepage"
+          >
+            <img src="../images/logo2.png" alt="PetStore Logo" class="logo" />
+          </a>
+        </div>
 
         <div class="search-container">
           <form action="/search" method="get" role="search">
+            <label for="site-search" class="visually-hidden"></label>
             <input
               type="text"
               id="site-search"
               placeholder="Search products..."
               name="search"
               class="search-input"
-              for="site-search"
             />
             <button type="submit" class="search-button" aria-label="Search">
               <i class="fas fa-search" aria-hidden="true"></i>
@@ -46,14 +53,94 @@
         </div>
       </div>
 
-      <nav aria-label="Main navigation" id="main-nav">
-  
-      </nav>
+      <nav aria-label="Main navigation" id="main-nav"></nav>
     </header>
 
-
     <main class="container">
-        
+      <div class="title-category">
+        <h1>Dog Shop: Dog Supplies & Dog Accessories</h1>
+        <p class="description">
+          Discover our great selection of the best dry dog food at fantastic
+          prices shipped across Ireland. Find dog food that matches the
+          nutritional needs of your dog, based on age, breed, or special health
+          and dietary needs. Whether a giant Saint Bernard or a Pug princess,
+          your four-legged friend will love our dog food range which includes:
+          Hill's, Burn's, Eukanuba, Royal Canin, and more! Alternatively, you
+          may be interested in our
+          <a href="#"><span class="highlight">Wet dog food</span></a
+          >,
+          <a href="#"><span class="highlight">Dog treats & Bones</span></a>
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <a href="../category items/dogItem.html">
+              <img
+                src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
+                alt="Hill's Prescription Diet Canine Metabolic"
+              />
+            </a>
+            <button
+              class="add-to-basket-button"
+              aria-label="Add to basket"
+            >
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="options">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="10"
+                y="4"
+                width="10"
+                height="10"
+                fill="none"
+                stroke="#333333"
+                stroke-width="1.5"
+                rx="1"
+              />
+              <rect
+                x="4"
+                y="10"
+                width="10"
+                height="10"
+                fill="none"
+                stroke="#333333"
+                stroke-width="1.5"
+                rx="1"
+              />
+            </svg>
+            3 options
+          </div>
+
+          <a href="../category items/dogItem.html" class="product-details-link">
+            <div class="product-details">
+              <h3 class="product-title">
+                Hill's Prescription Diet Canine Metabolic Weight Management -
+                Chicken
+              </h3>
+              <p class="product-weight">12kg</p>
+              <div class="price-container">
+                <p class="price">£96.99</p>
+              </div>
+              <div class="ratings">
+                <div class="stars">★★★★★</div>
+                <div class="review-count">(14)</div>
+              </div>
+              <p class="delivery">Delivery in 3-6 working days</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </main>
 
     <div class="newsletter-banner">
@@ -75,7 +162,14 @@
         </h2>
         <form class="newsletter-form">
           <div class="select-container">
-            <select class="pet-type-select" aria-label="Select pet type">
+            <label for="pet-type" class="visually-hidden"
+              >Select pet type</label
+            >
+            <select
+              id="pet-type"
+              class="pet-type-select"
+              aria-label="Select pet type"
+            >
               <option value="" disabled selected>Please select pet type</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -96,8 +190,10 @@
             </div>
           </div>
 
+          <label for="email-input" class="visually-hidden">Email address</label>
           <input
             type="email"
+            id="email-input"
             class="email-input"
             placeholder="Email address"
             aria-label="Email address"
@@ -113,10 +209,11 @@
         <div class="footer-section">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Shipping & Delivery</a></li>
-            <li><a href="#">Returns</a></li>
+            <li><a href="dog-category.html">Dog</a></li>
+            <li><a href="cat-category.html">Cat</a></li>
+            <li><a href="small-pet-category.html">Small Pet</a></li>
+            <li><a href="feathered-category.html">Feathered</a></li>
+            <li><a href="aquatic-category.html">Aquatic</a></li>
           </ul>
         </div>
 
@@ -144,7 +241,7 @@
         <div class="footer-section">
           <div>
             <h3>Connect with us</h3>
-            <div style="display: flex; gap: 15px; margin-top: 10px">
+            <div class="social-links">
               <a href="#" aria-label="Facebook">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
