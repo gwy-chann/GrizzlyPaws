@@ -9,7 +9,7 @@
       content="Shop premium pet food and accessories for dogs, cats, small pets, birds, and fish at Grizzly Paws, your trusted online pet store."
     />
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css category/style.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -18,16 +18,10 @@
   <body>
     <header>
       <div class="header-top">
-        <!-- <div class="logo-container">
-          <a href="/" aria-label="Grizzly Paws Home">
-            <img src="images/logo2.png" alt="Grizzly Paws Logo" class="logo" />
-          </a>
-        </div> -->
-
         <div class="logo-container">
           <button class="mobile-menu-button">☰</button>
           <a href="index.html" title="Return to Homepage" aria-label="Go to Homepage">
-            <img src="images/logo2.png" alt="Logo" class="logo">
+            <img src="../images/logo2.png" alt="Logo" class="logo">
           </a>
         </div>
 
@@ -57,15 +51,9 @@
         </div>
       </div>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="dog-category.html">Dog</a></li>
-          <li><a href="cat-category.html">Cat</a></li>
-          <li><a href="small-pet-category.html">Small Pet</a></li>
-          <li><a href="feathered-category.html">Feathered</a></li>
-          <li><a href="aquatic-category.html">Aquatic</a></li>
-        </ul>
+      <nav aria-label="Main navigation" id="main-nav">
       </nav>
+      
     </header>
 
 
@@ -73,8 +61,8 @@
       <div class="main-content">
         <div class="hero-container">
           <div class="hero-image">
-            <img src="images/hero2.png" alt="Hero Image" class="active" />
-            <img src="images/hero1.png" alt="Hero Image" />
+            <img src="../images/hero2.png" alt="Hero Image" class="active" />
+            <img src="../images/hero1.png" alt="Hero Image" />
           </div>
 
           <div class="slider-dots">
@@ -85,7 +73,7 @@
 
         <div class="discount-container">
           <img
-            src="images/discount.png"
+            src="../images/discount.png"
             alt="Special Discounts"
             class="discount-image"
           />
@@ -712,6 +700,9 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+
+    <script src="../data/category.js"></script>
+    <script src="../js/dynamic-display.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

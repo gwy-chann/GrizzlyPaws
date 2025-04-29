@@ -8,20 +8,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/header&footer.css" />
-    <link rel="stylesheet" href="css/dog-dry-food.css" />
+    <link rel="stylesheet" href="../css category/header&footer.css" />
+    <link rel="stylesheet" href="../css sub category/dog-dry-food.css" />
   </head>
   <body>
     <header>
       <div class="header-top">
         <div class="logo-container">
-          <button class="mobile-menu-button" aria-label="Open mobile menu">☰</button>
+          <button class="mobile-menu-button" aria-label="Open mobile menu">
+            ☰
+          </button>
           <a
-            href="index.html"
+            href="../category/index.html"
             title="Return to Homepage"
             aria-label="Go to Homepage"
           >
-            <img src="images/logo2.png" alt="PetStore Logo" class="logo" />
+            <img src="../images/logo2.png" alt="PetStore Logo" class="logo" />
           </a>
         </div>
 
@@ -51,15 +53,7 @@
         </div>
       </div>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="dog-category.html">Dog</a></li>
-          <li><a href="cat.html">Cat</a></li>
-          <li><a href="small-pet.html">Small Pet</a></li>
-          <li><a href="feathered.html">Feathered</a></li>
-          <li><a href="aquatic.html">Aquatic</a></li>
-        </ul>
-      </nav>
+      <nav aria-label="Main navigation" id="main-nav"></nav>
     </header>
 
     <main class="container">
@@ -69,165 +63,83 @@
           Discover our great selection of the best dry dog food at fantastic
           prices shipped across Ireland. Find dog food that matches the
           nutritional needs of your dog, based on age, breed, or special health
-          and dietary needs. Whether a giant Saint Bernard or a Pug princess, your
-          four-legged friend will love our dog food range which includes: Hill's,
-          Burn's, Eukanuba, Royal Canin, and more! Alternatively, you may be interested in our
-          <a href="#"><span class="highlight">Wet dog food</span></a>,
+          and dietary needs. Whether a giant Saint Bernard or a Pug princess,
+          your four-legged friend will love our dog food range which includes:
+          Hill's, Burn's, Eukanuba, Royal Canin, and more! Alternatively, you
+          may be interested in our
+          <a href="#"><span class="highlight">Wet dog food</span></a
+          >,
           <a href="#"><span class="highlight">Dog treats & Bones</span></a>
         </p>
       </div>
-      
+
       <div class="products-grid">
         <!-- Product 1 -->
         <div class="product-card">
-            <div class="product-image">
-                <a href="/product/hills-prescription-diet-canine-metabolic">
-                    <img src="hillsPrescriptionDiet1.jpg" alt="Hill's Prescription Diet Canine Metabolic">
-                </a>
-                <a href="/basket" class="add-to-basket-button" aria-label="Add to basket">
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="options">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                </svg>
-                3 options
-            </div>
+          <div class="product-image">
+            <a href="../category items/dogItem.html">
+              <img
+                src="../Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
+                alt="Hill's Prescription Diet Canine Metabolic"
+              />
+            </a>
+            <button
+              class="add-to-basket-button"
+              aria-label="Add to basket"
+            >
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="options">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="10"
+                y="4"
+                width="10"
+                height="10"
+                fill="none"
+                stroke="#333333"
+                stroke-width="1.5"
+                rx="1"
+              />
+              <rect
+                x="4"
+                y="10"
+                width="10"
+                height="10"
+                fill="none"
+                stroke="#333333"
+                stroke-width="1.5"
+                rx="1"
+              />
+            </svg>
+            3 options
+          </div>
+
+          <a href="../category items/dogItem.html" class="product-details-link">
             <div class="product-details">
-                <a href="#" class="product-link">
-                    <h3 class="product-title">Hill's Prescription Diet Canine Metabolic Weight Management - Chicken</h3>
-                </a>
-                <p class="product-weight">12kg</p>
-                <div class="price-container">
-                    <p class="price">£96.99</p>
-                    <p class="price-per-kg">£8.08 / kg</p>
-                    <p class="discount-price">
-                        <span class="discount-icon">↻</span>
-                        £92.14
-                    </p>
-                </div>
-                <div class="ratings">
-                    <div class="stars">★★★★★</div>
-                    <div class="review-count">(14)</div>
-                </div>
-                <p class="delivery">Delivery in 3-6 working days</p>
+              <h3 class="product-title">
+                Hill's Prescription Diet Canine Metabolic Weight Management -
+                Chicken
+              </h3>
+              <p class="product-weight">12kg</p>
+              <div class="price-container">
+                <p class="price">£96.99</p>
+              </div>
+              <div class="ratings">
+                <div class="stars">★★★★★</div>
+                <div class="review-count">(14)</div>
+              </div>
+              <p class="delivery">Delivery in 3-6 working days</p>
             </div>
+          </a>
         </div>
-        
-        <!-- Product 2 -->
-        <div class="product-card">
-            <div class="product-image">
-                <a href="https://media.zooplus.com/bilder/5/400/rc_shn_maxiadult_mv_1_5.jpg">
-                    <img src="Hill'sPrescriptionDietCanineDigestiveCare1.jpg" alt="Royal Canin Veterinary Canine Gastrointestinal">
-                </a>
-                <a href="/basket" class="add-to-basket-button" aria-label="Add to basket">
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="options">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                </svg>
-                3 options
-            </div>
-            <div class="product-details">
-                <a href="/product/royal-canin-veterinary-canine-gastrointestinal" class="product-link">
-                    <h3 class="product-title">Royal Canin Veterinary Canine Gastrointestinal Low Fat</h3>
-                </a>
-                <p class="product-weight">6kg</p>
-                <div class="price-container">
-                    <p class="price">£55.49</p>
-                    <p class="price-per-kg">£9.25 / kg</p>
-                    <p class="discount-price">
-                        <span class="discount-icon">↻</span>
-                        £52.72
-                    </p>
-                </div>
-                <div class="ratings">
-                    <div class="stars">★★★★★</div>
-                    <div class="review-count">(19)</div>
-                </div>
-                <p class="delivery">Delivery in 3-6 working days</p>
-            </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-card">
-            <div class="product-image">
-                <a href="/product/hills-prescription-diet-canine-id">
-                    <img src="Hill'sPrescriptionDietCanineMetabolic1.jpg" alt="Hill's Prescription Diet Canine i/d Digestive Care">
-                </a>
-                <a href="/basket" class="add-to-basket-button" aria-label="Add to basket">
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="options">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                </svg>
-                4 options
-            </div>
-            <div class="product-details">
-                <a href="/product/hills-prescription-diet-canine-id" class="product-link">
-                    <h3 class="product-title">Hill's Prescription Diet Canine i/d Digestive Care - Chicken</h3>
-                </a>
-                <p class="product-weight">12kg</p>
-                <div class="price-container">
-                    <p class="price">£95.49</p>
-                    <p class="price-per-kg">£7.96 / kg</p>
-                    <p class="discount-price">
-                        <span class="discount-icon">↻</span>
-                        £90.72
-                    </p>
-                </div>
-                <div class="ratings">
-                    <div class="stars">★★★★★</div>
-                    <div class="review-count">(14)</div>
-                </div>
-                <p class="delivery">Delivery in 3-6 working days</p>
-            </div>
-        </div>
-        
-        <!-- Remaining product cards follow the same structure... -->
-        <!-- Product 4 -->
-        <div class="product-card">
-            <div class="product-image">
-                <a href="/product/royal-canin-veterinary-canine-hypoallergenic">
-                    <img src="RoyalCaninMediumAdult1.jpg" alt="Royal Canin Veterinary Canine Hypoallergenic">
-                </a>
-                <a href="/basket" class="add-to-basket-button" aria-label="Add to basket">
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="options">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                </svg>
-                2 options
-            </div>
-            <div class="product-details">
-                <a href="/product/royal-canin-veterinary-canine-hypoallergenic" class="product-link">
-                    <h3 class="product-title">Royal Canin Veterinary Canine Hypoallergenic</h3>
-                </a>
-                <p class="product-weight">14kg</p>
-                <div class="price-container">
-                    <p class="price">£89.99</p>
-                    <p class="price-per-kg">£6.43 / kg</p>
-                    <p class="discount-price">
-                        <span class="discount-icon">↻</span>
-                        £85.49
-                    </p>
-                </div>
-                <div class="ratings">
-                    <div class="stars">★★★★★</div>
-                    <div class="review-count">(21)</div>
-                </div>
-                <p class="delivery">Delivery in 3-6 working days</p>
-            </div>
-        </div>
-        
-        <!-- Products 5-10 would follow the same structure -->
       </div>
     </main>
 
@@ -250,8 +162,14 @@
         </h2>
         <form class="newsletter-form">
           <div class="select-container">
-            <label for="pet-type" class="visually-hidden">Select pet type</label>
-            <select id="pet-type" class="pet-type-select" aria-label="Select pet type">
+            <label for="pet-type" class="visually-hidden"
+              >Select pet type</label
+            >
+            <select
+              id="pet-type"
+              class="pet-type-select"
+              aria-label="Select pet type"
+            >
               <option value="" disabled selected>Please select pet type</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -381,6 +299,8 @@
         </div>
       </div>
     </footer>
-    <script src="js/header.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../data/category.js"></script>
+    <script src="../js/dynamic-display.js"></script>
   </body>
 </html>
