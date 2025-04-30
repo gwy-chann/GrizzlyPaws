@@ -12,7 +12,6 @@ if (product) {
     display_image.src = product.images[0]
 
     const thumbnails = document.getElementById("thumbnail-container")
-
     let thumbnail_display  = ''
 
     
