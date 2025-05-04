@@ -67,16 +67,11 @@ function updatePrice(selectedValue) {
       break;
   }
 
-  // Set the current price
   priceDiv.textContent = `₱ ${price.toLocaleString()}`;
-
-  // Set the original price (₱1000 more for example)
   const originalPrice = price + 1000;
   originalPriceDiv.textContent = `₱ ${originalPrice.toLocaleString()}`;
 }
 
-
-// Thumbnail functionality
 const thumbnails = document.querySelectorAll('.thumbnail');
 const mainImage = document.querySelector('.main-image img');
 
@@ -150,4 +145,69 @@ quantityInput.addEventListener('input', function () {
     }
     this.value = cleanedValue;
     updateButtonStatus();
+});
+
+
+// For modal =============
+// Get the modal elements
+const modal = document.getElementById("myModal");
+const closeBtn = document.querySelector(".close");
+// const addToCartBtn = document.getElementById("myBasket");
+const continueShoppingBtn = document.querySelector(".continue-shopping");
+const viewBasketBtn = document.querySelector(".view-basket");
+const modalProductInfo = document.getElementById("modal-product-info");
+
+// Function to show the modal with product details
+function showSuccessModal() {
+  // Get product info
+  const productTitle = document.getElementById("product_title").textContent;
+  const selectedSize = document.getElementById("custom_select").value;
+  const quantity = document.querySelector(".quantity-input").value;
+  
+  // Update modal message with product details
+  modalProductInfo.textContent = `${quantity} × ${productTitle} (${selectedSize}) has been added to your basket.`;
+  
+  modal.style.display = "block";
+  
+  // Prevent scrolling on the body while modal is open
+  document.body.style.overflow = "hidden";
+}
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
+
+// Add event listener to the Add to Basket button
+addToCartBtn.addEventListener("click", function() {
+  // You might want to add code here to actually add the item to basket
+  // For example, update a cart object or send data to server
+  
+  // Then show the success modal
+  showSuccessModal();
+});
+
+// Event listeners for closing the modal
+closeBtn.addEventListener("click", closeModal);
+continueShoppingBtn.addEventListener("click", closeModal);
+
+// View basket button
+viewBasketBtn.addEventListener("click", function() {
+  // Redirect to basket page
+  window.location.href = "/basket"; // Change this to your basket page URL
+});
+
+// Close modal when clicking outside of it
+window.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Optional: Close modal with ESC key
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape" && modal.style.display === "block") {
+    closeModal();
+  }
 });

@@ -7,7 +7,7 @@ const products = [{
   description: 'Balanced dry food for adult dogs of medium-sized breeds, provides high-quality proteins, highly-digestible ingredients, source of antioxidants, with a tailored kibble size.',
   variations: [
     {
-      unit: "150kg",
+      unit: "69kg",
       price: 2_500,
     },
     {

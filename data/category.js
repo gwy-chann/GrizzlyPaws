@@ -53,4 +53,17 @@ cat: [
     { link: '#', id: 9, img: "", name: "Cat Grooming & Care" },
     { link: '#', id: 10, img: "", name: "Cat Leads & Cat Collars" },
 ],
+
+small_pet: [
+  { link: '#', id: 1, img: "", name: "Dry Cat Food" },
+    { link: '#', id: 2, img: "", name: "Wet Cat Food" },
+    { link: '#', id: 3, img: "", name: "Cat Treats & Cat Bones" },
+    { link: '#', id: 4, img: "", name: "Cat Supplements & Special Food" },
+    { link: '#', id: 5, img: "", name: "Cat Kennels, Cat Flaps & Gates" },
+    { link: '#', id: 6, img: "", name: "Cat Crates & Cat Travel" },
+    { link: '#', id: 7, img: "", name: "Cat Beds & Baskets" },
+    { link: '#', id: 8, img: "", name: "Cat Toys, Sports & Training" },
+    { link: '#', id: 9, img: "", name: "Cat Grooming & Care" },
+    { link: '#', id: 10, img: "", name: "Cat Leads & Cat Collars" },
+],
 };

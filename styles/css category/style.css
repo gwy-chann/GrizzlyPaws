@@ -481,14 +481,15 @@
    .small-pet-bg {
      background-color: #D8F2C2;
    }
+
+   .bird-bg {
+    background-color: #FFCDD2;
+  }
    
    .fish-bg {
      background-color: #EEEEEE;
    }
    
-   .bird-bg {
-     background-color: #FFCDD2;
-   }
    
    .pet-image {
      max-width: 100%;
