@@ -10,6 +10,7 @@ favoriteIcon.addEventListener('click', function() {
 const decreaseBtn = document.querySelector('.decrease');
 const increaseBtn = document.querySelector('.increase');
 const quantityInput = document.querySelector('.quantity-input');
+const addToCartBtn = document.querySelector('#myBasket');
 
 decreaseBtn.addEventListener('click', function() {
     let currentValue = parseInt(quantityInput.value);

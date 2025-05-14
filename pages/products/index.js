@@ -53,7 +53,12 @@ if (sub_products) {
             event.preventDefault()
             const productId = button.getAttribute('data-id')
 
-            addToCart(productId)
+            console.log(productId)
+
+            addToCart({ 
+              id: productId,
+              quantity: 1,
+            })
             showSuccessModal(productId);
         })
     })

@@ -69,7 +69,7 @@ if (product) {
       const e = document.getElementById("custom_select");
       const value = e.options[e.selectedIndex].value;
     
-      addToCart( { 
+      addToCart({ 
         id: productId,
         name: product.name,
         quantity: parseInt(quantityInput.value) || 1,
