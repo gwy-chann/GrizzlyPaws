@@ -83,7 +83,7 @@
               <label for="select-all-checkbox">Select All Items</label>
             </div>
 
-            <table class="item-table">
+            <table class="item-table" id="item-table">
               <thead>
                 <tr>
                   <th width="10%"></th>
@@ -93,7 +93,7 @@
                   <th width="15%">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="item-table-body">
                 <tr class="item-row">
                   <td>
                     <input type="checkbox" class="checkbox item-checkbox" />
@@ -170,7 +170,7 @@
           <h2>Order Summary</h2>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span>₱3699</span>
+            <span id="subtotal">₱3699</span>
           </div>
           <div class="summary-row">
             <span>Shipping Fees</span>
@@ -188,7 +188,7 @@
 
           <div class="summary-row">
             <span>Total incl. VAT</span>
-            <span>₱3699</span>
+            <span id="vat-id">₱3699</span>
           </div>
 
           <button class="checkout-button">Proceed to checkout</button>
@@ -311,6 +311,142 @@
     <script src="../../../data/category.js"></script>
     <script src="../../../data/products.js"></script>
     <script src="../../../js/dynamic-display.js"></script>
-    <!-- <script src="../../../js/dogItem.js"></script> -->
+
+    <script>
+
+      const itemTable = document.getElementById("item-table-body");
+      const subtotalElement = document.getElementById("subtotal");
+      const vatElement = document.getElementById("vat-id");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      renderCartItems();
+
+    function renderCartItems() {
+    itemTable.innerHTML = ""; // Clear existing items
+    let subtotal = 0;
+    
+    cart.forEach((item, index) => {
+      const row = document.createElement("tr");
+      const product = products.find((product) => product.id == item.id);
+
+      row.classList.add("item-row");
+
+      
+      const itemTotalPrice = item.price * item.quantity;
+      subtotal += itemTotalPrice;
+
+      row.innerHTML = `
+        <td>
+          <input type="checkbox" class="checkbox item-checkbox" />
+        </td>
+        <td>
+          <div class="product-info">
+            <img src="${product.images[0]}" alt="${item.name}" class="product-image" />
+            <div>
+              <div class="product-name">
+                <a href="#">${item.name}</a>
+              </div>
+              <div class="product-details">${item.unit}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="quantity-control">
+            <button class="quantity-btn minus-btn" ${item.quantity === 1 ? "disabled" : ""}>−</button>
+            <input type="text" class="quantity" value="${item.quantity}" readonly />
+            <button class="quantity-btn plus-btn">+</button>
+          </div>
+        </td>
+        <td class="price-section">₱<span class="item-price">${(item.price * item.quantity).toFixed(2)}</span></td>
+        <td>
+          <div class="action-icons">
+            <button class="delete-icon">
+                <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="100"
+                          height="100"
+                          viewBox="0,0,256,256"
+                        >
+                          <g
+                            fill="#333333"
+                            fill-rule="nonzero"
+                            stroke="none"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                            stroke-miterlimit="10"
+                            stroke-dasharray=""
+                            stroke-dashoffset="0"
+                            font-family="none"
+                            font-weight="none"
+                            font-size="none"
+                            text-anchor="none"
+                            style="mix-blend-mode: normal"
+                          >
+                            <g transform="scale(5.33333,5.33333)">
+                              <path
+                                d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"
+                              ></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </button>
+          </div>
+        </td>
+      `;
+
+      // Add event listeners for quantity buttons and delete button
+      const minusBtn = row.querySelector(".minus-btn");
+      const plusBtn = row.querySelector(".plus-btn");
+      const deleteBtn = row.querySelector(".delete-icon");
+
+      minusBtn.addEventListener("click", () => updateQuantity(index, -1));
+      plusBtn.addEventListener("click", () => updateQuantity(index, 1));
+      deleteBtn.addEventListener("click", () => removeItem(index));
+
+      itemTable.appendChild(row);
+    });
+
+
+    
+    // Update subtotal and VAT
+    const vat = subtotal * 0.12;
+    const total = subtotal + vat;
+
+    subtotalElement.textContent = `₱${subtotal.toFixed(2)}`;
+    vatElement.textContent = `₱${total.toFixed(2)}`;
+  }
+
+
+  
+  function updateQuantity(index, change) {
+    cart[index].quantity += change;
+
+    // Ensure quantity is at least 1
+    if (cart[index].quantity < 1) {
+      cart[index].quantity = 1;
+    }
+
+    // Update local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Re-render items
+    renderCartItems();
+  }
+
+
+  function removeItem(index) {
+    // Remove item from cart
+    cart.splice(index, 1);
+
+    // Update local storage and re-render items
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCartItems();
+  }
+      
+  
+    </script>
   </body>
 </html>

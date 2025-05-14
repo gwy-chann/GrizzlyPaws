@@ -53,8 +53,6 @@ if (sub_products) {
             event.preventDefault()
             const productId = button.getAttribute('data-id')
 
-            console.log(productId)
-
             addToCart({ 
               id: productId,
               quantity: 1,
