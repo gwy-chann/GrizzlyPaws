@@ -14,7 +14,7 @@ if (product) {
     const thumbnails = document.getElementById("thumbnail-container")
     let thumbnail_display  = ''
 
-    
+  
     product.images.forEach((image, index) => {
         if (index == 0) {
             thumbnail_display += ` 
@@ -45,5 +45,61 @@ if (product) {
     });
 
     custom_select.innerHTML = option_display
+
+    const addToCartButton = document.getElementById('myBasket')
+    addToCartButton.setAttribute('data-id', product.id)
+
+    // for price of product
+    const select = document.querySelector('.custom-select');
+
+    updatePrice(select.value);
+
+    select.addEventListener('change', function () {
+      updatePrice(this.value);
+    });
+
+
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    addToCartBtn.addEventListener("click", function() {
+
+      const quantityInput = document.querySelector('.quantity-input');
+
+      const productId = addToCartBtn.getAttribute('data-id');
+
+      const e = document.getElementById("custom_select");
+      const value = e.options[e.selectedIndex].value;
+    
+      addToCart( { 
+        id: productId,
+        name: product.name,
+        quantity: parseInt(quantityInput.value) || 1,
+        unit: value,
+      });
+      showSuccessModal(productId);
+    });
+    
+
+
+
 }
 
+
+
+function updatePrice(selectedValue) {
+  let price = 0;
+
+
+  const selectedVariation = product.variations.find(variation => variation.unit === selectedValue);
+  if (selectedVariation) {
+    price = selectedVariation.price;
+  }
+
+
+  const priceDiv = document.querySelector('.price');
+  const originalPriceDiv = document.querySelector('.original-price');
+
+
+  priceDiv.textContent = `₱ ${price.toLocaleString()}`;
+  const originalPrice = price + 1000;
+  originalPriceDiv.textContent = `₱ ${originalPrice.toLocaleString()}`;
+}

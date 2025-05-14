@@ -56,7 +56,7 @@ li {
       ========================================================================== */
 
 header {
-  background-color: #d8ebd0;
+  background: linear-gradient(130deg, #1a3303, #73974d);
   text-align: center;
   padding: 20px 0 0;
   width: 100%;
@@ -164,9 +164,14 @@ header {
   background-color: #ffc933;
 }
 
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 .account-button {
   font-size: 28px;
-  color: #333;
+  color: #fffbeb;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -174,10 +179,47 @@ header {
   transition: color 0.2s ease;
 }
 
-.account-button:hover {
-  color: #333333;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px); /* Add some space for the tail */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
+.dropdown-tail {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f9f9f9; /* Same color as dropdown background */
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 16px;
+  font-size: 15px;
+  text-align: start;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #006400;
+}
+
+/* Change this selector to target the parent container */
+.account-dropdown:hover .dropdown-content {
+  display: block;
+}
 /* ==========================================================================
       5. Navigation
       ========================================================================== */
@@ -226,7 +268,7 @@ nav a:hover {
       13. Newsletter Banner
       ========================================================================== */
 .newsletter-banner {
-  background-color: #006400;
+  background-color: #237803;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -334,7 +376,7 @@ nav a:hover {
   padding: 12px 30px;
   border-radius: 25px;
   border: 2px solid white;
-  background-color: #006400;
+  background-color: #237803;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -343,7 +385,7 @@ nav a:hover {
 
 .subscribe-btn:hover {
   background-color: white;
-  color: #006400;
+  color: #237803;
 }
 
 /* ==========================================================================
@@ -425,7 +467,7 @@ nav a:hover {
     display: flex; /* Show on mobile */
     background: none;
     border: none;
-    color: #333;
+    color: #fffbeb;
     font-size: 24px;
     align-items: center;
     justify-content: center;
@@ -562,6 +604,8 @@ nav a:hover {
   .feature-box {
     flex: 1 0 calc(50% - 20px);
   }
+
+
 
   .offers-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -728,7 +772,7 @@ nav a:hover {
 }
 
 /* Extra small phones */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .container {
     padding: 0 10px;
   }
@@ -745,6 +789,7 @@ nav a:hover {
   .basket-button {
     padding: 6px 10px;
   }
+
 
   .search-input {
     padding: 8px 35px 8px 10px;

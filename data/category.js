@@ -31,7 +31,7 @@ const pageDetails = {
 const subCategory = {
   dog: [
     { link: '/pages/products/index.html?sub-cat-id=Dry Dog Food&cat-id=dog', id: 1, img: "", name: "Dry Dog Food" },
-    { link: '#', id: 2, img: "", name: "Wet Dog Food" },
+    { link: '/pages/products/index.html?sub-cat-id=Wet Dog Food&cat-id=dog', id: 2, img: "", name: "Wet Dog Food" },
     { link: '#', id: 3, img: "", name: "Dog Treats & Dog Bones" },
     { link: '#', id: 4, img: "", name: "Dog Supplements & Special Food" },
     { link: '#', id: 5, img: "", name: "Dog Kennels, Dog Flaps & Gates" },
@@ -42,7 +42,7 @@ const subCategory = {
     { link: '#', id: 10, img: "", name: "Dog Leads & Dog Collars" },
   ],
 cat: [
-    { link: '#', id: 1, img: "", name: "Dry Cat Food" },
+    { link: '/pages/products/index.html?sub-cat-id=Dry Cat Food&cat-id=cat', id: 1, img: "", name: "Dry Cat Food" },
     { link: '#', id: 2, img: "", name: "Wet Cat Food" },
     { link: '#', id: 3, img: "", name: "Cat Treats & Cat Bones" },
     { link: '#', id: 4, img: "", name: "Cat Supplements & Special Food" },

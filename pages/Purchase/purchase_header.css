@@ -1,0 +1,123 @@
+
+.user-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.user-nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.nav-link:hover {
+    color: #006400;
+}
+
+.nav-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.tabs-container {
+    position: relative;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.tabs::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.tab {
+    padding: 12px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.tab:hover {
+    color: #006400;
+}
+
+.tab.active {
+    color: #006400;
+    font-weight: 600;
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #006400;
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    background-color: #006400;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+    .tab {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .user-nav-links {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+    .user-nav-links {
+        gap: 12px;
+    }
+    
+    .nav-link span {
+        display: none;
+    }
+    
+    .nav-link svg {
+        width: 22px;
+        height: 22px;
+    }
+}

@@ -19,7 +19,7 @@
           <div class="logo-container">
             <button class="mobile-menu-button">☰</button>
             <a href="/index.html" title="Return to Homepage" aria-label="Go to Homepage">
-              <img src="../images/logo2.png" alt="Logo" class="logo">
+              <img src="../../images/logo3.png" alt="Logo" class="logo">
             </a>
           </div>
 
@@ -39,13 +39,22 @@
           </form>
         </div>
         <div class="basket-container">
-          <a href="/basket" class="basket-button" aria-label="Shopping basket">
+          <a href="../../pages/basket.html" class="basket-button" aria-label="Shopping basket">
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
-          <a href="/account" class="account-button" aria-label="My account">
-            <i class="fas fa-user-circle" aria-hidden="true"></i>
-          </a>
+          <div class="account-dropdown">
+            <a class="account-button" aria-label="My account">
+              <i class="fas fa-user-circle" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content">
+              <div class="dropdown-tail"></div>
+              <a href="/account">My Account</a>
+              <a href="/purchases">My Purchase</a>
+              <a href="/purchases">My Favorites</a>
+              <a href="/logout">Logout</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -57,7 +66,7 @@
 
     <main class="container">
       <div class="breadcrumb">
-        <a href="index.html">
+        <a href="../../index.html">
             <svg class="home-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -89,6 +98,11 @@
                 <!-- <img src="../images/hero-dog.png" class="hero-dog"> -->
                 <p class="description" id="categoryDescription"></p>
                 
+                <div class="category_banner">
+                  <img src="../../images/dog_banner.png" alt="category_banner">
+
+                </div>
+                
                 <div class="categories-grid" id="categoriesGrid">
                     <!-- <a href="../dog-dry-food-products.html" class="category-card">
                       <div class="title">Dry Dog Food</div>
@@ -104,8 +118,8 @@
 
     <div class="newsletter-banner">
       <div class="years-badge">
-        <div class="years-number">24</div>
-        <div class="years-text">years in business celebrating pet love</div>
+        <div class="years-number">2025</div>
+        <div class="years-text">New beginnings, same love for pets</div>
         <div class="paw-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path
@@ -159,37 +173,30 @@
         <div class="footer-section">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Shipping & Delivery</a></li>
-            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a>Free Shipping & Delivery</a></li>
+            <li><a>Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+
           </ul>
         </div>
 
         <div class="footer-section">
           <h3>Advantages</h3>
           <ul class="footer-links">
-            <li><a href="#">Loyalty Programme</a></li>
-            <li><a href="#">Refer a Friend</a></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">zooplus Repeat</a></li>
+            <li><a>Newsletter</a></li>
+            <li><a href="#features-container">Special Offer</a></li>
+            <li><a href="#">Grizzly Paws Repeat</a></li>
           </ul>
         </div>
 
-        <div class="footer-section">
-          <h3>Shopping</h3>
-          <ul class="footer-links">
-            <li><a href="#">Special Offers</a></li>
-            <li><a href="#">Clearance Sale</a></li>
-            <li><a href="#">Seasonal Specials</a></li>
-            <li><a href="#">Popular Products</a></li>
-            <li><a href="#">New Arrivals</a></li>
-          </ul>
-        </div>
 
         <div class="footer-section">
           <div>
             <h3>Connect with us</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Team</a></li>
+            </ul>
             <div style="display: flex; gap: 15px; margin-top: 10px">
               <a href="#" aria-label="Facebook">
                 <svg
@@ -201,32 +208,6 @@
                 >
                   <path
                     d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"
-                  />
-                </svg>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="#666"
-                >
-                  <path
-                    d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.088 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.088.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.055-.059 1.37-.059 4.04 0 2.67.01 2.986.059 4.04.045.976.207 1.504.344 1.857.181.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.047 1.37.059 4.04.059 2.67 0 2.987-.01 4.04-.059.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.047-1.054.059-1.37.059-4.04 0-2.67-.01-2.986-.059-4.04-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.054-.047-1.37-.059-4.04-.059zm0 3.063A5.135 5.135 0 0112 12a5.135 5.135 0 01-5.135 5.135A5.135 5.135 0 011.73 12 5.135 5.135 0 116.865 6.865zm0 1.802A3.333 3.333 0 008.333 12c0 1.84 1.492 3.333 3.333 3.333 1.84 0 3.333-1.492 3.333-3.333 0-1.84-1.492-3.333-3.333-3.333zm6.538-3.598a1.2 1.2 0 10-2.4 0 1.2 1.2 0 002.4 0z"
-                  />
-                </svg>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="#666"
-                >
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"
                   />
                 </svg>
               </a>

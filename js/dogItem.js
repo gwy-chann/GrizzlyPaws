@@ -10,7 +10,6 @@ favoriteIcon.addEventListener('click', function() {
 const decreaseBtn = document.querySelector('.decrease');
 const increaseBtn = document.querySelector('.increase');
 const quantityInput = document.querySelector('.quantity-input');
-const addToCartBtn = document.querySelector('.add-to-cart');
 
 decreaseBtn.addEventListener('click', function() {
     let currentValue = parseInt(quantityInput.value);
@@ -36,40 +35,6 @@ function updateButtonStatus() {
         addToCartBtn.setAttribute('disabled', true);  // Disable button properly
         addToCartBtn.style.opacity = '0.7';           // Dim opacity
     }
-}
-
-// for price of product
-const select = document.querySelector('.custom-select');
-const priceDiv = document.querySelector('.price');
-const originalPriceDiv = document.querySelector('.original-price');
-
-updatePrice(select.value);
-
-select.addEventListener('change', function () {
-  updatePrice(this.value);
-});
-
-function updatePrice(selectedValue) {
-  let price = 0;
-
-  switch (selectedValue) {
-    case '15kg':
-      price = 2500;
-      break;
-    case '10kg':
-      price = 1700;
-      break;
-    case '7kg':
-      price = 1500;
-      break;
-    case '4kg':
-      price = 1300;
-      break;
-  }
-
-  priceDiv.textContent = `₱ ${price.toLocaleString()}`;
-  const originalPrice = price + 1000;
-  originalPriceDiv.textContent = `₱ ${originalPrice.toLocaleString()}`;
 }
 
 const thumbnails = document.querySelectorAll('.thumbnail');
@@ -148,66 +113,9 @@ quantityInput.addEventListener('input', function () {
 });
 
 
-// For modal =============
-// Get the modal elements
-const modal = document.getElementById("myModal");
-const closeBtn = document.querySelector(".close");
-// const addToCartBtn = document.getElementById("myBasket");
-const continueShoppingBtn = document.querySelector(".continue-shopping");
-const viewBasketBtn = document.querySelector(".view-basket");
-const modalProductInfo = document.getElementById("modal-product-info");
+// const modal = document.getElementById("myModal");
+// const closeBtn = document.querySelector(".close");
+// const continueShoppingBtn = document.querySelector(".continue-shopping");
+// const viewBasketBtn = document.querySelector(".view-basket");
+// const modalProductInfo = document.getElementById("modal-product-info");
 
-// Function to show the modal with product details
-function showSuccessModal() {
-  // Get product info
-  const productTitle = document.getElementById("product_title").textContent;
-  const selectedSize = document.getElementById("custom_select").value;
-  const quantity = document.querySelector(".quantity-input").value;
-  
-  // Update modal message with product details
-  modalProductInfo.textContent = `${quantity} × ${productTitle} (${selectedSize}) has been added to your basket.`;
-  
-  modal.style.display = "block";
-  
-  // Prevent scrolling on the body while modal is open
-  document.body.style.overflow = "hidden";
-}
-
-// Function to close the modal
-function closeModal() {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // Re-enable scrolling
-}
-
-// Add event listener to the Add to Basket button
-addToCartBtn.addEventListener("click", function() {
-  // You might want to add code here to actually add the item to basket
-  // For example, update a cart object or send data to server
-  
-  // Then show the success modal
-  showSuccessModal();
-});
-
-// Event listeners for closing the modal
-closeBtn.addEventListener("click", closeModal);
-continueShoppingBtn.addEventListener("click", closeModal);
-
-// View basket button
-viewBasketBtn.addEventListener("click", function() {
-  // Redirect to basket page
-  window.location.href = "/basket"; // Change this to your basket page URL
-});
-
-// Close modal when clicking outside of it
-window.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-// Optional: Close modal with ESC key
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape" && modal.style.display === "block") {
-    closeModal();
-  }
-});

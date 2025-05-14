@@ -20,6 +20,7 @@ if (sub_products) {
             <button
               class="add-to-basket-button"
               aria-label="Add to basket"
+              data-id=${product.id}
             >
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             </button>
@@ -43,5 +44,17 @@ if (sub_products) {
         `
     });
     
-     productCardContainer.innerHTML = subCategory_display
+    productCardContainer.innerHTML = subCategory_display
+
+
+    const addToCartBtn = document.querySelectorAll(".add-to-basket-button");
+    addToCartBtn.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault()
+            const productId = button.getAttribute('data-id')
+
+            addToCart(productId)
+            showSuccessModal(productId);
+        })
+    })
 }
