@@ -53,10 +53,10 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="/account">My Account</a>
-              <a href="/purchases">My Purchase</a>
-              <a href="/purchases">My Favorites</a>
-              <a href="/logout">Logout</a>
+              <a href="../pages/account.html">My Account</a>
+              <a href="../pages/Purchase/purchase.html">My Purchase</a>
+              <a href="/wishlist">Wishlist</a>
+              <a href="../login.html">Logout</a>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
       <nav aria-label="Main navigation" id="main-nav"></nav>
     </header>
 
-    <main class="container" style="padding: 30px 0px 30px 0px">
+    <main class="container">
       <!-- <div class="header-section ">
         <h2>Your Purchase History</h2>
       </div> -->
@@ -222,7 +222,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small-pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -247,6 +247,8 @@
         </form>
       </div>
     </div>
+
+
 
     <footer class="footer">
       <div class="footer-container">
@@ -307,11 +309,31 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal" id="myModal"> 
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="success-message">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Order Confirmed</h3>
+          <p id="modal-product-info">Your item has been placed. You can track your order in your email</p>
+          <div class="modal-buttons">
+            <a href="/index.html">
+              <button class="continue-shopping" id="continue-shopping">Continue Shopping</button>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox"><button class="view-basket">Track Order</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../../../js/header.js"></script>
     <script src="../../../data/category.js"></script>
     <script src="../../../data/products.js"></script>
     <script src="../../../js/dynamic-display.js"></script>
-
+    <!-- <script src="../js/basket.js"></script> -->
     <script>
 
       const itemTable = document.getElementById("item-table-body");
@@ -324,7 +346,7 @@
     function renderCartItems() {
     itemTable.innerHTML = ""; // Clear existing items
     let subtotal = 0;
-    
+
     cart.forEach((item, index) => {
       const row = document.createElement("tr");
       const product = products.find((product) => product.id == item.id);
@@ -357,7 +379,7 @@
             <button class="quantity-btn plus-btn">+</button>
           </div>
         </td>
-        <td class="price-section">₱<span class="item-price">${(item.price * item.quantity).toFixed(2)}</span></td>
+        <td class="price-section">₱<span class="item-price">${(item.price * item.quantity).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></td>
         <td>
           <div class="action-icons">
             <button class="delete-icon">
@@ -415,8 +437,9 @@
     const vat = subtotal * 0.12;
     const total = subtotal + vat;
 
-    subtotalElement.textContent = `₱${subtotal.toFixed(2)}`;
-    vatElement.textContent = `₱${total.toFixed(2)}`;
+   
+    subtotalElement.textContent = `₱${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    vatElement.textContent = `₱${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   }
 
 
@@ -445,8 +468,53 @@
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCartItems();
   }
-      
   
+    </script>
+    <script>
+      // Connect "Proceed to checkout" button to open the modal
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal element
+  const modal = document.getElementById("myModal");
+  
+  // Get the checkout button
+  const checkoutBtn = document.querySelector(".checkout-button");
+  
+  // Get the close button
+  const closeBtn = document.getElementsByClassName("close")[0];
+  
+  // Get the continue shopping button
+  const continueShoppingBtn = document.getElementById("continue-shopping");
+  
+  // When the user clicks the checkout button, open the modal
+  checkoutBtn.addEventListener('click', function() {
+    modal.style.display = "block";
+    
+    // You can customize the product info dynamically
+    document.getElementById("modal-product-info").textContent = 
+      "Your order has been placed successfully. You can track your order in your email.";
+    
+    // Clear the cart when order is placed
+    localStorage.setItem("cart", JSON.stringify([]));
+  });
+  
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  
+  // Close the modal when continue shopping is clicked
+  continueShoppingBtn.onclick = function() {
+    modal.style.display = "none";
+    // The link will redirect to index.html after closing
+  }
+});
     </script>
   </body>
 </html>

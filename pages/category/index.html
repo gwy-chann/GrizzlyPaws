@@ -49,10 +49,10 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="/account">My Account</a>
-              <a href="/purchases">My Purchase</a>
-              <a href="/purchases">My Favorites</a>
-              <a href="/logout">Logout</a>
+              <a href="../../pages/account.html">My Account</a>
+              <a href="../Purchase/purchase.html">My Purchase</a>
+              <a href="../../pages/Purchase/wishlist.html">Wishlist</a>
+              <a href="../../login.html">Logout</a>
             </div>
           </div>
         </div>
@@ -77,14 +77,14 @@
             <path d="M1.5 1L6.5 6L1.5 11" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <span>Dog</span>
+        <span>Pet</span>
     </div>
     
         <div class="shop-layout">
           <!-- Sidebar Navigation -->
             <div class="sidebar-nav">
                 <div class="category-header">
-                    <h2 class="category-title">Dog</h2>
+                    <h2 class="category-title" >Pet</h2>
                 </div>
                 
                 <ul class="category-list" id="categoryList">
@@ -95,14 +95,14 @@
             <!-- Main Content -->
             <div class="main-content">
                 <h1 id="categoryTitle"></h1>
-                <!-- <img src="../images/hero-dog.png" class="hero-dog"> -->
+                
                 <p class="description" id="categoryDescription"></p>
                 
-                <div class="category_banner">
-                  <img src="../../images/dog_banner.png" alt="category_banner">
-
+                <div class="category_banner" id="categoryImage">
+                  <!-- <img src="../../images/dog_banner.png" alt="category_banner">   -->
                 </div>
                 
+
                 <div class="categories-grid" id="categoriesGrid">
                     <!-- <a href="../dog-dry-food-products.html" class="category-card">
                       <div class="title">Dry Dog Food</div>
@@ -142,7 +142,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small-pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">

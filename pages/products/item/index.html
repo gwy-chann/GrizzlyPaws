@@ -37,7 +37,7 @@
           </form>
         </div>
         <div class="basket-container">
-          <a href="/basket" class="basket-button" aria-label="Shopping basket">
+          <a href="../pages/basket.html" class="basket-button" aria-label="Shopping basket">
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
@@ -47,10 +47,10 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="/account">My Account</a>
-              <a href="/purchases">My Purchase</a>
-              <a href="/purchases">My Favorites</a>
-              <a href="/logout">Logout</a>
+              <a href="../../account.html">My Account</a>
+              <a href="../../Purchase/purchase.html">My Purchase</a>
+              <a href="../purchase.html">Wishlist</a>
+              <a href="../../../login.html">Logout</a>
             </div>
           </div>
         </div>
@@ -59,7 +59,33 @@
       </nav>
     </header>
 
-    <main class="container" style="padding: 30px 0px 30px 0px;">
+    <main class="container" >
+      <div class="breadcrumb">
+        <a href="../../index.html">
+            <svg class="home-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <span class="separator">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1L6.5 6L1.5 11" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Pet</span>
+        <span class="separator">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1L6.5 6L1.5 11" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Sub Category</span>
+        <span class="separator">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1L6.5 6L1.5 11" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Product Detail</span>
+    </div>
       <div class="product-container">
         <div class="product-images">
           <div class="main-image">
@@ -238,7 +264,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small-pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">

@@ -22,6 +22,7 @@ const categoryList = document.getElementById('categoryList')
 if(categoryList) {
 
     subCategory[paramValue].forEach((subItem) => {
+        
         const subCategoryDisplay = `
             <li>
                 <a href="${subItem.link}">${subItem.name}</a>
@@ -52,21 +53,16 @@ if (categoryCard) {
 
 const categoryTitle = document.getElementById('categoryTitle')
 const categoryDescription = document.getElementById('categoryDescription')
+const categoryImage = document.getElementById('categoryImage')
 
 
 if (categoryTitle || categoryDescription) {
 
     categoryTitle.innerHTML  = pageDetails[paramValue].title
     categoryDescription.innerHTML = pageDetails[paramValue].description
+    categoryImage.innerHTML = `
+        <img src="${pageDetails[paramValue].link}" alt="${paramValue} category banner">
+    `;
 }
 
-// function getPageTitle(url) {
-//     const regex = /category\/([a-zA-Z]+)\.html/;
-//     const match = url.match(regex);
-
-//     if (match) {
-//     const title = match[1]; 
-//     return title;
-//     }
-// }
 

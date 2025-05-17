@@ -10,6 +10,7 @@
     />
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="styles/css category/style.css" />
+    <!-- <link rel="stylesheet" href="styles/css sub category/dog-dry-food.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -60,10 +61,10 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="/account">My Account</a>
-              <a href="/purchases">My Purchase</a>
-              <a href="/purchases">My Favorites</a>
-              <a href="/logout">Logout</a>
+              <a href="pages/account.html">My Account</a>
+              <a href="pages/Purchase/purchase.html">My Purchase</a>
+              <a href="../purchase.html">Wishlist</a>
+              <a href="login.html">Logout</a>
             </div>
           </div>
         </div>
@@ -167,7 +168,7 @@
           Shop for your pet
         </h2>
         <div class="pet-categories">
-          <a href="/dog-products" class="pet-category">
+          <a href="/pages/category/index.html?cat-id=dog" class="pet-category">
             <div class="pet-image-container dog-bg">
               <img
                 src="images/CategoryImages/dog_cat.png"
@@ -179,7 +180,7 @@
             <div class="pet-name">Dog</div>
           </a>
 
-          <a href="/cat-products" class="pet-category">
+          <a href="/pages/category/index.html?cat-id=cat" class="pet-category">
             <div class="pet-image-container cat-bg">
               <img
                 src="images/CategoryImages/cat_cat.png"
@@ -191,8 +192,8 @@
             <div class="pet-name">Cat</div>
           </a>
 
-          <a href="/small-pet-products" class="pet-category">
-            <div class="pet-image-container small-pet-bg">
+          <a href="/pages/category/index.html?cat-id=small_pet" class="pet-category">
+            <div class="pet-image-container  small_pet-bg">
               <img
                 src="images/CategoryImages/small_pet_cat.png"
                 alt="Small Pet"
@@ -203,7 +204,7 @@
             <div class="pet-name">Small Pet</div>
           </a>
 
-          <a href="/bird-products" class="pet-category">
+          <a href="/pages/category/index.html?cat-id=feathered" class="pet-category">
             <div class="pet-image-container bird-bg">
               <img
                 src="images/CategoryImages/bird_cat.png"
@@ -215,7 +216,7 @@
             <div class="pet-name">Feathered</div>
           </a>
 
-          <a href="/fish-products" class="pet-category">
+          <a href="/pages/category/index.html?cat-id=aquatic" class="pet-category">
             <div class="pet-image-container fish-bg">
               <img
                 src="images/CategoryImages/aquatic_cat.png"
@@ -348,271 +349,7 @@
                 </a>
               </div>
 
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>   
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>   
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>   
-
-              <div class="product-card">
-                <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
-                    <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
-                      alt="Hill's Prescription Diet Canine Metabolic"
-                    />
-                  </a>
-                  <button
-                    class="add-to-basket-button"
-                    aria-label="Add to basket"
-                  >
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                  </button>
-                </div>
-
-                <a
-                  href="/pages/products/item/index.html?id=1"
-                  class="product-details-link"
-                >
-                  <div class="product-details">
-                    <h3 class="product-title">
-                      Hill's Prescription Diet Canine Metabolic Weight
-                      Management - Chicken
-                    </h3>
-
-                    <div class="price-container">
-                      <p class="price">£96.99</p>
-                    </div>
-                    <div class="ratings">
-                      <div class="stars">★★★★★</div>
-                      <div class="review-count">(14)</div>
-                    </div>
-                    <p class="delivery">Delivery in 3-6 working days</p>
-                  </div>
-                </a>
-              </div>  
+             
 
 
 
@@ -780,7 +517,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small-pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -866,9 +603,28 @@
       </div>
     </footer>
 
-    <script src="..././../data/category.js"></script>
+    <div class="modal" id="myModal"> 
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="success-message">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Added to Basket! 🐾</h3>
+          <p id="modal-product-info">Your item has been added to the basket.</p>
+          <div class="modal-buttons">
+            <button class="continue-shopping">Continue Shopping</button>
+            <a href="pages/basket.html"><button class="view-basket">View Basket</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <script src="..././../data/products.js"></script>
-    <script src="js/dynamic-display.js"></script>
+    <script src="..././../data/category.js"></script>
+    <script src="/js/dynamic-display.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="pages/Purchase/wishlist.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

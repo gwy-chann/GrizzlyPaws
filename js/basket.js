@@ -73,3 +73,5 @@ productCheckboxes.forEach(checkbox => {
 
 // Setup quantity controls for each product
 document.querySelectorAll('.product').forEach(setupQuantityControls);
+
+

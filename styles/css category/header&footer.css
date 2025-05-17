@@ -56,7 +56,9 @@ li {
       ========================================================================== */
 
 header {
-  background: linear-gradient(130deg, #1a3303, #73974d);
+  /* background: linear-gradient(130deg, #286328, #83a75d); */
+  background: linear-gradient(130deg, #235523, #83a75d);
+  /* color: #=; */
   text-align: center;
   padding: 20px 0 0;
   width: 100%;

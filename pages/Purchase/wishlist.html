@@ -10,7 +10,8 @@
     />
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="../../styles/css category/header&footer.css" />
-    <link rel="stylesheet" href="purchase_header.css" />
+    <link rel="stylesheet" href="wishlist.css" />
+    <link rel="stylesheet" href="../../styles/css sub category/dog-dry-food.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -50,7 +51,11 @@
           </form>
         </div>
         <div class="basket-container">
-          <a href="../../pages/basket.html" class="basket-button" aria-label="Shopping basket">
+          <a
+            href="../../pages/basket.html"
+            class="basket-button"
+            aria-label="Shopping basket"
+          >
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
@@ -61,10 +66,10 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="/account">My Account</a>
-              <a href="/purchases">My Purchase</a>
-              <a href="/purchases">My Favorites</a>
-              <a href="/logout">Logout</a>
+              <a href="../account.html">My Account</a>
+              <a href="purchase.html">My Purchase</a>
+              <a href="../purchase.html">Wishlist</a>
+              <a href="../../login.html">Logout</a>
             </div>
           </div>
         </div>
@@ -77,7 +82,7 @@
       <div class="tabs-container">
         <div class="tabs">
           <div class="tab">
-            <a href="purchase.html" class="nav-link">
+            <a href="purchase.html" class="tab-link">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -99,7 +104,7 @@
             </a>
           </div>
           <div class="tab active">
-            <a href="wishlist.html" class="nav-link">
+            <a href="wishlist.html" class="tab-link">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -119,7 +124,7 @@
             </a>
           </div>
           <div class="tab">
-            <a href="trackorder.html" class="nav-link">
+            <a href="trackorder.html" class="tab-link">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -146,7 +151,46 @@
       <!-- Content area would go here -->
 
       <div class="order-container">
-        
+        <div class="wishlist-banner">
+          <img src="../../images/wishlist_banner.png" alt="wishlist-banner" />
+        </div>
+
+        <div class="products-grid" id="product_grid">
+          <div class="product-card">
+            <div class="product-image">
+              <a href="/pages/products/item/index.html?id=1">
+                <img
+                  src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
+                  alt="Hill's Prescription Diet Canine Metabolic"
+                />
+              </a>
+              <button class="add-to-basket-button" aria-label="Add to basket">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <a
+              href="/pages/products/item/index.html?id=1"
+              class="product-details-link"
+            >
+              <div class="product-details">
+                <h3 class="product-title">
+                  Hill's Prescription Diet Canine Metabolic Weight Management -
+                  Chicken
+                </h3>
+
+                <div class="price-container">
+                  <p class="price">£96.99</p>
+                </div>
+                <div class="ratings">
+                  <div class="stars">★★★★★</div>
+                  <div class="review-count">(14)</div>
+                </div>
+                <p class="delivery">Delivery in 3-6 working days</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -176,7 +220,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small-pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -262,9 +306,12 @@
       </div>
     </footer>
 
-    <script src="../../../data/category.js"></script>
+    
+    
     <script src="../../data/products.js"></script>
+    <script src="../../data/category.js"></script>
     <script src="../../js/dynamic-display.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="../../js/actions.js"></script>
+    <script src="wishlist.js"></script>
   </body>
 </html>

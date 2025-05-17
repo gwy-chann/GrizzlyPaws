@@ -107,6 +107,7 @@ h1 {
 
 .category_banner img {
     width: 100%;
+
     border-radius: 8px;
     margin-bottom: 30px;
 }
@@ -155,7 +156,7 @@ h1 {
 }
 
 .highlight {
-    color: #054422;
+    color: #0a8d48;
 }
 
 /* Responsive styles */

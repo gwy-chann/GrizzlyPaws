@@ -28,10 +28,12 @@ if (sub_products) {
 
           <a href="/pages/products/item/index.html?id=${product.id}" class="product-details-link">
             <div class="product-details">
-              <h3>${product.name}</h3>
+            
+              <h3 class="product-title">${product.name}</h3>
+            
               <!-- <p class="product-weight">12kg</p> -->
               <div class="price-container">
-                <p class="price">₱${product.variations[0].price}</p>
+                <p class="price">₱${product.variations[0].price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               </div>
               <div class="ratings">
                 <div class="stars">★★★★★</div>
@@ -60,4 +62,5 @@ if (sub_products) {
             showSuccessModal(productId);
         })
     })
+    
 }
