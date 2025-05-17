@@ -1,3 +1,62 @@
+
+  const dummyImages = [
+  {
+    category: 'bird',
+    sub_category: 'food',
+    path: '../../../Product Images/bird/food/',
+    images:  [
+      '106033_pla_verselelaga_prestigeloro_parque_african_papageimix_hs_01_9.jpg.jpeg',
+      '106036_pla_verselelaga_prestigeloro_parque_amazone_papageimix_hs_01_4.jpg.jpeg',
+      '106097_pla_verselelaga_prestigeloro_parque_african_papageimix_hs_01_6.jpg.jpeg',
+      '19059_pla_schesirsmall_megapack_gelee_thunfisch_6x50g_hs_01_3.jpg.jpeg',
+      '1_432317_pla_almonature_mix_hs_01_0.jpg.jpeg',
+      '200896_pla_versele_laga_countrys_best_gold_4mix_20kg_hs_01_9.jpg.jpeg',
+      '200900_pla_verselelaga_countrysbest_gold_4mini_mix_20kg_hs_01_2.jpg.jpeg',
+      '200901_versele_laga_countrys_best_gra_mix_hennen_mischung_20kg_hs_2_2_1.jpg.jpeg',
+      '212198_versele_versele_laga_nutribird_p15_tropical_hs_13_3.jpg.jpeg',
+      '32198_pla_catsbest_original_20l_hs_01_5.jpg.jpeg',
+      '374200__pla_lillebro_fatballs_berries_4x90g_1000x1000_3.jpg.jpeg',
+      '38434_pla_prestige_wellensittich_4kg_6.jpg.jpeg',
+      '52189_jr_individual_wellensittich_4.jpg.jpeg',
+      '52189_PLA_jrfarm_Individual_Wellensittich_1kg_5.jpg.jpeg',
+      '606454_lillebro_wild_bird_food_4kg_mit_schalen_6.jpg.jpeg',
+      '64918_pla_prestige_exoten_4kg_3.jpg.jpeg',
+      '67664_pla_applaws_dose_12x70g_mixedselection_hs_01_9.jpg.jpeg',
+      '77975_pla_versele_natureclean_2_5kg_0.jpg.jpeg',
+      'lillebro_suetpellets_insect_3kg_1000x1000_4.jpg.jpeg',
+      'lillebro_wbf_mealworms_0_5kg_1000x1000_8.jpg.jpeg',
+      'sunflowers_seeds_10kg_0.jpg.jpeg',
+      'sunflowers_seeds_3kg_9.jpg.jpeg'
+      ]
+  },
+    {
+    category: 'bird',
+    sub_category: 'cages',
+    path: '../../../Product Images/bird/cages/',
+    images:  [
+    '230696_pla_savic_primo60_open_empire_hs_01_4.jpg.jpeg',
+    '352200_pla_ferplast_vogelkaefig_piano_6_braun_schwarz_hs_01_5.jpg.jpeg',
+    '352200_pla_vogelk_fig_ferplast_piano_6_hs_01_3.jpg.jpeg',
+    '360199_pla_ferplast_vogelvoliere_planeta_hs_05_3.jpg.jpeg',
+    '369520_pla_tiaki_noble_fg_0290_1.jpg.jpeg',
+    '388097_ml_bird_cage_industrial_fg_3873_6.jpg.jpeg',
+    '388097_pla_ml_bird_cage_industrial_fg_3872_6.jpg.jpeg',
+    '463573_pla_tiaki_wooden_outdoor_enclosure_fg_3314_3.jpg.jpeg',
+    '465396_pla_tiaki_wooden_chicken_coop_ranch_fg_3272_4.jpg.jpeg',
+    '475098_pla_tiaki_bird_aviary_fg_2460_8.jpg.jpeg',
+    '475196_pla_tiaki_bird_cage_120_fg_2426_2.jpg.jpeg',
+    '58108_58109_pla_caesar_papageienkaefig_lg_8825_5.jpg.jpeg',
+    '71861_pla_vogelvoliere_planeta_9.jpg.jpeg',
+    '85438_pla_skyline_vogelvoliere_loretto_xl_3.jpg.jpeg',
+    '85438_pla_skyline_vogelvoliere_loretto_xl_4.jpg.jpeg'
+      ]
+  }
+]
+
+
+
+
+
 const products = [
   {
     id: 1,
@@ -3472,7 +3531,7 @@ const products = [
     id: 211,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "Lillebro Fat Balls Wild Bird Food Saver Pack",
     description: "Lillebro Fat Balls contain a mix of grain, minerals, oils and fats which help wild birds to build up their energy reserves so that they can stay healthy during the long cold winter. Fat balls are very popular but they are especially vital when the temperature outside falls below zero or if everything is covered in snow. This kind of weather makes it difficult for birds to find food naturally, so it is a good time to put out some fat balls. The wild birds in your garden will appreciate it.",
     variations: [{ unit: "100 x 90g (without net)", price: 1246.17 }],
@@ -3482,7 +3541,7 @@ const products = [
     id: 212,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+     images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "Lillebro Wild Bird Food with Berries",
     description: "Lillebro Wild Bird Food with Berries is an excellent source of energy for wild birds. It's a mix of seeds, grain and berries suitable for all seasons. The food contains no shells or husks, resulting in less mess and waste. It's ragweed seed tested and made with European quality.",
     variations: [{ unit: "1.5 kg", price: 700 }],
@@ -3492,7 +3551,7 @@ const products = [
     id: 213,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "Savic Primo 60 Open Empire",
     description: "The Savic Primo 60 Open Empire bird cage is a spacious home for canaries with a height of 95 cm. It offers enough space to attach the included perches, feeding bowls, drinking fountain, and bird bath. You can access the inside through door openings at the front and sides, and the cage can be opened at the top for free flying.",
     variations: [{ unit: "L 80 x W x H 50 x 115 cm", price: 7097 }],
@@ -3502,7 +3561,7 @@ const products = [
     id: 214,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "Trixie Nesting Box for Budgies",
     description: "This box is made of natural untreated wood and is specially designed to meet the needs of Budgies. A mould for a nest is incorporated into the floor of the box. Furthermore, a wooden perch is included, which can be attached outside the entrance hole. The box can be opened from above.",
     variations: [{ unit: "21 x 13 x 13 cm (L x W x H)", price: 414.96 }],
@@ -3512,7 +3571,7 @@ const products = [
     id: 215,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "Savic Crock Feeding Dish with Screw Fastening",
     description: "Savic Crock Feeding Dish with Screw Fastening is a quick and easy solution to dirty dishes. This deep feeding bowl can be positioned where you want, avoiding areas where it can get dirty. Birds like to be up high, so this is a great way to let them feed in a species-appropriate way. The dish is easy to clean and can be removed with a simple twist.",
     variations: [
@@ -3525,7 +3584,7 @@ const products = [
     id: 216,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "TIAKI Java Wood Foraging Toy",
     description: "The TIAKI Java Wood Foraging Toy offers a world of discovery and play for your bird. Made from natural java wood, it provides a safe and environmentally-friendly solution for allowing birds to peck and explore. The robust construction ensures your bird can slowly take in food, helping to reduce overfeeding and promote healthy digestion.",
     variations: [{ unit: "6 x 6 x 22 cm (L x W x H)", price: 287 }],
@@ -3535,7 +3594,7 @@ const products = [
     id: 217,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "TIAKI Ladder Bird Toy",
     description: "Enrich your bird's home with this TIAKI Ladder Bird Toy, made from wood for small and medium birds. The robust ladder fits harmoniously into any bird cage and can be easily installed using practical hooks. The colourful, moving wooden beads encourage your bird to play and explore. It's the perfect combination of fitness accessory and toy.",
     variations: [{ unit: "30.5 x 9 x 1.5 cm (L x W x H)", price: 146 }],
@@ -3545,7 +3604,7 @@ const products = [
     id: 218,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "JR Birds Foxtail Millet, Yellow",
     description: "Foxtail millet is a tasty, easy to digest treat which birds adore. Parakeets, canaries, and exotic birds all love foxtail millet and especially enjoy picking the seeds out of the husks. It is easy to attach the millet to the cage with a clip or clothes peg. Foxtail millet is suitable for breeding pairs or when raising a young bird.",
     variations: [{ unit: "1kg", price: 478 }],
@@ -3555,7 +3614,7 @@ const products = [
     id: 219,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "TIAKI Capsule Transport Backpack for Birds",
     description: "The TIAKI Capsule Transport Backpack for Birds is ideal for transporting parakeets and small parrots. It features a large window for observation and generous ventilation holes for air circulation. The backpack has adjustable straps for comfortable carrying and comes equipped with a removable perch and bowl to increase comfort while traveling.",
     variations: [{ unit: "33 x 28 x 42 cm (L x W x H)", price: 1821 }],
@@ -3565,7 +3624,7 @@ const products = [
     id: 220,
     category: "feathered",
     sub_category: "Bird Foods",
-    images: [],
+    images: [getRandomImage('bird', 'food'), getRandomImage('bird', 'food')],
     name: "TIAKI Log Cabin Nesting Box",
     description: "The TIAKI Log Cabin Nesting Box is a charming home for wild birds. With its rustic design, it blends seamlessly into any garden and offers wild birds a safe place to nest. Thanks to the weatherproof material, it is perfect for outdoor use and can withstand all weather conditions. The protected interior ensures that birds feel safe and secure.",
     variations: [{ unit: "approx. 20 x 20cm (diameter x H)", price: 1300 }],
@@ -3574,7 +3633,7 @@ const products = [
     id: 221,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Savic Primo 60 Open Empire",
     description: "With the Savic Primo 60 Open Empire bird cage, you have a spacious home for your canaries. With a height of 95 cm, the cage is particularly high and therefore offers enough space to attach the included perches and feeding bowls, as well as the drinking fountain and bird bath.",
     variations: [{ unit: "L 80 x W x H 50 x 115 cm", price: 4500 }],
@@ -3584,7 +3643,7 @@ const products = [
     id: 222,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Ferplast Planeta Bird Aviary",
     description: "The Ferplast Planeta Bird Aviary offers the perfect haven for your birds, providing a spacious home for a range of different bird species. The aviary features 8 separate door openings, four at the front and two at each side, which allow great access to the cage. The Ferplast Planeta Bird Aviary also comes with an adorable birdbath that can be attached to the mesh. The removable floor tray allows for more thorough cleaning and helps prevent your birds from becoming stressed when the aviary is being cleaned.",
     variations: [{ unit: "L 99.5 x W 53 x H 171.5 cm", price: 7500 }],
@@ -3594,7 +3653,7 @@ const products = [
     id: 223,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "TIAKI Noble Parrot Cage",
     description: "The TIAKI Noble Parrot Cage is not only stable and long-lasting, but also offers maximum comfort for your birds. The large front door and additional side doors make it possible to enter the cage from various sides. The perch on top of the cage has an integrated ladder, perch and feeding station, offering your parrot an additional space to relax and play. For easy cleaning, the grille and collection tray can be removed.",
     variations: [{ unit: "82 x 77.4 x 164 cm (L x W x H)", price: 7899 }],
@@ -3604,7 +3663,7 @@ const products = [
     id: 224,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Caesar Parrot Cage",
     description: "With this elegant aviary, offer your parrot a roomy home. The aviary is rectangular and measures 101 x 61 x 121 cm (L x W x H) without the droppings collector, arch, or feet. With the arch included the cage stands 178cm tall. 2 perches allow your pet a comfortable place to sit and sleep.",
     variations: [{ unit: "123 x 82 x 178 cm", price: 7899 }],
@@ -3614,7 +3673,7 @@ const products = [
     id: 225,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "TIAKI Ranch Wooden Chicken Coop",
     description: "The TIAKI Ranch Wooden Chicken Coop (Optionally Expandable) offers your chickens a comfortable and safe home. Made from natural fir wood, the hutch blends seamlessly into your garden and impresses with its sturdy construction. With an easily accessible incubator and a weatherproof roof, this chicken coop is suitable for all weather conditions and offers protection from rain and wind.",
     variations: [{ unit: "116 x 78 x 89.8 cm (L x W x H)", price: 6000 }],
@@ -3624,7 +3683,7 @@ const products = [
     id: 226,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "TIAKI Bird Cage 120",
     description: "The TIAKI Bird Cage 120 offers your feathered friends a spacious home. This elegant cage is ideal for birds such as finches, budgies, large parakeets, etc. With a total of 10 cage doors, you can easily access all areas to change food and water or keep your birds company. Optionally, you can also fit the wheels supplied to easily move your birdhouse to different locations.",
     variations: [{ unit: "120 x 59 x 132 cm (L x W x H)", price: 8899 }],
@@ -3634,7 +3693,7 @@ const products = [
     id: 227,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Ferplast Piano 6 Bird Cage",
     description: "The Ferplast Piano 6 Bird Cage is a spacious cage with a wide range of accessories for your budgies, zebra finches or canaries. The cage accessories supplied are made of plastic and are easy to clean. A total of four rotating food containers ensure a varied diet for your birds, while two included water bottles ensure their hydration.",
     variations: [{ unit: "Black: 87 x 46.5 x 70cm (L x W x H)", price: 4999 }],
@@ -3644,7 +3703,7 @@ const products = [
     id: 228,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Modern Living Industrial Bird Cage",
     description: "With its industrial design and patterned rear wall in brass, the Modern Living Industrial Bird Cage is a truly eye-catching addition to your home. It features a cage top with wooden perch, as well as two additional wooden perches inside the cage, ensuring there is sufficient space for your bird to move around and play. Two free-standing food holders ensure your bird can always access its food and have a sense of wellbeing.",
     variations: [{ unit: "81 x 48 x 84 / 102 cm (L x W x H)", price: 4799 }],
@@ -3654,7 +3713,7 @@ const products = [
     id: 229,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "TIAKI Bird Aviary",
     description: "The TIAKI Bird Aviary offers your little feathered friends a cosy home that encourages their natural urge to move. Thanks to the generous height, the birds can fly and climb freely, which leads to a happier and more active life. The large front door gives you easy access to the inside, whether for cleaning or interacting with your birds.",
     variations: [{ unit: "79 x 69.5 x 167 cm (L x W x H)", price: 6899 }],
@@ -3664,7 +3723,7 @@ const products = [
     id: 230,
     category: "feathered",
     sub_category: "Bird Cages",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "Skyline bird aviary Loretto XL",
     description: "Loretto XL from Skyline is a spacious and functional aviary for budgies, canaries and exotic birds. The modern aviary with birch wood elements impresses with its design and functionality. The included accessoires offer your birds species-appropriate comfort. The practical feeding counter contains 3 chrome-plated feeding bowls and can be swung completely outwards, making it easier to refill and clean the feeding area.",
     variations: [{ unit: "L 78 x W x H 75 x 175 cm", price: 5599 }],
@@ -3673,7 +3732,7 @@ const products = [
     id: 231,
     category: "feathered",
     sub_category: "Bird Cage Accessories",
-    images: [],
+    images: [getRandomImage('bird', 'cages'), getRandomImage('bird', 'cages')],
     name: "TIAKI Wide Pumice Bird Perch",
     description: "Offer your feathered friends the ideal combination of comfort and care with this TIAKI Wide Pumice Bird Perch. The robust perch is not only a playground for birds such as parrots and parakeets, or small animals such as hamsters and degus, but also a natural grooming station for all kinds of animals. Made from natural pumice stone, it supports the care of birds' claws and beaks by regulating their growth in a natural way. Small pets can also keep their teeth in good condition by gnawing on this mineral chewing stone.",
     variations: [{ unit: "13.5 x 7 x 2.8 cm (L x W x H)", price: 199 }],
@@ -4310,7 +4369,7 @@ const products = [
       id: 287,
       category: "aquatic",
       sub_category: "Aquarium Sand",
-      images: [],
+      images: [""],
       name: "Fluval Plant and Shrimp Stratum",
       description: "Specialized substrate designed to promote healthy plant growth and create an ideal environment for shrimp. Its porous structure provides superior biological filtration while maintaining stable pH levels optimal for sensitive species.",
       variations: [
@@ -5276,3 +5335,23 @@ const products = [
 
 
 ];
+
+
+
+
+
+function getRandomImage(category, sub_category) {
+
+
+
+  const config =  dummyImages.find(item => item.category === category && item.sub_category === sub_category);
+  const images = config.images;
+
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const randomImage = config.path + images[randomIndex];
+
+
+  return randomImage
+}
+
+
