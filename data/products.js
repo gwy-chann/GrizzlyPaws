@@ -1710,7 +1710,6 @@ const products = [
     sub_category: "Dry Cat Food",
     images: [
       "../../../Product Images/Cat/Category 1 - Dry Cat Food/Category 1 - Products/Product 1 - Orijen Original/OrijenCat.png",
-      "../../../Product Images/Cat/Category 1 - Dry Cat Food/Category 1 - Products/Product 1 - Orijen Original/OrijenCat1.png",
       "../../../Product Images/Cat/Category 1 - Dry Cat Food/Category 1 - Products/Product 1 - Orijen Original/OrijenCat2.png",
     ],
     name: "Orijen Six Fish",
