@@ -5,6 +5,12 @@ const urlParams = new URLSearchParams(urlString);
 
 const paramValue = urlParams.get('cat-id')
 
+const sub_category = urlParams.get('sub-cat-id')
+
+if (sub_category) {
+document.getElementById('sub-category-txt').innerHTML = sub_category
+}
+
 let navigationDisplay = '<ul>'
 category.forEach((item) => {
     navigationDisplay += `

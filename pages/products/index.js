@@ -6,6 +6,7 @@ const _category = prodUrlParams.get('cat-id')
 
 const sub_products = products.filter((product) => subCategoryValue == product.sub_category && product.category == _category) 
 
+
 if (sub_products) {
     const productCardContainer = document.getElementById("product_grid")
     let subCategory_display = ''

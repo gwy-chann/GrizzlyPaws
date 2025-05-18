@@ -338,10 +338,10 @@ const subCategory = {
       name: "Aquarium Decorations",
     },
     {
-      link: "/pages/products/index.html?sub-cat-id= Aquarium Lighting&cat-id=aquatic",
+      link: "/pages/products/index.html?sub-cat-id=Aquarium Lighting&cat-id=aquatic",
       id: 6,
       img: "../../images/fish-category/aquarium light.jpg",
-      name: " Aquarium Lighting",
+      name: "Aquarium Lighting",
     },
     {
       link: "/pages/products/index.html?sub-cat-id=Fish Health&cat-id=aquatic",

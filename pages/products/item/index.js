@@ -6,11 +6,25 @@ const prodParamValue = prodUrlParams.get('id')
 const product = products.find((product)=> parseInt(prodParamValue) ===  product.id)
 
 
+
+
 if (product) {
     const display_image = document.getElementById("display_image")
 
     display_image.src = product.images[0]
 
+    document.getElementById('sub-category-item').innerHTML = product.sub_category
+
+    const maxLength = 50;
+    const productName = product.name;
+    const displayText = productName.length > maxLength 
+      ? productName.substring(0, maxLength) + '...' 
+      : productName;
+
+    document.getElementById('product-detail-item').innerText = displayText;
+
+    document.getElementById('product-detail-item').innerText = displayText;
+    
     const thumbnails = document.getElementById("thumbnail-container")
     let thumbnail_display  = ''
 
