@@ -234,9 +234,6 @@ body {
     font-weight: 500;
 }
 
-input:invalid {
-    border-color: #e74c3c;
-}
 
 /* Modal Styles */
 .modal {

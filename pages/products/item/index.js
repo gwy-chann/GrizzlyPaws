@@ -2,6 +2,8 @@ const productUrlString = window.location.search;
 const prodUrlParams = new URLSearchParams(productUrlString);
 
 const prodParamValue = prodUrlParams.get('id')
+const _category = prodUrlParams.get('cat-id')
+
 
 const product = products.find((product)=> parseInt(prodParamValue) ===  product.id)
 
@@ -12,6 +14,9 @@ if (product) {
     const display_image = document.getElementById("display_image")
 
     display_image.src = product.images[0]
+
+    document.getElementById("first-breadcrumb").innerText = toTitleCase(_category.replace("_", " "))
+
 
     document.getElementById('sub-category-item').innerHTML = product.sub_category
 

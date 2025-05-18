@@ -4,18 +4,17 @@ const urlString = window.location.search;
 const urlParams = new URLSearchParams(urlString);
 
 const paramValue = urlParams.get('cat-id')
-
 const sub_category = urlParams.get('sub-cat-id')
 
 if (sub_category) {
-document.getElementById('sub-category-txt').innerHTML = sub_category
+    document.getElementById('sub-category-txt').innerHTML = sub_category
 }
 
 let navigationDisplay = '<ul>'
 category.forEach((item) => {
     navigationDisplay += `
         <li class="nav-item">
-            <a href="${item.link}" class="nav-link">${item.name}</a>
+            <a href="${item.link}"  class="nav-link ${paramValue == item.category_id ? 'active' : ''}">${item.name}</a>
         </li>
     `
 })
@@ -25,7 +24,17 @@ navigation.innerHTML = navigationDisplay
 
 const categoryList = document.getElementById('categoryList')
 
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+  );
+}
+
 if(categoryList) {
+
+    document.getElementById("first-breadcrumb").innerText = toTitleCase(paramValue.replace("_", " "))
+    document.getElementById('pet-dyno').innerText = toTitleCase(paramValue.replace("_", " ").toLocaleUpperCase())
 
     subCategory[paramValue].forEach((subItem) => {
         

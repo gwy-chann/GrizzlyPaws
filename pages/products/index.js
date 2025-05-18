@@ -11,11 +11,13 @@ if (sub_products) {
     const productCardContainer = document.getElementById("product_grid")
     let subCategory_display = ''
 
+    document.getElementById("first-breadcrumb").innerText = toTitleCase(_category.replace("_", " "))
+
     sub_products.forEach((product) => {
         subCategory_display += `
         <div class="product-card">
           <div class="product-image">
-            <a href="/pages/products/item/index.html?id=${product.id}">
+            <a href="/pages/products/item/index.html?id=${product.id}&cat-id=${_category}">
               <img src="${product.images[0]}" alt = "${product.name}"/>
             </a>
             <button
@@ -27,7 +29,7 @@ if (sub_products) {
             </button>
           </div>
 
-          <a href="/pages/products/item/index.html?id=${product.id}" class="product-details-link">
+          <a href="/pages/products/item/index.html?id=${product.id}&cat-id=${_category}" class="product-details-link">
             <div class="product-details">
             
               <h3 class="product-title">${product.name}</h3>
