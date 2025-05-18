@@ -2,26 +2,31 @@ const category = [
   {
     id: 1,
     name: "Dog",
+    category_id: 'dog',
     link: "/pages/category/index.html?cat-id=dog",
   },
   {
     id: 2,
     name: "Cat",
+    category_id: 'cat',
     link: "/pages/category/index.html?cat-id=cat",
   },
   {
     id: 3,
     name: "Small Pet",
+    category_id: 'small_pet',
     link: "/pages/category/index.html?cat-id=small_pet",
   },
   {
     id: 4,
     name: "Feathered",
+    category_id: 'feathered',
     link: "/pages/category/index.html?cat-id=feathered",
   },
   {
     id: 5,
     name: "Aquatic",
+    category_id: 'aquatic',
     link: "/pages/category/index.html?cat-id=aquatic",
   },
 ];
