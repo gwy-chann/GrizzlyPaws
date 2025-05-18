@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grizzly Paws | Basket</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/css category/header&footer.css" />
+    <link rel="stylesheet" href="../styles/css category items/dogItem.css" />
+
+    <link rel="stylesheet" href="../styles/basket.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <button class="mobile-menu-button">☰</button>
+          <a
+            href="/index.html"
+            title="Return to Homepage"
+            aria-label="Go to Homepage"
+          >
+            <img src="../images/logo3.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+
+        <div class="search-container">
+          <form action="/search" method="get" role="search">
+            <input
+              type="text"
+              id="site-search"
+              placeholder="Search products..."
+              name="search"
+              class="search-input"
+              for="site-search"
+            />
+            <button type="submit" class="search-button" aria-label="Search">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <div class="basket-container">
+          <a href="../pages/basket.html" class="basket-button" aria-label="Shopping basket">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            <span>BASKET</span>
+          </a>
+          <div class="account-dropdown">
+            <a class="account-button" aria-label="My account">
+              <i class="fas fa-user-circle" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content">
+              <div class="dropdown-tail"></div>
+              <a href="../pages/account.html">My Account</a>
+              <a href="../pages/Purchase/purchase.html">My Purchase</a>
+              <a href="/wishlist">Wishlist</a>
+              <a href="../login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation" id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+      <!-- <div class="header-section ">
+        <h2>Your Purchase History</h2>
+      </div> -->
+      <div class="main-content">
+        <div class="content">
+          <div class="header-section">
+            <h2>Your Purchase History</h2>
+          </div>
+          <div class="cart-items">
+            <div class="select-all">
+              <input
+                type="checkbox"
+                id="select-all-checkbox"
+                class="checkbox"
+              />
+              <label for="select-all-checkbox">Select All Items</label>
+            </div>
+
+            <table class="item-table" id="item-table">
+              <thead>
+                <tr>
+                  <th width="10%"></th>
+                  <th width="45%">Product</th>
+                  <th width="15%">Quantity</th>
+                  <th width="15%">Price</th>
+                  <th width="15%">Action</th>
+                </tr>
+              </thead>
+              <tbody id="item-table-body">
+                <tr class="item-row">
+                  <td>
+                    <input type="checkbox" class="checkbox item-checkbox" />
+                  </td>
+                  <td>
+                    <div class="product-info">
+                      <img
+                        src="/api/placeholder/80/80"
+                        alt="Dog Food"
+                        class="product-image"
+                      />
+                      <div>
+                        <div class="product-name">
+                          <a href="#">
+                            Hill's Science Plan Adult 1-6 Medium with Chicken
+                          </a>
+                          
+                        </div>
+                        <div class="product-details">14kg</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="quantity-control">
+                      <button class="quantity-btn minus-btn">−</button>
+                      <input type="text" class="quantity" value="1" />
+                      <button class="quantity-btn plus-btn">+</button>
+                    </div>
+                  </td>
+                  <td class="price-section">₱3699</td>
+                  <td>
+                    <div class="action-icons">
+                      <button class="delete-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="100"
+                          height="100"
+                          viewBox="0,0,256,256"
+                        >
+                          <g
+                            fill="#333333"
+                            fill-rule="nonzero"
+                            stroke="none"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                            stroke-miterlimit="10"
+                            stroke-dasharray=""
+                            stroke-dashoffset="0"
+                            font-family="none"
+                            font-weight="none"
+                            font-size="none"
+                            text-anchor="none"
+                            style="mix-blend-mode: normal"
+                          >
+                            <g transform="scale(5.33333,5.33333)">
+                              <path
+                                d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"
+                              ></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="checkout-summary">
+          <h2>Order Summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">₱3699</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping Fees</span>
+            <span>Free</span>
+          </div>
+
+          <div class="coupon">
+            <input
+              type="text"
+              class="coupon-input"
+              placeholder="Enter a coupon code"
+            />
+            <button class="apply-button">Apply</button>
+          </div>
+
+          <div class="summary-row">
+            <span>Total incl. VAT</span>
+            <span id="vat-id">₱3699</span>
+          </div>
+
+          <button class="checkout-button">Proceed to checkout</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="newsletter-banner">
+      <div class="years-badge">
+        <div class="years-number">2025</div>
+        <div class="years-text">New beginnings, same love for pets</div>
+        <div class="paw-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">
+          Do not miss out on personalised offers, discounts and coupons!
+        </h2>
+        <form class="newsletter-form">
+          <div class="select-container">
+            <select class="pet-type-select" aria-label="Select pet type">
+              <option value="" disabled selected>Please select pet type</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="bird">Bird</option>
+              <option value="fish">Fish</option>
+              <option value="reptile">Reptile</option>
+              <option value=" small_pet">Small Pet</option>
+            </select>
+            <div class="select-arrow">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path
+                  d="M1 1L6 6L11 1"
+                  stroke="#333"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <input
+            type="email"
+            class="email-input"
+            placeholder="Email address"
+            aria-label="Email address"
+          />
+
+          <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">FAQS</a></li>
+            <li><a>Free Shipping & Delivery</a></li>
+            <li><a>Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Advantages</h3>
+          <ul class="footer-links">
+            <li><a>Newsletter</a></li>
+            <li><a href="#features-container">Special Offer</a></li>
+            <li><a href="#">Grizzly Paws Repeat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <div>
+            <h3>Connect with us</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Team</a></li>
+            </ul>
+            <div style="display: flex; gap: 15px; margin-top: 10px">
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#666"
+                >
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#666"
+                >
+                  <path
+                    d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="myModal"> 
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="success-message">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Order Confirmed</h3>
+          <p id="modal-product-info">Your item has been placed. You can track your order in your email</p>
+          <div class="modal-buttons">
+            <a href="/index.html">
+              <button class="continue-shopping" id="continue-shopping">Continue Shopping</button>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox"><button class="view-basket">Track Order</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../../js/header.js"></script>
+    <script src="../../../data/category.js"></script>
+    <script src="../../../data/products.js"></script>
+    <script src="../../../js/dynamic-display.js"></script>
+    <!-- <script src="../js/basket.js"></script> -->
+    <script>
+
+      const itemTable = document.getElementById("item-table-body");
+      const subtotalElement = document.getElementById("subtotal");
+      const vatElement = document.getElementById("vat-id");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      renderCartItems();
+
+    function renderCartItems() {
+    itemTable.innerHTML = ""; // Clear existing items
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+      const row = document.createElement("tr");
+      const product = products.find((product) => product.id == item.id);
+
+      row.classList.add("item-row");
+
+      
+      const itemTotalPrice = item.price * item.quantity;
+      subtotal += itemTotalPrice;
+
+      row.innerHTML = `
+        <td>
+          <input type="checkbox" class="checkbox item-checkbox" />
+        </td>
+        <td>
+          <div class="product-info">
+            <img src="${product.images[0]}" alt="${item.name}" class="product-image" />
+            <div>
+              <div class="product-name">
+                <a href="#">${item.name}</a>
+              </div>
+              <div class="product-details">${item.unit}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="quantity-control">
+            <button class="quantity-btn minus-btn" ${item.quantity === 1 ? "disabled" : ""}>−</button>
+            <input type="text" class="quantity" value="${item.quantity}" readonly />
+            <button class="quantity-btn plus-btn">+</button>
+          </div>
+        </td>
+        <td class="price-section">₱<span class="item-price">${(item.price * item.quantity).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></td>
+        <td>
+          <div class="action-icons">
+            <button class="delete-icon">
+                <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="100"
+                          height="100"
+                          viewBox="0,0,256,256"
+                        >
+                          <g
+                            fill="#333333"
+                            fill-rule="nonzero"
+                            stroke="none"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                            stroke-miterlimit="10"
+                            stroke-dasharray=""
+                            stroke-dashoffset="0"
+                            font-family="none"
+                            font-weight="none"
+                            font-size="none"
+                            text-anchor="none"
+                            style="mix-blend-mode: normal"
+                          >
+                            <g transform="scale(5.33333,5.33333)">
+                              <path
+                                d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"
+                              ></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </button>
+          </div>
+        </td>
+      `;
+
+      // Add event listeners for quantity buttons and delete button
+      const minusBtn = row.querySelector(".minus-btn");
+      const plusBtn = row.querySelector(".plus-btn");
+      const deleteBtn = row.querySelector(".delete-icon");
+
+      minusBtn.addEventListener("click", () => updateQuantity(index, -1));
+      plusBtn.addEventListener("click", () => updateQuantity(index, 1));
+      deleteBtn.addEventListener("click", () => removeItem(index));
+
+      itemTable.appendChild(row);
+    });
+
+
+    
+    // Update subtotal and VAT
+    const vat = subtotal * 0.12;
+    const total = subtotal + vat;
+
+   
+    subtotalElement.textContent = `₱${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    vatElement.textContent = `₱${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+
+
+  
+  function updateQuantity(index, change) {
+    cart[index].quantity += change;
+
+    // Ensure quantity is at least 1
+    if (cart[index].quantity < 1) {
+      cart[index].quantity = 1;
+    }
+
+    // Update local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Re-render items
+    renderCartItems();
+  }
+
+
+  function removeItem(index) {
+    // Remove item from cart
+    cart.splice(index, 1);
+
+    // Update local storage and re-render items
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCartItems();
+  }
+  
+    </script>
+    <script>
+      // Connect "Proceed to checkout" button to open the modal
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal element
+  const modal = document.getElementById("myModal");
+  
+  // Get the checkout button
+  const checkoutBtn = document.querySelector(".checkout-button");
+  
+  // Get the close button
+  const closeBtn = document.getElementsByClassName("close")[0];
+  
+  // Get the continue shopping button
+  const continueShoppingBtn = document.getElementById("continue-shopping");
+  
+  // When the user clicks the checkout button, open the modal
+  checkoutBtn.addEventListener('click', function() {
+    modal.style.display = "block";
+    
+    // You can customize the product info dynamically
+    document.getElementById("modal-product-info").textContent = 
+      "Your order has been placed successfully. You can track your order in your email.";
+    
+    // Clear the cart when order is placed
+    localStorage.setItem("cart", JSON.stringify([]));
+  });
+  
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  
+  // Close the modal when continue shopping is clicked
+  continueShoppingBtn.onclick = function() {
+    modal.style.display = "none";
+    // The link will redirect to index.html after closing
+  }
+});
+    </script>
+  </body>
+</html>
