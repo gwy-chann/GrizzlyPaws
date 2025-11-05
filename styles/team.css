@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+/* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+} */
+
+.team-header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.team-header h1 {
+    font-size: 3rem;
+    color: #006400;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.team-header h1::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: #78ba37;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.team-grid {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 40px;
+    margin-bottom: 60px;
+}
+
+/* Container for team members */
+.team-members-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+    width: 100%;
+}
+
+.team-member {
+    width: 280px;
+    min-width: 280px; /* Prevents shrinking below this width */
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.member-header {
+    height: 120px;
+    background: linear-gradient(135deg, #006400, #78ba37);
+    position: relative;
+}
+
+.member-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 80px 20px 30px;
+    text-align: center;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.member-position {
+    font-size: 15px;
+    color: #679936;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #78ba37;
+    color: white;
+}
+
+.social-links svg {
+    width: 18px;
+    height: 18px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #78ba37;
+}
+
+.arrow:hover svg {
+    fill: #fff;
+}
+  
+.arrow.left {
+    left: 0;
+}
+  
+.arrow.right {
+    right: 0;
+}
+  
+.arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition: fill 0.3s ease;
+}
+
+.arrow.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .team-grid {
+        padding: 20 20px;
+    }
+    
+    .arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+}

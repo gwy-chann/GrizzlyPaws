@@ -8,10 +8,225 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="stylesheet" href="../styles/css category/header&footer.css" />
     <link rel="stylesheet" href="../styles/css category items/dogItem.css" />
+    <link rel="stylesheet" href="../styles/css category/style.css" />
 
     <link rel="stylesheet" href="../styles/basket.css" />
+    <style>
+      /* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  color: #aaaaaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000000;
+}
+
+/* Modal Title */
+.modal-content h2 {
+  margin: 0 0 25px 0;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Payment Options Container */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual Payment Option */
+.payment-option {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+  border-color: #6baf4c;
+  background-color: #f9f9f9;
+}
+
+/* Payment Option Label */
+.payment-option > label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.payment-option > label input[type="radio"] {
+  margin-right: 12px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* Payment Details Section */
+.payment-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* COD Message */
+#cod-message p {
+  margin: 0;
+  padding: 12px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  color: #856404;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* E-Wallet Options */
+#ewallet-options label {
+  display: block;
+  margin: 12px 0;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+#ewallet-options label:hover {
+  background-color: #f5f5f5;
+}
+
+#ewallet-options input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Account Number Input */
+#account-number-input {
+  margin-top: 15px;
+}
+
+#account-number-input input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#account-number-input input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+/* Card Form Inputs */
+#card-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#card-form input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+#card-form > div {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+#card-form > div input {
+  flex: 1;
+  margin: 0;
+}
+
+/* Proceed Button */
+/* .checkout-button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
+} */
+
+.checkout-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 95%;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  #card-form > div {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+    </style>
   </head>
   <body>
     <header>
@@ -47,6 +262,45 @@
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
+
+          <!-- Notification Dropdown -->
+          <div class="notification-dropdown">
+            <a class="notification-button" aria-label="Notifications">
+              <i class="fas fa-bell" aria-hidden="true"></i>
+              <span class="notification-badge">2</span>
+            </a>
+            <div class="dropdown-content notification-content">
+              <div class="dropdown-tail"></div>
+              <div class="notification-header">
+                <h3>Notifications</h3>
+                <a href="#" class="mark-all-read">Mark all as read</a>
+              </div>
+              <div class="notification-list">
+                <a href="#" class="notification-item unread">
+                  <div class="notification-icon order">
+                    <i class="fas fa-box"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="notification-title">Order Shipped</p>
+                    <p class="notification-message">Your order #12345 has been shipped and will arrive in 2-3 days.</p>
+                    <span class="notification-time">2 hours ago</span>
+                  </div>
+                </a>
+                <a href="#" class="notification-item unread">
+                  <div class="notification-icon promo">
+                    <i class="fas fa-tag"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="notification-title">Special Offer!</p>
+                    <p class="notification-message">Get 20% off on all electronics. Limited time offer!</p>
+                    <span class="notification-time">5 hours ago</span>
+                  </div>
+                </a>
+              </div>
+              <a href="#" class="view-all-notifications">View All Notifications</a>
+            </div>
+          </div>
+
           <div class="account-dropdown">
             <a class="account-button" aria-label="My account">
               <i class="fas fa-user-circle" aria-hidden="true"></i>
@@ -55,7 +309,7 @@
               <div class="dropdown-tail"></div>
               <a href="../pages/account.html">My Account</a>
               <a href="../pages/Purchase/purchase.html">My Purchase</a>
-              <a href="/wishlist">Wishlist</a>
+              <a href="../pages/Purchase/wishlist.html">Wishlist</a>
               <a href="../login.html">Logout</a>
             </div>
           </div>
@@ -177,14 +431,14 @@
             <span>Free</span>
           </div>
 
-          <div class="coupon">
+          <!-- <div class="coupon">
             <input
               type="text"
               class="coupon-input"
               placeholder="Enter a coupon code"
             />
             <button class="apply-button">Apply</button>
-          </div>
+          </div> -->
 
           <div class="summary-row">
             <span>Total incl. VAT</span>
@@ -258,7 +512,7 @@
             <li><a href="#">FAQS</a></li>
             <li><a>Free Shipping & Delivery</a></li>
             <li><a>Returns</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="https://mail.google.com/mail/u/0/#inbox">Contact Us</a></li>
           </ul>
         </div>
 
@@ -310,6 +564,70 @@
       </div>
     </footer>
 
+    <!-- Payment Method Modal -->
+    <div class="modal" id="paymentModal"> 
+      <div class="modal-content">
+        <span class="close" id="closePaymentModal">&times;</span>
+        <h2 style="margin-bottom: 20px;">Payment Method</h2>
+        
+        <div class="payment-options">
+          <!-- COD Option -->
+          <div class="payment-option">
+            <label>
+              <input type="radio" name="paymentMethod" value="cod" />
+              Cash on Delivery
+            </label>
+            <div id="cod-message" class="payment-details" style="display: none;">
+              <p>PREPARE EXACT AMOUNT UPON DELIVERY</p>
+            </div>
+          </div>
+
+          <!-- E-Wallet Option -->
+          <div class="payment-option">
+            <label>
+              <input type="radio" name="paymentMethod" value="ewallet" />
+              E-Wallet
+            </label>
+            <div id="ewallet-options" class="payment-details" style="display: none;">
+              <label style="display: block; margin: 10px 0;">
+                <input type="radio" name="ewalletType" value="gcash" />
+                Gcash
+              </label>
+              <label style="display: block; margin: 10px 0;">
+                <input type="radio" name="ewalletType" value="maya" />
+                Maya
+              </label>
+              <label style="display: block; margin: 10px 0;">
+                <input type="radio" name="ewalletType" value="paypal" />
+                Paypal
+              </label>
+              <div id="account-number-input" style="display: none; margin-top: 10px;">
+                <input type="text" id="accountNumber" placeholder="Enter Account Number" style="width: 100%; padding: 8px; margin-top: 5px;" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Credit/Debit Option -->
+          <div class="payment-option">
+            <label>
+              <input type="radio" name="paymentMethod" value="card" />
+              Credit/Debit
+            </label>
+            <div id="card-form" class="payment-details" style="display: none;">
+              <input type="text" id="cardNumber" placeholder="Card Number" style="width: 100%; padding: 8px; margin: 10px 0;" />
+              <div style="display: flex; gap: 10px;">
+                <input type="text" id="cardExpiry" placeholder="MM/YY" style="flex: 1; padding: 8px;" />
+                <input type="text" id="cardCVV" placeholder="CVV" style="flex: 1; padding: 8px;" />
+              </div>
+              <input type="text" id="cardholderName" placeholder="Cardholder Name" style="width: 100%; padding: 8px; margin-top: 10px;" />
+            </div>
+          </div>
+        </div>
+
+        <button class="checkout-button" id="proceedPaymentBtn" style="margin-top: 20px; width: 100%;">Proceed</button>
+      </div>
+    </div>
+
     <div class="modal" id="myModal"> 
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -329,6 +647,205 @@
       </div>
     </div>
 
+    <!-- FAQ Modal -->
+    <div class="faq-modal" id="faqModal">
+      <div class="faq-modal-content">
+        <button class="faq-modal-close" id="faqModalClose">&times;</button>
+        <h2 class="faq-modal-title">Frequently Asked Questions</h2>
+        
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question active">
+              <span>Question 1: What is Grizzly Paws?</span>
+              <span class="faq-icon">−</span>
+            </button>
+            <div class="faq-answer" style="display: block;">
+              <p>Grizzly Paws is an online pet store platform that allows pet owners to shop for premium pet food and accessories. It serves as a digital marketplace where customers can browse products for dogs, cats, small pets, birds, and aquatic animals. The platform offers trusted brands, competitive prices, and convenient nationwide delivery across the Philippines.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Question 2: Is Grizzly Paws free to use?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Grizzly Paws is completely free to browse and shop. There are no membership fees or hidden charges. You only pay for the products you purchase and applicable shipping fees. We also offer free shipping for orders over ₱1,500!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Question 3: Who can shop on Grizzly Paws?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Anyone can shop on Grizzly Paws! Whether you're a pet owner, pet enthusiast, or shopping for someone else's furry friend, our platform is open to all customers in the Philippines. Simply create an account to start shopping and enjoy exclusive benefits like order tracking, wishlists, and special offers.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Question 4: How long does delivery take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Standard delivery typically takes 3-6 working days depending on your location. We offer express shipping options for faster delivery. All orders are tracked and you'll receive updates on your order status via email and SMS.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Question 5: What payment methods do you accept?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We accept various payment methods including credit/debit cards, GCash, PayMaya, and cash on delivery (COD). All online payments are processed through our secure payment gateway to ensure your information is protected.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Question 6: Can I return or exchange products?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We accept returns and exchanges within 30 days of purchase. Items must be unused and in their original packaging. Simply go to 'My Purchase' in your account and select the order you'd like to return. Refunds are processed within 5-7 business days after we receive the returned item.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div class="contact-modal" id="contactModal">
+      <div class="contact-modal-content">
+        <button class="contact-modal-close" id="contactModalClose">&times;</button>
+        <h2 class="contact-modal-title">Contact us</h2>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <textarea 
+              id="contactSubject" 
+              name="subject" 
+              rows="3" 
+              placeholder="Enter your subject here..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="contactConcern">Concern</label>
+            <textarea 
+              id="contactConcern" 
+              name="concern" 
+              rows="3" 
+              placeholder="Describe your concern in detail..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="button" class="btn-cancel" id="contactCancel">Cancel</button>
+            <button type="submit" class="btn-proceed">Proceed</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <button class="chat-button" id="chatButton" aria-label="Open chat">
+        <i class="fas fa-comment"></i>
+        <span>Chat</span>
+        <span class="chat-notification-badge">3</span>
+      </button>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+          <div class="chat-header-info">
+            <i class="fas fa-headset"></i>
+            <div>
+              <h3>Customer Support</h3>
+              <span class="status-online">● Online</span>
+            </div>
+          </div>
+          <button class="chat-close" id="chatClose" aria-label="Close chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="chat-subject-selection" id="subjectSelection">
+          <div class="subject-prompt">
+            <i class="fas fa-comments"></i>
+            <h4>How can we help you today?</h4>
+            <p>Please select a subject to start chatting</p>
+          </div>
+          <div class="subject-options">
+            <button class="subject-option" data-subject="Order Status">
+              <i class="fas fa-box"></i>
+              <span>Order Status</span>
+            </button>
+            <button class="subject-option" data-subject="Product Inquiry">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Product Inquiry</span>
+            </button>
+            <button class="subject-option" data-subject="Returns & Refunds">
+              <i class="fas fa-undo"></i>
+              <span>Returns & Refunds</span>
+            </button>
+            <button class="subject-option" data-subject="Technical Support">
+              <i class="fas fa-tools"></i>
+              <span>Technical Support</span>
+            </button>
+            <button class="subject-option" data-subject="Pet Care Advice">
+              <i class="fas fa-paw"></i>
+              <span>Pet Care Advice</span>
+            </button>
+            <button class="subject-option" data-subject="Other">
+              <i class="fas fa-question-circle"></i>
+              <span>Other</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages" style="display: none;">
+          <div class="chat-date-divider">Today</div>
+          <div class="message admin-message">
+            <div class="message-avatar">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="message-content">
+              <div class="message-bubble">
+                <p>Hello! Welcome to Grizzly Paws support. How can I assist you today? 🐾</p>
+              </div>
+              <span class="message-time">Just now</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-container" id="chatInputContainer" style="display: none;">
+          <div class="selected-subject" id="selectedSubject"></div>
+          <div class="chat-input-wrapper">
+            <button class="chat-attach-btn" aria-label="Attach file">
+              <i class="fas fa-paperclip"></i>
+            </button>
+            <input 
+              type="text" 
+              class="chat-input" 
+              id="chatInput" 
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button class="chat-send-btn" id="chatSend" aria-label="Send message">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../../../js/header.js"></script>
     <script src="../../../data/category.js"></script>
     <script src="../../../data/products.js"></script>
@@ -340,12 +857,12 @@
       const subtotalElement = document.getElementById("subtotal");
       const vatElement = document.getElementById("vat-id");
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
 
       renderCartItems();
 
     function renderCartItems() {
     itemTable.innerHTML = ""; // Clear existing items
-    let subtotal = 0;
 
     cart.forEach((item, index) => {
       const row = document.createElement("tr");
@@ -353,13 +870,9 @@
 
       row.classList.add("item-row");
 
-      
-      const itemTotalPrice = item.price * item.quantity;
-      subtotal += itemTotalPrice;
-
       row.innerHTML = `
         <td>
-          <input type="checkbox" class="checkbox item-checkbox" />
+          <input type="checkbox" class="checkbox item-checkbox" data-index="${index}" />
         </td>
         <td>
           <div class="product-info">
@@ -431,16 +944,35 @@
       itemTable.appendChild(row);
     });
 
+    // Update order summary based on selected items
+    updateOrderSummary();
+  }
 
+  // Function to update order summary based on selected items only
+  function updateOrderSummary() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const checkedItems = document.querySelectorAll('.item-checkbox:checked');
+    let subtotal = 0;
+
+    checkedItems.forEach(checkbox => {
+      const index = parseInt(checkbox.dataset.index);
+      if (index >= 0 && index < cart.length) {
+        const item = cart[index];
+        const itemTotalPrice = item.price * item.quantity;
+        subtotal += itemTotalPrice;
+      }
+    });
     
     // Update subtotal and VAT
     const vat = subtotal * 0.12;
     const total = subtotal + vat;
-
    
     subtotalElement.textContent = `₱${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     vatElement.textContent = `₱${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   }
+  
+  // Expose to window for use in event handlers
+  window.updateOrderSummary = updateOrderSummary;
 
 
   
@@ -455,8 +987,24 @@
     // Update local storage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // Check if this item was selected before re-render
+    const wasChecked = document.querySelector(`.item-checkbox[data-index="${index}"]`)?.checked || false;
+
     // Re-render items
     renderCartItems();
+    
+    // Re-initialize checkboxes after render and restore checked state
+    setTimeout(() => {
+      if (window.initializeCheckboxes) {
+        window.initializeCheckboxes();
+      }
+      // Restore checkbox state if it was checked
+      const checkbox = document.querySelector(`.item-checkbox[data-index="${index}"]`);
+      if (checkbox && wasChecked) {
+        checkbox.checked = true;
+        updateOrderSummary();
+      }
+    }, 50);
   }
 
 
@@ -467,52 +1015,664 @@
     // Update local storage and re-render items
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCartItems();
+    
+    // Re-initialize checkboxes after render
+    setTimeout(() => {
+      if (window.initializeCheckboxes) {
+        window.initializeCheckboxes();
+      }
+      // Update order summary after removal
+      if (window.updateOrderSummary) {
+        window.updateOrderSummary();
+      }
+    }, 50);
   }
   
     </script>
     <script>
-      // Connect "Proceed to checkout" button to open the modal
+      // Checkbox functionality and Payment Modal
 document.addEventListener('DOMContentLoaded', function() {
-  // Get the modal element
-  const modal = document.getElementById("myModal");
-  
-  // Get the checkout button
+        const selectAllCheckbox = document.getElementById("select-all-checkbox");
+        const itemTableBody = document.getElementById("item-table-body");
   const checkoutBtn = document.querySelector(".checkout-button");
-  
-  // Get the close button
+        const paymentModal = document.getElementById("paymentModal");
+        const successModal = document.getElementById("myModal");
+        const closePaymentModal = document.getElementById("closePaymentModal");
+        const proceedPaymentBtn = document.getElementById("proceedPaymentBtn");
   const closeBtn = document.getElementsByClassName("close")[0];
-  
-  // Get the continue shopping button
   const continueShoppingBtn = document.getElementById("continue-shopping");
   
-  // When the user clicks the checkout button, open the modal
+        // Initialize checkbox functionality using event delegation
+        function initializeCheckboxes() {
+          // Select All functionality - use event delegation
+          const selectAll = document.getElementById("select-all-checkbox");
+          if (selectAll && !selectAll.hasAttribute('data-listener')) {
+            selectAll.setAttribute('data-listener', 'true');
+            selectAll.addEventListener('change', function() {
+              const allItemCheckboxes = document.querySelectorAll(".item-checkbox");
+              allItemCheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+              });
+              // Update order summary
+              if (window.updateOrderSummary) {
+                window.updateOrderSummary();
+              }
+            });
+          }
+        }
+        
+        // Use event delegation for item checkboxes on the table
+        const itemTable = document.getElementById("item-table-body");
+        if (itemTable) {
+          itemTable.addEventListener('change', function(e) {
+            if (e.target.classList.contains('item-checkbox')) {
+              // Update select all checkbox state
+              const selectAll = document.getElementById("select-all-checkbox");
+              const allItemCheckboxes = document.querySelectorAll(".item-checkbox");
+              if (selectAll) {
+                const allChecked = Array.from(allItemCheckboxes).every(cb => cb.checked);
+                const someChecked = Array.from(allItemCheckboxes).some(cb => cb.checked);
+                selectAll.checked = allChecked;
+                selectAll.indeterminate = someChecked && !allChecked;
+              }
+              // Update order summary
+              if (window.updateOrderSummary) {
+                window.updateOrderSummary();
+              }
+            }
+          });
+        }
+        
+        // Expose to window for use in other functions
+        window.initializeCheckboxes = initializeCheckboxes;
+        
+        // Call after initial render
+        setTimeout(initializeCheckboxes, 100);
+        
+        // Payment Method Radio Button Handlers
+        const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+        const ewalletTypes = document.querySelectorAll('input[name="ewalletType"]');
+        
+        paymentMethods.forEach(method => {
+          method.addEventListener('change', function() {
+            // Hide all payment details
+            document.getElementById('cod-message').style.display = 'none';
+            document.getElementById('ewallet-options').style.display = 'none';
+            document.getElementById('card-form').style.display = 'none';
+            document.getElementById('account-number-input').style.display = 'none';
+            
+            // Show selected payment details
+            if (this.value === 'cod') {
+              document.getElementById('cod-message').style.display = 'block';
+            } else if (this.value === 'ewallet') {
+              document.getElementById('ewallet-options').style.display = 'block';
+            } else if (this.value === 'card') {
+              document.getElementById('card-form').style.display = 'block';
+            }
+          });
+        });
+        
+        // E-Wallet sub-option handler
+        ewalletTypes.forEach(type => {
+          type.addEventListener('change', function() {
+            if (document.querySelector('input[name="paymentMethod"]:checked')?.value === 'ewallet') {
+              document.getElementById('account-number-input').style.display = 'block';
+            }
+          });
+        });
+        
+        // Checkout button click handler
   checkoutBtn.addEventListener('click', function() {
-    modal.style.display = "block";
-    
-    // You can customize the product info dynamically
+          // Validate if basket is empty
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          if (cart.length === 0) {
+            alert("Your basket is empty. Please add items to your basket before proceeding to checkout.");
+            return;
+          }
+          
+          // Check if at least one item is selected
+          const checkedItems = document.querySelectorAll('.item-checkbox:checked');
+          if (checkedItems.length === 0) {
+            alert("Please select at least one item to proceed to checkout.");
+            return;
+          }
+          
+          // Reset payment modal
+          paymentMethods.forEach(method => method.checked = false);
+          document.getElementById('cod-message').style.display = 'none';
+          document.getElementById('ewallet-options').style.display = 'none';
+          document.getElementById('card-form').style.display = 'none';
+          document.getElementById('account-number-input').style.display = 'none';
+          ewalletTypes.forEach(type => type.checked = false);
+          document.getElementById('accountNumber').value = '';
+          document.getElementById('cardNumber').value = '';
+          document.getElementById('cardExpiry').value = '';
+          document.getElementById('cardCVV').value = '';
+          document.getElementById('cardholderName').value = '';
+          
+          // Show payment modal
+          paymentModal.style.display = "block";
+          // Disable body scroll
+          document.body.classList.add("modal-open");
+        });
+        
+        // Proceed Payment Button Handler
+        proceedPaymentBtn.addEventListener('click', function() {
+          const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+          
+          if (!selectedPayment) {
+            alert("Please select a payment method.");
+            return;
+          }
+          
+          // Validate based on payment method
+          if (selectedPayment.value === 'ewallet') {
+            const selectedEwallet = document.querySelector('input[name="ewalletType"]:checked');
+            if (!selectedEwallet) {
+              alert("Please select an e-wallet option.");
+              return;
+            }
+            const accountNumber = document.getElementById('accountNumber').value.trim();
+            if (!accountNumber) {
+              alert("Please enter your account number.");
+              return;
+            }
+          } else if (selectedPayment.value === 'card') {
+            const cardNumber = document.getElementById('cardNumber').value.trim();
+            const cardExpiry = document.getElementById('cardExpiry').value.trim();
+            const cardCVV = document.getElementById('cardCVV').value.trim();
+            const cardholderName = document.getElementById('cardholderName').value.trim();
+            
+            if (!cardNumber || !cardExpiry || !cardCVV || !cardholderName) {
+              alert("Please fill in all card details.");
+              return;
+            }
+          }
+          
+          // Close payment modal
+          paymentModal.style.display = "none";
+          
+          // Show success modal (keep body scroll disabled)
+          successModal.style.display = "block";
     document.getElementById("modal-product-info").textContent = 
       "Your order has been placed successfully. You can track your order in your email.";
     
-    // Clear the cart when order is placed
-    localStorage.setItem("cart", JSON.stringify([]));
-  });
-  
-  // When the user clicks on <span> (x), close the modal
-  closeBtn.onclick = function() {
+          // Clear selected items from cart
+          const checkedItems = document.querySelectorAll('.item-checkbox:checked');
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const checkedIndices = Array.from(checkedItems).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
+          
+          checkedIndices.forEach(index => {
+            cart.splice(index, 1);
+          });
+          
+          localStorage.setItem("cart", JSON.stringify(cart));
+          
+          // Re-render items to update cart display
+          renderCartItems();
+        });
+        
+        // Close payment modal
+        closePaymentModal.onclick = function() {
+          paymentModal.style.display = "none";
+          // Re-enable body scroll
+          document.body.classList.remove("modal-open");
+        }
+        
+        // Disable close button for success modal - user must choose an option
+        // Get the close button specifically for success modal (inside myModal)
+        const successModalCloseBtn = successModal.querySelector('.close');
+        if (successModalCloseBtn) {
+          successModalCloseBtn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Do nothing - success modal should not close on X button click
+            // User must choose either "Continue Shopping" or "Track Order"
+          }
+          // Also hide the close button visually
+          successModalCloseBtn.style.display = 'none';
+        }
+        
+        // Handle the general closeBtn (if it exists) - this should only work for payment modal
+        if (closeBtn && closeBtn.id !== 'closePaymentModal') {
+          closeBtn.onclick = function(e) {
+            // Only allow closing if it's not the success modal
+            const modal = e.target.closest('.modal');
+            if (modal && modal.id !== 'myModal') {
     modal.style.display = "none";
+              // Re-enable body scroll
+              document.body.classList.remove("modal-open");
+            }
+          }
   }
   
-  // When the user clicks anywhere outside of the modal, close it
+        // When the user clicks anywhere outside of the modals, close them
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-  
-  // Close the modal when continue shopping is clicked
+          if (event.target == paymentModal) {
+            paymentModal.style.display = "none";
+            // Re-enable body scroll
+            document.body.classList.remove("modal-open");
+          }
+          // Don't close success modal when clicking outside - user must choose an option
+          // if (event.target == successModal) {
+          //   successModal.style.display = "none";
+          // }
+        }
+        
+        // Close the modal when continue shopping is clicked (navigation will happen via link)
   continueShoppingBtn.onclick = function() {
-    modal.style.display = "none";
-    // The link will redirect to index.html after closing
+          successModal.style.display = "none";
+          // Re-enable body scroll
+          document.body.classList.remove("modal-open");
+        }
+        
+        // Close the modal when track order is clicked (navigation will happen via link)
+        const trackOrderBtn = document.querySelector('.view-basket');
+        if (trackOrderBtn) {
+          trackOrderBtn.onclick = function() {
+            successModal.style.display = "none";
+            // Re-enable body scroll
+            document.body.classList.remove("modal-open");
+          }
+        }
+      });
+    </script>
+
+    <script>
+      // Footer Modals and Chat Widget JavaScript
+      document.addEventListener('DOMContentLoaded', function() {
+        // Update footer links
+        const faqLink = document.querySelector('.footer-links a[href="#"]');
+        const contactLink = document.querySelector('.footer-links a[href="https://mail.google.com/mail/u/0/#inbox"]');
+        
+        // Function to disable body scroll
+        function disableBodyScroll() {
+          document.body.style.overflow = 'hidden';
+        }
+        
+        // Function to enable body scroll
+        function enableBodyScroll() {
+          document.body.style.overflow = '';
+        }
+        
+        if (faqLink && faqLink.textContent.trim() === 'FAQS') {
+          faqLink.setAttribute('href', '#');
+          faqLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('faqModal').classList.add('active');
+            disableBodyScroll();
+          });
+        }
+        
+        if (contactLink) {
+          contactLink.setAttribute('href', '#');
+          contactLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contactModal').classList.add('active');
+            disableBodyScroll();
+          });
+        }
+
+        // FAQ Modal Elements
+        const faqModal = document.getElementById('faqModal');
+        const faqModalClose = document.getElementById('faqModalClose');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        // Contact Modal Elements
+        const contactModal = document.getElementById('contactModal');
+        const contactModalClose = document.getElementById('contactModalClose');
+        const contactCancel = document.getElementById('contactCancel');
+        const contactForm = document.getElementById('contactForm');
+
+        // FAQ Accordion functionality
+        if (faqQuestions.length > 0) {
+          faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+              const isActive = this.classList.contains('active');
+              const answer = this.nextElementSibling;
+              const icon = this.querySelector('.faq-icon');
+
+              // Close all other questions
+              faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.querySelector('.faq-icon').textContent = '+';
+                q.nextElementSibling.style.display = 'none';
+              });
+
+              // Toggle current question
+              if (!isActive) {
+                this.classList.add('active');
+                icon.textContent = '−';
+                answer.style.display = 'block';
+              }
+            });
+          });
+        }
+
+        // Close FAQ Modal
+        if (faqModalClose) {
+          faqModalClose.addEventListener('click', function() {
+            faqModal.classList.remove('active');
+            enableBodyScroll();
+          });
+        }
+
+        // Close Contact Modal
+        if (contactModalClose) {
+          contactModalClose.addEventListener('click', function() {
+            contactModal.classList.remove('active');
+            contactForm.reset();
+            enableBodyScroll();
+          });
+        }
+
+        if (contactCancel) {
+          contactCancel.addEventListener('click', function() {
+            contactModal.classList.remove('active');
+            contactForm.reset();
+            enableBodyScroll();
+          });
+        }
+
+        // Handle Contact Form Submission
+        if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const subject = document.getElementById('contactSubject').value;
+            const concern = document.getElementById('contactConcern').value;
+
+            alert('Thank you for contacting us!\n\nSubject: ' + subject + '\n\nWe will get back to you soon!');
+            
+            contactModal.classList.remove('active');
+            contactForm.reset();
+            enableBodyScroll();
+          });
+        }
+
+        // Close modals when clicking outside
+        if (faqModal) {
+          faqModal.addEventListener('click', function(e) {
+            if (e.target === faqModal) {
+              faqModal.classList.remove('active');
+              enableBodyScroll();
+            }
+          });
+        }
+
+        if (contactModal) {
+          contactModal.addEventListener('click', function(e) {
+            if (e.target === contactModal) {
+              contactModal.classList.remove('active');
+              contactForm.reset();
+              enableBodyScroll();
+            }
+          });
+        }
+
+        // Prevent closing when clicking inside modal content
+        const faqModalContent = document.querySelector('.faq-modal-content');
+        const contactModalContent = document.querySelector('.contact-modal-content');
+        
+        if (faqModalContent) {
+          faqModalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+          });
+        }
+
+        if (contactModalContent) {
+          contactModalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+          });
+        }
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            if (faqModal && faqModal.classList.contains('active')) {
+              faqModal.classList.remove('active');
+              enableBodyScroll();
+            }
+            if (contactModal && contactModal.classList.contains('active')) {
+              contactModal.classList.remove('active');
+              contactForm.reset();
+              enableBodyScroll();
+            }
+          }
+        });
+
+        // Chat Widget JavaScript
+        const chatButton = document.getElementById('chatButton');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatClose = document.getElementById('chatClose');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const chatMessages = document.getElementById('chatMessages');
+        const subjectSelection = document.getElementById('subjectSelection');
+        const chatInputContainer = document.getElementById('chatInputContainer');
+        const selectedSubjectDiv = document.getElementById('selectedSubject');
+        const subjectOptions = document.querySelectorAll('.subject-option');
+        const notificationBadge = document.querySelector('.chat-notification-badge');
+
+        let selectedSubject = '';
+
+        // Predefined admin responses
+        const responses = {
+          order: [
+            "I can help you track your order! Please provide your order number and I'll check the status for you. 📦",
+            "To check your order status, you can visit 'My Purchase' section in your account or provide your order number here.",
+            "Our typical delivery time is 3-6 working days. Would you like to track a specific order?"
+          ],
+          product: [
+            "I'd be happy to help with product information! Which product are you interested in? 🐾",
+            "We have a wide range of pet food and accessories. What are you looking for specifically?",
+            "You can browse our products by pet type: Dogs, Cats, Small Pets, Birds, or Aquatic pets. What's your pet?"
+          ],
+          return: [
+            "We accept returns within 30 days of purchase. Items must be unused and in original packaging. 📋",
+            "For returns, please go to 'My Purchase' and select the order you'd like to return. We'll guide you through the process.",
+            "Refunds are processed within 5-7 business days after we receive the returned item."
+          ],
+          technical: [
+            "I'm here to help with any technical issues. What problem are you experiencing? 💻",
+            "If you're having trouble with the website, try clearing your browser cache or using a different browser.",
+            "For account-related issues, make sure you're logged in with the correct credentials."
+          ],
+          pet: [
+            "I'd love to help with pet care advice! What would you like to know? 🐕🐈",
+            "We have expert guides on feeding, grooming, and training. What specific advice do you need?",
+            "Every pet is unique! Tell me about your pet and I can provide personalized recommendations."
+          ],
+          price: [
+            "We offer competitive prices and regular promotions! Check our 'Special Offers' section for current deals. 💰",
+            "Sign up for our newsletter to get exclusive discounts and early access to sales!",
+            "We have economy packs that help you save more when you buy in bulk!"
+          ],
+          shipping: [
+            "We offer fast nationwide delivery across the Philippines! 🚚",
+            "Standard shipping takes 3-6 working days. Express shipping is also available for faster delivery.",
+            "Shipping is FREE for orders over ₱1,500!"
+          ],
+          payment: [
+            "We accept credit cards, debit cards, GCash, PayMaya, and cash on delivery. 💳",
+            "All payments are processed securely through our encrypted payment gateway.",
+            "You can also pay cash on delivery for added convenience!"
+          ],
+          default: [
+            "Thank you for your message! Let me help you with that. Can you provide more details? 😊",
+            "I'm here to assist you! Could you please elaborate on your concern?",
+            "Great question! I'd be happy to help. Can you tell me more about what you need?",
+            "I understand. Let me get you the information you need. Could you clarify a bit more?"
+          ]
+        };
+
+        if (chatButton && chatWindow) {
+          // Toggle chat window
+          chatButton.addEventListener('click', function() {
+            chatWindow.classList.add('active');
+            chatButton.style.display = 'none';
+            
+            if (notificationBadge) {
+              notificationBadge.style.display = 'none';
+            }
+          });
+
+          chatClose.addEventListener('click', function() {
+            chatWindow.classList.remove('active');
+            chatButton.style.display = 'flex';
+          });
+
+          // Subject selection
+          subjectOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              selectedSubject = this.dataset.subject;
+              const icon = this.querySelector('i').className;
+              
+              subjectSelection.style.display = 'none';
+              chatMessages.style.display = 'block';
+              chatInputContainer.style.display = 'block';
+              
+              selectedSubjectDiv.innerHTML = `<i class="${icon}"></i> Subject: ${selectedSubject}`;
+              selectedSubjectDiv.style.display = 'flex';
+              
+              addMessage('admin', `Great! I see you need help with "${selectedSubject}". How can I assist you?`);
+              chatInput.focus();
+            });
+          });
+
+          // Send message
+          chatSend.addEventListener('click', sendMessage);
+          chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              sendMessage();
+            }
+          });
+
+          function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            addMessage('user', message);
+            chatInput.value = '';
+            showTypingIndicator();
+
+            setTimeout(() => {
+              hideTypingIndicator();
+              const response = getAdminResponse(message);
+              addMessage('admin', response);
+            }, 1000 + Math.random() * 1000);
+          }
+
+          function addMessage(sender, text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const time = new Date().toLocaleTimeString('en-US', { 
+              hour: 'numeric', 
+              minute: '2-digit',
+              hour12: true 
+            });
+
+            if (sender === 'admin') {
+              messageDiv.innerHTML = `
+                <div class="message-avatar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="message-content">
+                  <div class="message-bubble">
+                    <p>${text}</p>
+                  </div>
+                  <span class="message-time">${time}</span>
+                </div>
+              `;
+            } else {
+              messageDiv.innerHTML = `
+                <div class="message-avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="message-content">
+                  <div class="message-bubble">
+                    <p>${text}</p>
+                  </div>
+                  <span class="message-time">${time}</span>
+                </div>
+              `;
+            }
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+
+          function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator message admin-message';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+              <div class="message-avatar">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="message-content">
+                <div class="message-bubble">
+                  <div class="typing-dot"></div>
+                  <div class="typing-dot"></div>
+                  <div class="typing-dot"></div>
+                </div>
+              </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+
+          function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+              typingIndicator.remove();
+            }
+          }
+
+          function getAdminResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            if (message.includes('order') || message.includes('track') || message.includes('delivery')) {
+              return getRandomResponse(responses.order);
+            } else if (message.includes('product') || message.includes('item') || message.includes('buy')) {
+              return getRandomResponse(responses.product);
+            } else if (message.includes('return') || message.includes('refund') || message.includes('exchange')) {
+              return getRandomResponse(responses.return);
+            } else if (message.includes('problem') || message.includes('error') || message.includes('bug') || message.includes('issue')) {
+              return getRandomResponse(responses.technical);
+            } else if (message.includes('pet') || message.includes('dog') || message.includes('cat') || message.includes('care') || message.includes('food')) {
+              return getRandomResponse(responses.pet);
+            } else if (message.includes('price') || message.includes('cost') || message.includes('discount') || message.includes('promo')) {
+              return getRandomResponse(responses.price);
+            } else if (message.includes('ship') || message.includes('deliver')) {
+              return getRandomResponse(responses.shipping);
+            } else if (message.includes('pay') || message.includes('payment')) {
+              return getRandomResponse(responses.payment);
+            } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+              return "Hello! 👋 How can I help you today?";
+            } else if (message.includes('thanks') || message.includes('thank you')) {
+              return "You're welcome! Is there anything else I can help you with? 😊";
+            } else if (message.includes('bye') || message.includes('goodbye')) {
+              return "Thank you for chatting with us! Have a great day! 🐾";
+            } else {
+              return getRandomResponse(responses.default);
+            }
+          }
+
+          function getRandomResponse(responsesArray) {
+            return responsesArray[Math.floor(Math.random() * responsesArray.length)];
+          }
+
+          // Close chat when clicking outside
+          document.addEventListener('click', function(e) {
+            if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
+              if (chatWindow.classList.contains('active')) {
+                chatWindow.classList.remove('active');
+                chatButton.style.display = 'flex';
+              }
+            }
+          });
   }
 });
     </script>

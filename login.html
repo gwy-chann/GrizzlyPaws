@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gizzly Paws | Log in</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -19,7 +20,7 @@
           class="welcome-image"
         />
         <div class="welcome-text">
-          <h2>Furry, Feathered, or Finned – We’ve Got You Covered!</h2>
+          <h2>Furry, Feathered, or Finned – We've Got You Covered!</h2>
           <p>
             Your one-stop destination for all pet needs. Login to access
             exclusive deals and manage your pet care.
@@ -31,7 +32,7 @@
         <div class="login-header">
           <h2>LOG IN</h2>
           <img
-          src="welcome.png"
+          src="/images/welcome.png"
           alt="Grizzly Paws Logo"
           class="welcome-image-phone"
         />
@@ -73,7 +74,7 @@
         </form>
 
         <div class="continue-without-account">
-          <p><a href="#" id="continue">Continue without account</a></p>
+          <p><a href="index.html" id="continue">Continue without account</a></p>
         </div>
     
 
@@ -91,7 +92,7 @@
               >
                 <path
                   fill="#1877f2"
-                  d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"
+                  d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200C681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"
                 ></path>
                 <path
                   fill="#fff"
@@ -194,14 +195,228 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3>Forgot Password</h3>
-          <button class="close-btn" id="close-modal">&times;</button>
+          <button class="close-btn" id="close-forgot-modal">&times;</button>
         </div>
         <div class="modal-body">
-          <p>Email: <strong>admin@gmail.com</strong></p>
-          <p>Your default password is: <strong>test123</strong></p>
+          <form id="forgot-password-form">
+            <div class="form-group">
+              <label for="forgot-email">Enter your email</label>
+              <input
+                type="email"
+                id="forgot-email"
+                placeholder="Enter your registered email"
+                required
+              />
+              <small class="error-message" id="forgot-email-error"></small>
+            </div>
+            <div id="security-questions" style="display: none;">
+              <div class="form-group">
+                <label id="security-question-1-label"></label>
+                <input
+                  type="text"
+                  id="security-answer-1"
+                  placeholder="Your answer"
+                  required
+                />
+                <small class="error-message" id="security-answer-1-error"></small>
+              </div>
+              <div class="form-group">
+                <label id="security-question-2-label"></label>
+                <input
+                  type="text"
+                  id="security-answer-2"
+                  placeholder="Your answer"
+                  required
+                />
+                <small class="error-message" id="security-answer-2-error"></small>
+              </div>
+            </div>
+            <div id="password-reset" style="display: none;">
+              <p style="color: #2ecc71; margin-bottom: 15px; font-weight: 500;">Security questions verified! Set your new password:</p>
+              <div class="form-group">
+                <label for="new-password">New Password</label>
+                <input
+                  type="password"
+                  id="new-password"
+                  placeholder="Enter new password"
+                  required
+                />
+                <small class="error-message" id="new-password-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="confirm-new-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-new-password"
+                  placeholder="Confirm new password"
+                  required
+                />
+                <small class="error-message" id="confirm-new-password-error"></small>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
-          <button class="modal-btn" id="confirm-modal">OK</button>
+          <button class="modal-btn" id="forgot-password-btn">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signup-modal">
+      <div class="modal-content signup-modal-content">
+        <div class="modal-header">
+          <h3>Create Account</h3>
+          <button class="close-btn" id="close-signup-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="signup-form">
+            <!-- Personal Information -->
+            <div class="form-section">
+              <h4>Personal Information</h4>
+              <div class="form-group">
+                <label for="signup-firstname">First Name *</label>
+                <input
+                  type="text"
+                  id="signup-firstname"
+                  placeholder="Enter your first name"
+                  required
+                />
+                <small class="error-message" id="signup-firstname-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="signup-middlename">Middle Name</label>
+                <input
+                  type="text"
+                  id="signup-middlename"
+                  placeholder="Enter your middle name (optional)"
+                />
+              </div>
+              <div class="form-group">
+                <label for="signup-lastname">Last Name *</label>
+                <input
+                  type="text"
+                  id="signup-lastname"
+                  placeholder="Enter your last name"
+                  required
+                />
+                <small class="error-message" id="signup-lastname-error"></small>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+              <h4>Contact Information</h4>
+              <div class="form-group">
+                <label for="signup-email">Email *</label>
+                <input
+                  type="email"
+                  id="signup-email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <small class="error-message" id="signup-email-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="signup-mobile">Mobile Number *</label>
+                <input
+                  type="tel"
+                  id="signup-mobile"
+                  placeholder="Enter your mobile number"
+                  required
+                />
+                <small class="error-message" id="signup-mobile-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="signup-address">Address *</label>
+                <textarea
+                  id="signup-address"
+                  placeholder="Enter your complete address"
+                  rows="3"
+                  required
+                ></textarea>
+                <small class="error-message" id="signup-address-error"></small>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-section">
+              <h4>Create Password</h4>
+              <div class="form-group">
+                <label for="signup-password">Password *</label>
+                <input
+                  type="password"
+                  id="signup-password"
+                  placeholder="Enter password (min. 6 characters)"
+                  required
+                />
+                <small class="error-message" id="signup-password-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="signup-confirm-password">Confirm Password *</label>
+                <input
+                  type="password"
+                  id="signup-confirm-password"
+                  placeholder="Confirm your password"
+                  required
+                />
+                <small class="error-message" id="signup-confirm-password-error"></small>
+              </div>
+            </div>
+
+            <!-- Security Questions -->
+            <div class="form-section">
+              <h4>Security Questions</h4>
+              <p style="font-size: 13px; color: #666; margin-bottom: 15px;">These questions will help you recover your password if you forget it.</p>
+              
+              <div class="form-group">
+                <label for="security-question-1">Security Question 1 *</label>
+                <select id="security-question-1" required>
+                  <option value="">Select a question</option>
+                  <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                  <option value="In what city were you born?">In what city were you born?</option>
+                  <option value="What is your favorite color?">What is your favorite color?</option>
+                  <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+                </select>
+                <small class="error-message" id="security-question-1-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="security-answer-1-signup">Your Answer *</label>
+                <input
+                  type="text"
+                  id="security-answer-1-signup"
+                  placeholder="Enter your answer"
+                  required
+                />
+                <small class="error-message" id="security-answer-1-signup-error"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="security-question-2">Security Question 2 (Pet-related) *</label>
+                <select id="security-question-2" required>
+                  <option value="">Select a question</option>
+                  <option value="What is your first pet's name?">What is your first pet's name?</option>
+                  <option value="What type of pet do you have?">What type of pet do you have?</option>
+                  <option value="What is your favorite pet breed?">What is your favorite pet breed?</option>
+                  <option value="What is your pet's favorite toy?">What is your pet's favorite toy?</option>
+                </select>
+                <small class="error-message" id="security-question-2-error"></small>
+              </div>
+              <div class="form-group">
+                <label for="security-answer-2-signup">Your Answer *</label>
+                <input
+                  type="text"
+                  id="security-answer-2-signup"
+                  placeholder="Enter your answer"
+                  required
+                />
+                <small class="error-message" id="security-answer-2-signup-error"></small>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn" id="signup-btn">Create Account</button>
         </div>
       </div>
     </div>

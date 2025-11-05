@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grizzly Paws | My Profile</title>
+    <title>Grizzly Paws - Our Team</title>
+    <meta
+      name="description"
+      content="Shop premium pet food and accessories for dogs, cats, small pets, birds, and fish at Grizzly Paws, your trusted online pet store."
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="styles/css category/style.css" />
+    <!-- <link rel="stylesheet" href="styles/css sub category/dog-dry-food.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
-    <link rel="stylesheet" href="../styles/css category/header&footer.css" />
-    <link rel="stylesheet" href="../styles/css category items/dogItem.css" />
-    <link rel="stylesheet" href="../styles/css category/style.css" />
-    <link rel="stylesheet" href="../styles/account.css" />
+    <link rel="stylesheet" href="/styles/team.css" />
   </head>
   <body>
-    
     <header>
       <div class="header-top">
         <div class="logo-container">
@@ -25,7 +27,11 @@
             title="Return to Homepage"
             aria-label="Go to Homepage"
           >
-            <img src="../images/logo3.png" alt="Logo" class="logo" />
+            <img
+              src="../../../../../images/logo3.png"
+              alt="Logo"
+              class="logo"
+            />
           </a>
         </div>
 
@@ -45,7 +51,11 @@
           </form>
         </div>
         <div class="basket-container">
-          <a href="../pages/basket.html" class="basket-button" aria-label="Shopping basket">
+          <a
+            href="pages/basket.html"
+            class="basket-button"
+            aria-label="Shopping basket"
+          >
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
@@ -94,118 +104,372 @@
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="../pages/account.html">My Account</a>
-              <a href="../pages/Purchase/purchase.html">My Purchase</a>
-              <a href="../pages/Purchase/wishlist.html">Wishlist</a>
-              <a href="../login.html">Logout</a>
+              <a href="pages/account.html">My Account</a>
+              <a href="pages/Purchase/purchase.html">My Purchase</a>
+              <a href="pages/Purchase/wishlist.html">Wishlist</a>
+              <a href="login.html">Logout</a>
             </div>
           </div>
         </div>
       </div>
+
       <nav aria-label="Main navigation" id="main-nav"></nav>
     </header>
 
     <main class="container">
-      <!-- Login Required Message (shown when user is not logged in) -->
-      <div class="login-required-container" id="login-required" style="display: none;">
-        <div class="login-required-card">
-          <i class="fas fa-lock login-required-icon"></i>
-          <h2>Login Required</h2>
-          <p>You need to be logged in to view your profile.</p>
-          <a href="../login.html" class="login-required-btn">Go to Login</a>
-        </div>
+      <div class="team-header">
+        <h1>Meet Our Team</h1>
       </div>
 
-      <!-- Profile Container (shown when user is logged in) -->
-      <div class="profile-container" id="profile-container" style="display: none;">
-        <div class="profile-card">
-          <div class="profile-header">
-            <h2>Personal Information</h2>
-          </div>
+      <div class="team-grid">
+        <!-- Navigation Arrows -->
+        <div class="arrow left" aria-label="Previous team members">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </div>
 
-          <div class="profile-content">
-            <div class="profile-photo-section">
-              <div class="profile-photo-wrapper">
-                <img src="" alt="Profile" class="profile-photo" id="profile-photo" />
-                <div class="profile-photo-overlay">
-                  <label for="photo-upload" class="photo-upload-label">
-                    <i class="fas fa-camera"></i>
-                  </label>
-                  <input type="file" id="photo-upload" accept="image/*" style="display: none;" />
-                </div>
+        <!-- Team Members -->
+        <div class="team-members-container">
+          <!-- Project Manager -->
+          <div class="team-member">
+            <div class="member-header">
+              <div class="member-image">
+                <img
+                  src="villegas.jpg"
+                  alt="Project Manager"
+                />
               </div>
             </div>
-
-            <form class="profile-form" id="profile-form">
-              <!-- Personal Information -->
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="first-name">First Name</label>
-                  <input type="text" id="first-name" class="form-input" readonly />
-                </div>
-                <div class="form-group">
-                  <label for="middle-name">Middle Name</label>
-                  <input type="text" id="middle-name" class="form-input" readonly />
-                </div>
-                <div class="form-group">
-                  <label for="last-name">Last Name</label>
-                  <input type="text" id="last-name" class="form-input" readonly />
-                </div>
+            <div class="member-info">
+              <h3 class="member-name">Mark Westley Villegas</h3>
+              <p class="member-position">Project Manager</p>
+              <p class="member-description">
+                Orchestrates project success by guiding the team through
+                planning, execution, and delivery, ensuring all goals are met on
+                time.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/Westley828495059"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/yflxv.ww/"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="www.linkedin.com/in/mark-villegas-180398365"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </a>
               </div>
-
-              <!-- Bio Section -->
-              <div class="form-group">
-                <label for="bio">Bio</label>
-                <textarea 
-                  id="bio" 
-                  class="form-input bio-textarea" 
-                  rows="4"
-                  readonly
-                  placeholder="Add bio"
-                ></textarea>
-              </div>
-
-              <!-- Contact Information -->
-              <h3 class="section-title">Contact Information</h3>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" class="form-input" readonly />
-                </div>
-                <div class="form-group">
-                  <label for="mobile">Mobile Number</label>
-                  <input type="tel" id="mobile" class="form-input" readonly />
-                </div>
-              </div>
-
-              <!-- Address -->
-              <h3 class="section-title">Address</h3>
-              <div class="form-group">
-                <textarea 
-                  id="address" 
-                  class="form-input address-textarea" 
-                  rows="3"
-                  readonly
-                ></textarea>
-              </div>
-
-              <!-- Action Buttons -->
-              <div class="profile-actions">
-                <button type="button" class="btn btn-logout" id="logout-btn">
-                  <i class="fas fa-sign-out-alt"></i> Log out
-                </button>
-                <button type="button" class="btn btn-edit" id="edit-btn">
-                  <i class="fas fa-edit"></i> Edit Profile
-                </button>
-                <button type="submit" class="btn btn-save" id="save-btn" style="display: none;">
-                  <i class="fas fa-save"></i> Save Changes
-                </button>
-                <button type="button" class="btn btn-cancel" id="cancel-btn" style="display: none;">
-                  <i class="fas fa-times"></i> Cancel
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
+
+          <!-- Information Architect -->
+          <div class="team-member">
+            <div class="member-header">
+              <div class="member-image">
+                <img
+                  src="descargar.jpg"
+                  alt="Information Architect"
+                />
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Elvis Descargar</h3>
+              <p class="member-position">Information Architect</p>
+              <p class="member-description">
+                Designs the structure and organization of information, creating
+                intuitive user flows and content hierarchies that enhance the
+                overall user experience.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/share/16QxaaQQAh/"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/ru.bisu?igsh=MW5md25zZ285dHI5cw=="
+                  aria-label="Instagram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/elvis-jr-descargar-870407365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- UX/UI Designer -->
+          <div class="team-member">
+            <div class="member-header">
+              <div class="member-image">
+                <img
+                  src="dalisay.jpg"
+                  alt="UX/UI Designer"
+                />
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Mark John Dalisay</h3>
+              <p class="member-position">UX/UI Designer</p>
+              <p class="member-description">
+                Creates visually appealing and functional interfaces that
+                prioritize user experience, combining aesthetics with intuitive
+                interaction design.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/share/1Ajz8zjHyE/?mibextid=wwXIfr"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/vince_yasilad?igsh=cWFxZnBlMDBtMWo3&utm_source=qr"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://ph.linkedin.com/in/mark-vincent-dalisay-730150365"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Manager -->
+          <div class="team-member">
+            <div class="member-header">
+              <div class="member-image">
+                <img
+                  src="abrise.jpg"
+                  alt="Content Manager"
+                />
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Mj Abrise</h3>
+              <p class="member-position">Content Manager</p>
+              <p class="member-description">
+                Oversees content strategy, creation, and publication, ensuring
+                messaging is consistent, engaging, and aligned with project
+                goals across all platforms.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/mjabrise10"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/marcjohn.10/"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/marc-john-abrise-aa8404365/"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Developer -->
+          <div class="team-member">
+            <div class="member-header">
+              <div class="member-image">
+                <img
+                  src="sdf.jpg"
+                  alt="Developer"
+                />
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Lizbeth Tabuena</h3>
+              <p class="member-position">Developer</p>
+              <p class="member-description">
+                Builds and implements the technical aspects of the project,
+                translating designs into functional code while ensuring
+                performance, security, and scalability.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/gwychan19"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/lizbethtabuena/?igsh=eGhwcG5iM2V5aGVl#"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/lizbeth-tabuena-b30913257/"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Navigation Arrow -->
+        <div class="arrow right" aria-label="Next team members">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+          </svg>
         </div>
       </div>
     </main>
@@ -236,7 +500,7 @@
               <option value="bird">Bird</option>
               <option value="fish">Fish</option>
               <option value="reptile">Reptile</option>
-              <option value="small_pet">Small Pet</option>
+              <option value=" small_pet">Small Pet</option>
             </select>
             <div class="select-arrow">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -521,14 +785,136 @@
       </div>
     </div>
 
-    <script src="../../../js/header.js"></script>
-    <script src="../../../data/category.js"></script>
-    <script src="../../../data/products.js"></script>
-    <script src="../../../js/dynamic-display.js"></script>
-    <script src="../js/profile.js"></script>
-
+    <script src="..././../data/products.js"></script>
+    <script src="..././../data/category.js"></script>
+    <script src="/js/dynamic-display.js"></script>
+    <script src="/js/moreProducts.js"></script>
+    <script src="js/script.js"></script>
     <script>
-      // Footer Modals and Chat Widget JavaScript (same as index.html)
+      document.addEventListener("DOMContentLoaded", function () {
+        // Elements
+        const container = document.querySelector(".team-members-container");
+        const teamMembers = document.querySelectorAll(".team-member");
+        const leftArrow = document.querySelector(".arrow.left");
+        const rightArrow = document.querySelector(".arrow.right");
+
+        // If arrows are commented out in the HTML, let's create them
+        if (!leftArrow) {
+          createArrows();
+        }
+
+        // Variables
+        let currentIndex = 0;
+        let visibleCards = calculateVisibleCards();
+        let maxIndex = Math.max(0, teamMembers.length - visibleCards);
+
+        // Calculate how many cards are visible based on container width
+        function calculateVisibleCards() {
+          const containerWidth =
+            document.querySelector(".team-grid").clientWidth - 80; // Subtract padding
+          const cardWidth = 280 + 20; // card width + gap
+          return Math.max(1, Math.floor(containerWidth / cardWidth));
+        }
+
+        // Create arrow elements if they don't exist
+        function createArrows() {
+          // Create left arrow
+          const leftArrowElement = document.createElement("div");
+          leftArrowElement.className = "arrow left";
+          leftArrowElement.setAttribute("aria-label", "Previous team members");
+          leftArrowElement.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        `;
+
+          // Create right arrow
+          const rightArrowElement = document.createElement("div");
+          rightArrowElement.className = "arrow right";
+          rightArrowElement.setAttribute("aria-label", "Next team members");
+          rightArrowElement.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg>
+        `;
+
+          // Add arrows to the team grid
+          const teamGrid = document.querySelector(".team-grid");
+          teamGrid.appendChild(leftArrowElement);
+          teamGrid.appendChild(rightArrowElement);
+
+          // Update references
+          return {
+            left: leftArrowElement,
+            right: rightArrowElement,
+          };
+        }
+
+        // Function to update arrow states
+        function updateArrowStates() {
+          const arrows = {
+            left: document.querySelector(".arrow.left"),
+            right: document.querySelector(".arrow.right"),
+          };
+
+          if (currentIndex <= 0) {
+            arrows.left.classList.add("disabled");
+          } else {
+            arrows.left.classList.remove("disabled");
+          }
+
+          if (currentIndex >= maxIndex) {
+            arrows.right.classList.add("disabled");
+          } else {
+            arrows.right.classList.remove("disabled");
+          }
+        }
+
+        // Function to slide the team members
+        function slideTeamMembers() {
+          const cardWidth = 280 + 20; // card width + gap
+          const translateX = -currentIndex * cardWidth;
+          container.style.transform = `translateX(${translateX}px)`;
+          updateArrowStates();
+        }
+
+        // Event listeners for arrows
+        document
+          .querySelector(".team-grid")
+          .addEventListener("click", function (event) {
+            const target = event.target.closest(".arrow");
+            if (!target) return;
+
+            if (target.classList.contains("left") && currentIndex > 0) {
+              currentIndex--;
+              slideTeamMembers();
+            } else if (
+              target.classList.contains("right") &&
+              currentIndex < maxIndex
+            ) {
+              currentIndex++;
+              slideTeamMembers();
+            }
+          });
+
+        // Handle window resize
+        window.addEventListener("resize", function () {
+          visibleCards = calculateVisibleCards();
+          maxIndex = Math.max(0, teamMembers.length - visibleCards);
+
+          // Adjust currentIndex if it's out of bounds after resize
+          if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+          }
+
+          slideTeamMembers();
+        });
+
+        // Initialize
+        updateArrowStates();
+      });
+
+      // Footer Modals and Chat Widget JavaScript
       document.addEventListener('DOMContentLoaded', function() {
         const faqLink = document.querySelector('.footer-links a[href="#"]');
         const contactLink = document.querySelector('.footer-links a[href="https://mail.google.com/mail/u/0/#inbox"]');
@@ -890,5 +1276,6 @@
         }
       });
     </script>
+    <script src="js/header.js"></script>
   </body>
 </html>

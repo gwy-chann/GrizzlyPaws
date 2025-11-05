@@ -1,8 +1,7 @@
 const wishlist = products
-  .filter(product => product.category !== "Small Pet") // Exclude "Small Pet"
-  .sort(() => Math.random() - 0.5) // Shuffle
-  .slice(0, 10); // Take the first 10
+  .filter(product => product.category == paramValue).sort(() => Math.random() - 0.5).slice(0, 12); // Take the first 10
 
+  
 if (wishlist) {
     const productCardContainer = document.getElementById("product_grid")
     let wishlist_display = ''

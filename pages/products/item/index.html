@@ -3,23 +3,564 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat</title>
+    <title>Grizzly Paws | Pet's Products</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="stylesheet" href="../../../styles/css category/header&footer.css" />
     <link rel="stylesheet" href="../../../styles/css category items/dogItem.css">
+    <style>
+/* Reviews Section */
+.reviews-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.reviews-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0;
+}
+
+.write-review-btn {
+  background-color: #b7e6b7;
+  color: rgb(41, 102, 1);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.write-review-btn:hover {
+  background-color: #7dcf81;
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #09692e 0%, #aee6ad 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.reviewer-details h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.review-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.review-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: #666;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.review-action-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.review-action-btn.edit:hover {
+  color: #398b13;
+}
+
+.review-action-btn.delete:hover {
+  color: #dc3545;
+}
+
+.review-content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 8px;
+}
+
+.review-hidden {
+  color: #dc3545;
+  font-weight: 600;
+  font-style: italic;
+  padding: 15px;
+  background: #ffe6e6;
+  border-left: 4px solid #dc3545;
+  border-radius: 4px;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.no-reviews i {
+  font-size: 48px;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.no-reviews p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Review Modal */
+.review-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.review-modal-content {
+  background-color: white;
+  margin: 5% auto;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease;
+}
+
+.review-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.review-modal-header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.review-modal-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.review-modal-close:hover {
+  color: #333;
+}
+
+.review-modal-body {
+  padding: 25px;
+}
+
+.review-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.review-textarea:focus {
+  outline: none;
+  border-color: #88cc5b;
+}
+
+.character-count {
+  text-align: right;
+  font-size: 13px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.review-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 25px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-cancel-review,
+.btn-submit-review {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel-review {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-cancel-review:hover {
+  background: #e0e0e0;
+}
+
+.btn-submit-review {
+  background: #b7e6b7;
+  color: rgb(41, 102, 1);
+}
+
+.btn-submit-review:hover {
+  background: #7dcf81;
+}
+
+.btn-submit-review:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* ADD THESE NEW STYLES TO YOUR EXISTING REVIEW CSS */
+
+/* Disabled Write Review Button */
+.write-review-btn.disabled {
+  background-color: #f3d8d8;
+  cursor: pointer;
+  color: #790000;
+  opacity: 0.7;
+}
+
+.write-review-btn.disabled:hover {
+  background-color: #f3cece;
+}
+
+/* Purchase Required Modal (keep this for purchase validation) */
+.login-required-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.login-required-content {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.login-required-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #78ba37, #5a8c2f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 35px;
+  color: white;
+}
+
+.login-required-content h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.login-required-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.login-required-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-close-modal {
+  padding: 12px 30px;
+  border: 2px solid #ddd;
+  background: white;
+  color: #666;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-close-modal:hover {
+  border-color: #999;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.btn-go-login {
+  padding: 12px 30px;
+  border: none;
+  background: linear-gradient(135deg, #78ba37, #5a8c2f);
+  color: white;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-go-login:hover {
+  background: linear-gradient(135deg, #5a8c2f, #78ba37);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(120, 186, 55, 0.3);
+}
+
+/* Success Message */
+.review-success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  z-index: 10001;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.review-success-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.review-success-message i {
+  font-size: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-required-content {
+    padding: 30px 20px;
+  }
+
+  .login-required-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .login-required-content h3 {
+    font-size: 20px;
+  }
+
+  .login-required-actions {
+    flex-direction: column;
+  }
+
+  .btn-close-modal,
+  .btn-go-login {
+    width: 100%;
+  }
+
+  .review-success-message {
+    width: 90%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reviews-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .write-review-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .review-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .review-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .review-modal-content {
+    margin: 10% auto;
+    width: 95%;
+  }
+}
+</style>
+
   </head>
   <body>
     <header>
       <div class="header-top">
-          <div class="logo-container">
-            <button class="mobile-menu-button">☰</button>
-            <a href="/index.html" title="Return to Homepage" aria-label="Go to Homepage">
-              <img src="../../../images/logo3.png" alt="Logo" class="logo">
-            </a>
-          </div>
+        <div class="logo-container">
+          <button class="mobile-menu-button">☰</button>
+          <a
+            href="/index.html"
+            title="Return to Homepage"
+            aria-label="Go to Homepage"
+          >
+            <img
+              src="../../../../../images/logo3.png"
+              alt="Logo"
+              class="logo"
+            />
+          </a>
+        </div>
 
         <div class="search-container">
           <form action="/search" method="get" role="search">
@@ -37,31 +578,75 @@
           </form>
         </div>
         <div class="basket-container">
-          <a href="../pages/basket.html" class="basket-button" aria-label="Shopping basket">
+          <a
+            href="../../basket.html"
+            class="basket-button"
+            aria-label="Shopping basket"
+          >
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             <span>BASKET</span>
           </a>
+
+          <!-- Notification Dropdown -->
+          <div class="notification-dropdown">
+            <a class="notification-button" aria-label="Notifications">
+              <i class="fas fa-bell" aria-hidden="true"></i>
+              <span class="notification-badge">2</span>
+            </a>
+            <div class="dropdown-content notification-content">
+              <div class="dropdown-tail"></div>
+              <div class="notification-header">
+                <h3>Notifications</h3>
+                <a href="#" class="mark-all-read">Mark all as read</a>
+              </div>
+              <div class="notification-list">
+                <a href="#" class="notification-item unread">
+                  <div class="notification-icon order">
+                    <i class="fas fa-box"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="notification-title">Order Shipped</p>
+                    <p class="notification-message">Your order #12345 has been shipped and will arrive in 2-3 days.</p>
+                    <span class="notification-time">2 hours ago</span>
+                  </div>
+                </a>
+                <a href="#" class="notification-item unread">
+                  <div class="notification-icon promo">
+                    <i class="fas fa-tag"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="notification-title">Special Offer!</p>
+                    <p class="notification-message">Get 20% off on all electronics. Limited time offer!</p>
+                    <span class="notification-time">5 hours ago</span>
+                  </div>
+                </a>
+              </div>
+              <a href="#" class="view-all-notifications">View All Notifications</a>
+            </div>
+          </div>
+
+          <!-- Account Dropdown -->
           <div class="account-dropdown">
             <a class="account-button" aria-label="My account">
               <i class="fas fa-user-circle" aria-hidden="true"></i>
             </a>
             <div class="dropdown-content">
               <div class="dropdown-tail"></div>
-              <a href="../../account.html">My Account</a>
-              <a href="../../Purchase/purchase.html">My Purchase</a>
-              <a href="../purchase.html">Wishlist</a>
-              <a href="../../../login.html">Logout</a>
+              <a href="pages/account.html">My Account</a>
+              <a href="pages/Purchase/purchase.html">My Purchase</a>
+              <a href="/pages/Purchase/wishlist.html">Wishlist</a>
+              <a href="login.html">Logout</a>
             </div>
           </div>
         </div>
       </div>
-      <nav aria-label="Main navigation" id="main-nav">
-      </nav>
+
+      <nav aria-label="Main navigation" id="main-nav"></nav>
     </header>
 
     <main class="container" >
       <div class="breadcrumb">
-        <a href="../../index.html">
+        <a href="../../../index.html">
             <svg class="home-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -217,6 +802,46 @@
         </div>
       </div>
 
+      <!-- Review Section -->
+      <section class="reviews-section">
+  <div class="reviews-header">
+    <h2>Customer Reviews</h2>
+    <button class="write-review-btn" id="writeReviewBtn">
+      <i class="fas fa-pen"></i>
+      Write a Review
+    </button>
+  </div>
+
+  <div class="reviews-container" id="reviewsContainer">
+    <!-- Reviews will be dynamically inserted here -->
+  </div>
+</section>
+
+<!-- Write Review Modal -->
+<div class="review-modal" id="reviewModal">
+  <div class="review-modal-content">
+    <div class="review-modal-header">
+      <h3 id="modalTitle">Write Your Review</h3>
+      <button class="review-modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="review-modal-body">
+      <textarea 
+        id="reviewText" 
+        class="review-textarea" 
+        placeholder="Share your thoughts about this product..."
+        maxlength="1000"
+      ></textarea>
+      <div class="character-count">
+        <span id="charCount">0</span>/1000 characters
+      </div>
+    </div>
+    <div class="review-modal-footer">
+      <button class="btn-cancel-review" id="cancelReview">Cancel</button>
+      <button class="btn-submit-review" id="submitReview">Post Review</button>
+    </div>
+  </div>
+</div>
+
 
       <!-- Modal -->
       <div class="modal" id="myModal"> 
@@ -236,6 +861,8 @@
         </div>
       </div>
     
+      
+
     </main>
 
     <div class="newsletter-banner">
@@ -297,7 +924,6 @@
           <ul class="footer-links">
             <li><a href="#">FAQS</a></li>
             <li><a>Free Shipping & Delivery</a></li>
-            <li><a>Returns</a></li>
             <li><a href="#">Contact Us</a></li>
 
           </ul>
@@ -307,8 +933,7 @@
           <h3>Advantages</h3>
           <ul class="footer-links">
             <li><a>Newsletter</a></li>
-            <li><a href="#features-container">Special Offer</a></li>
-            <li><a href="#">Grizzly Paws Repeat</a></li>
+        
           </ul>
         </div>
 
@@ -350,7 +975,766 @@
           </div>
         </div>
       </div>
+    </footer>
 
+    <!-- Chat Widget -->
+<button class="chat-button" id="chatButton" aria-label="Chat with us">
+  <i class="fas fa-comments"></i>
+  <span class="chat-notification-badge">1</span>
+</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-content">
+      <div class="chat-avatar">
+        <i class="fas fa-headset"></i>
+      </div>
+      <div class="chat-header-text">
+        <h3>Customer Support</h3>
+        <span class="chat-status">
+          <span class="status-dot"></span>
+          Online
+        </span>
+      </div>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="chat-body">
+    <!-- Subject Selection Screen -->
+    <div class="subject-selection" id="subjectSelection">
+      <h4>How can we help you?</h4>
+      <p>Choose a topic to get started:</p>
+      <div class="subject-options">
+        <button class="subject-option" data-subject="Order Status">
+          <i class="fas fa-box"></i>
+          <span>Order Status</span>
+        </button>
+        <button class="subject-option" data-subject="Product Question">
+          <i class="fas fa-question-circle"></i>
+          <span>Product Question</span>
+        </button>
+        <button class="subject-option" data-subject="Returns">
+          <i class="fas fa-undo"></i>
+          <span>Returns</span>
+        </button>
+        <button class="subject-option" data-subject="Technical Support">
+          <i class="fas fa-tools"></i>
+          <span>Technical Support</span>
+        </button>
+        <button class="subject-option" data-subject="Pet Care Advice">
+          <i class="fas fa-paw"></i>
+          <span>Pet Care Advice</span>
+        </button>
+        <button class="subject-option" data-subject="Other">
+          <i class="fas fa-ellipsis-h"></i>
+          <span>Other</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Messages (initially hidden) -->
+    <div class="chat-messages" id="chatMessages" style="display: none;">
+      <div class="message admin-message">
+        <div class="message-avatar">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="message-content">
+          <div class="message-bubble">
+            <p>Hi! Welcome to Grizzly Paws Customer Support. How can I help you today? 🐾</p>
+          </div>
+          <span class="message-time">Just now</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input-container" id="chatInputContainer" style="display: none;">
+    <div class="selected-subject" id="selectedSubject"></div>
+    <div class="chat-input-wrapper">
+      <button class="chat-attach-btn" aria-label="Attach file">
+        <i class="fas fa-paperclip"></i>
+      </button>
+      <input 
+        type="text" 
+        class="chat-input" 
+        id="chatInput" 
+        placeholder="Type your message..."
+        autocomplete="off"
+      />
+      <button class="chat-send-btn" id="chatSend" aria-label="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+    <script>
+      (function() {
+  // Get current logged-in user from session
+  let CURRENT_USER = null;
+  
+  // Sample reviews data structure (this will come from database)
+  // Store reviews per product - format: productId_reviews
+  let reviews = JSON.parse(localStorage.getItem('product_reviews') || '[]');
+  
+  // PRODUCT ID - Replace this with actual product ID from your page
+  // You can get this from URL parameter or data attribute
+  const PRODUCT_ID = getProductId(); // You'll implement this based on your page structure
+
+  let editingReviewId = null;
+
+  // DOM Elements
+  const reviewsContainer = document.getElementById('reviewsContainer');
+  const writeReviewBtn = document.getElementById('writeReviewBtn');
+  const reviewModal = document.getElementById('reviewModal');
+  const closeModal = document.getElementById('closeModal');
+  const cancelReview = document.getElementById('cancelReview');
+  const submitReview = document.getElementById('submitReview');
+  const reviewText = document.getElementById('reviewText');
+  const charCount = document.getElementById('charCount');
+  const modalTitle = document.getElementById('modalTitle');
+
+  // Initialize
+  function init() {
+    loadCurrentUser();
+    renderReviews();
+    setupEventListeners();
+    updateWriteReviewButton();
+  }
+
+  // Load current user from session
+  function loadCurrentUser() {
+    const loggedInEmail = sessionStorage.getItem('loggedInUser');
+    
+    if (!loggedInEmail) {
+      CURRENT_USER = null;
+      return;
+    }
+
+    // Check if admin
+    if (loggedInEmail === 'admin') {
+      CURRENT_USER = {
+        email: 'admin@gmail.com',
+        name: 'Admin',
+        userId: 'admin',
+        isAdmin: true
+      };
+      return;
+    }
+
+    // Load user from localStorage
+    const users = JSON.parse(localStorage.getItem('users') || '{}');
+    const user = users[loggedInEmail];
+    
+    if (user) {
+      CURRENT_USER = {
+        email: user.email,
+        name: `${user.firstname} ${user.lastname}`,
+        userId: user.email, // Using email as userId
+        firstname: user.firstname,
+        middlename: user.middlename,
+        lastname: user.lastname,
+        isAdmin: false
+      };
+    } else {
+      CURRENT_USER = null;
+      sessionStorage.removeItem('loggedInUser'); // Clean up invalid session
+    }
+  }
+
+  // Get product ID from page (CUSTOMIZE THIS BASED ON YOUR PAGE STRUCTURE)
+  function getProductId() {
+    // Option 1: Get from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const productIdFromUrl = urlParams.get('id') || urlParams.get('productId');
+    if (productIdFromUrl) return productIdFromUrl;
+
+    // Option 2: Get from data attribute on page element
+    const productElement = document.querySelector('[data-product-id]');
+    if (productElement) return productElement.dataset.productId;
+
+    // Option 3: Get from page title or other element
+    // You can customize this based on your page structure
+    
+    // Default: use current page URL as product identifier
+    return window.location.pathname;
+  }
+
+  // Update Write Review button based on login status
+  function updateWriteReviewButton() {
+    if (!CURRENT_USER) {
+      writeReviewBtn.innerHTML = '<i class="fas fa-lock"></i> Login to Review';
+      writeReviewBtn.classList.add('disabled');
+    } else {
+      writeReviewBtn.innerHTML = '<i class="fas fa-pen"></i> Write a Review';
+      writeReviewBtn.classList.remove('disabled');
+    }
+  }
+
+  // Check if user has purchased this product (PLACEHOLDER - IMPLEMENT LATER)
+  function hasUserPurchasedProduct() {
+    // TODO: Implement this when you have purchase history
+    // For now, return true to allow all logged-in users to review
+    
+    // Future implementation example:
+    // const purchases = JSON.parse(localStorage.getItem('user_purchases') || '[]');
+    // return purchases.some(purchase => 
+    //   purchase.userId === CURRENT_USER.userId && 
+    //   purchase.productId === PRODUCT_ID &&
+    //   purchase.status === 'completed'
+    // );
+    
+    return true; // Allow all logged-in users for now
+  }
+
+  // Setup Event Listeners
+  function setupEventListeners() {
+    writeReviewBtn.addEventListener('click', openNewReviewModal);
+    closeModal.addEventListener('click', closeReviewModal);
+    cancelReview.addEventListener('click', closeReviewModal);
+    submitReview.addEventListener('click', handleSubmitReview);
+    
+    reviewText.addEventListener('input', updateCharCount);
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === reviewModal) {
+        closeReviewModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && reviewModal.style.display === 'block') {
+        closeReviewModal();
+      }
+    });
+  }
+
+  // Format date to readable format
+  function formatDate(date) {
+    const now = new Date();
+    const reviewDate = new Date(date);
+    const diffTime = Math.abs(now - reviewDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) {
+      return 'Today';
+    } else if (diffDays === 1) {
+      return 'Yesterday';
+    } else if (diffDays < 7) {
+      return `${diffDays} days ago`;
+    } else {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return reviewDate.toLocaleDateString('en-US', options);
+    }
+  }
+
+  // Get user initials for avatar
+  function getUserInitials(name) {
+    return name
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  }
+
+  // Render all reviews
+  function renderReviews() {
+    // Filter reviews for current product
+    const productReviews = reviews.filter(r => r.productId === PRODUCT_ID);
+
+    if (productReviews.length === 0) {
+      reviewsContainer.innerHTML = `
+        <div class="no-reviews">
+          <i class="fas fa-comments"></i>
+          <p>No reviews yet</p>
+          <p style="font-size: 14px; color: #aaa;">Be the first to share your thoughts!</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Sort reviews by date (newest first)
+    const sortedReviews = [...productReviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    reviewsContainer.innerHTML = sortedReviews.map(review => {
+      const isOwnReview = CURRENT_USER && review.userId === CURRENT_USER.userId;
+      
+      return `
+        <div class="review-card" data-review-id="${review.id}">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                ${getUserInitials(review.userName)}
+              </div>
+              <div class="reviewer-details">
+                <h4>${escapeHtml(review.userName)}</h4>
+                <div class="review-date">${formatDate(review.date)}</div>
+              </div>
+            </div>
+            ${isOwnReview ? `
+              <div class="review-actions">
+                <button class="review-action-btn edit" onclick="editReview(${review.id})">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="review-action-btn delete" onclick="deleteReview(${review.id})">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            ` : ''}
+          </div>
+          ${review.isHidden ? 
+            '<div class="review-hidden">Review hidden by the admin</div>' : 
+            `<div class="review-content">${escapeHtml(review.text)}</div>`
+          }
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Open modal for new review
+  function openNewReviewModal() {
+    // Check if user is logged in
+    if (!CURRENT_USER) {
+      showLoginRequiredModal();
+      return;
+    }
+
+    // Check if user has purchased product (PLACEHOLDER - implement later)
+    if (!hasUserPurchasedProduct()) {
+      showPurchaseRequiredModal();
+      return;
+    }
+
+    editingReviewId = null;
+    modalTitle.textContent = 'Write Your Review';
+    reviewText.value = '';
+    updateCharCount();
+    reviewModal.style.display = 'block';
+  }
+
+  // Redirect to login page
+function showLoginRequiredModal() {
+    // Store the current page URL to return after login (optional)
+    // sessionStorage.setItem('returnUrl', window.location.href);
+    
+    // Redirect to login page
+    window.location.href = '../../../login.html'; 
+}
+
+  // Show purchase required modal (PLACEHOLDER - implement later)
+  function showPurchaseRequiredModal() {
+    const modal = document.createElement('div');
+    modal.className = 'login-required-modal';
+    modal.innerHTML = `
+      <div class="login-required-content">
+        <div class="login-required-icon" style="background: #f39c12;">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <h3>Purchase Required</h3>
+        <p>You need to purchase this product before you can write a review.</p>
+        <div class="login-required-actions">
+          <button class="btn-close-modal" onclick="this.closest('.login-required-modal').remove()">Cancel</button>
+          <button class="btn-go-login" onclick="this.closest('.login-required-modal').remove()">Continue Shopping</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.remove();
+      }
+    });
+  }
+
+  // Open modal for editing review
+  window.editReview = function(reviewId) {
+    if (!CURRENT_USER) return;
+
+    const review = reviews.find(r => r.id === reviewId);
+    if (!review || review.userId !== CURRENT_USER.userId) return;
+
+    editingReviewId = reviewId;
+    modalTitle.textContent = 'Edit Your Review';
+    reviewText.value = review.text;
+    updateCharCount();
+    reviewModal.style.display = 'block';
+  };
+
+  // Delete review
+  window.deleteReview = function(reviewId) {
+    if (!CURRENT_USER) return;
+
+    const review = reviews.find(r => r.id === reviewId);
+    if (!review || review.userId !== CURRENT_USER.userId) return;
+
+    if (confirm('Are you sure you want to delete this review?')) {
+      reviews = reviews.filter(r => r.id !== reviewId);
+      saveReviews();
+      renderReviews();
+      showSuccessMessage('Review deleted successfully');
+    }
+  };
+
+  // Close modal
+  function closeReviewModal() {
+    reviewModal.style.display = 'none';
+    editingReviewId = null;
+    reviewText.value = '';
+  }
+
+  // Update character count
+  function updateCharCount() {
+    const count = reviewText.value.length;
+    charCount.textContent = count;
+    
+    if (count > 0) {
+      submitReview.disabled = false;
+    } else {
+      submitReview.disabled = true;
+    }
+  }
+
+  // Handle submit review
+  function handleSubmitReview() {
+    const text = reviewText.value.trim();
+    
+    if (!text) {
+      alert('Please write a review before submitting.');
+      return;
+    }
+
+    if (!CURRENT_USER) {
+      alert('You must be logged in to post a review.');
+      closeReviewModal();
+      return;
+    }
+
+    if (editingReviewId) {
+      // Update existing review
+      const review = reviews.find(r => r.id === editingReviewId);
+      if (review) {
+        review.text = text;
+        review.date = new Date().toISOString();
+        review.editedAt = new Date().toISOString();
+      }
+    } else {
+      // Create new review
+      const newReview = {
+        id: Date.now(),
+        productId: PRODUCT_ID,
+        userId: CURRENT_USER.userId,
+        userName: CURRENT_USER.name,
+        text: text,
+        date: new Date().toISOString(),
+        isHidden: false
+      };
+      
+      reviews.push(newReview);
+    }
+
+    saveReviews();
+    renderReviews();
+    closeReviewModal();
+    
+    showSuccessMessage(editingReviewId ? 'Review updated successfully' : 'Review posted successfully');
+  }
+
+  // Save reviews to localStorage
+  function saveReviews() {
+    localStorage.setItem('product_reviews', JSON.stringify(reviews));
+  }
+
+  // Show success message
+  function showSuccessMessage(message) {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'review-success-message';
+    successDiv.innerHTML = `
+      <i class="fas fa-check-circle"></i>
+      <span>${message}</span>
+    `;
+    document.body.appendChild(successDiv);
+
+    setTimeout(() => {
+      successDiv.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+      successDiv.classList.remove('show');
+      setTimeout(() => successDiv.remove(), 300);
+    }, 3000);
+  }
+
+  // Initialize on page load
+  init();
+})();
+    </script>
+
+    <script>
+    // Chat Widget JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const chatButton = document.getElementById('chatButton');
+  const chatWindow = document.getElementById('chatWindow');
+  const chatClose = document.getElementById('chatClose');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  const chatMessages = document.getElementById('chatMessages');
+  const subjectSelection = document.getElementById('subjectSelection');
+  const chatInputContainer = document.getElementById('chatInputContainer');
+  const selectedSubjectDiv = document.getElementById('selectedSubject');
+  const subjectOptions = document.querySelectorAll('.subject-option');
+  const notificationBadge = document.querySelector('.chat-notification-badge');
+
+  let selectedSubject = '';
+
+  // Predefined admin responses based on keywords
+  const responses = {
+    order: [
+      "I can help you track your order! Please provide your order number and I'll check the status for you. 📦",
+      "To check your order status, you can visit 'My Purchase' section in your account or provide your order number here.",
+      "Our typical delivery time is 3-6 working days. Would you like to track a specific order?"
+    ],
+    product: [
+      "I'd be happy to help with product information! Which product are you interested in? 🐾",
+      "We have a wide range of pet food and accessories. What are you looking for specifically?",
+      "You can browse our products by pet type: Dogs, Cats, Small Pets, Birds, or Aquatic pets. What's your pet?"
+    ],
+    return: [
+      "We accept returns within 30 days of purchase. Items must be unused and in original packaging. 📋",
+      "For returns, please go to 'My Purchase' and select the order you'd like to return. We'll guide you through the process.",
+      "Refunds are processed within 5-7 business days after we receive the returned item."
+    ],
+    technical: [
+      "I'm here to help with any technical issues. What problem are you experiencing? 💻",
+      "If you're having trouble with the website, try clearing your browser cache or using a different browser.",
+      "For account-related issues, make sure you're logged in with the correct credentials."
+    ],
+    pet: [
+      "I'd love to help with pet care advice! What would you like to know? 🐕🐈",
+      "We have expert guides on feeding, grooming, and training. What specific advice do you need?",
+      "Every pet is unique! Tell me about your pet and I can provide personalized recommendations."
+    ],
+    price: [
+      "We offer competitive prices and regular promotions! Check our 'Special Offers' section for current deals. 💰",
+      "Sign up for our newsletter to get exclusive discounts and early access to sales!",
+      "We have economy packs that help you save more when you buy in bulk!"
+    ],
+    shipping: [
+      "We offer fast nationwide delivery across the Philippines! 🚚",
+      "Standard shipping takes 3-6 working days. Express shipping is also available for faster delivery.",
+      "Shipping is FREE for orders over ₱1,500!"
+    ],
+    payment: [
+      "We accept credit cards, debit cards, GCash, PayMaya, and cash on delivery. 💳",
+      "All payments are processed securely through our encrypted payment gateway.",
+      "You can also pay cash on delivery for added convenience!"
+    ],
+    default: [
+      "Thank you for your message! Let me help you with that. Can you provide more details? 😊",
+      "I'm here to assist you! Could you please elaborate on your concern?",
+      "Great question! I'd be happy to help. Can you tell me more about what you need?",
+      "I understand. Let me get you the information you need. Could you clarify a bit more?"
+    ]
+  };
+
+  // Toggle chat window
+  chatButton.addEventListener('click', function() {
+    chatWindow.classList.add('active');
+    chatButton.style.display = 'none';
+    
+    // Remove notification badge when chat opens
+    if (notificationBadge) {
+      notificationBadge.style.display = 'none';
+    }
+  });
+
+  chatClose.addEventListener('click', function() {
+    chatWindow.classList.remove('active');
+    chatButton.style.display = 'flex';
+  });
+
+  // Subject selection
+  subjectOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      selectedSubject = this.dataset.subject;
+      const icon = this.querySelector('i').className;
+      
+      // Hide subject selection, show chat
+      subjectSelection.style.display = 'none';
+      chatMessages.style.display = 'block';
+      chatInputContainer.style.display = 'block';
+      
+      // Display selected subject
+      selectedSubjectDiv.innerHTML = `<i class="${icon}"></i> Subject: ${selectedSubject}`;
+      selectedSubjectDiv.style.display = 'flex';
+      
+      // Add system message about subject
+      addMessage('admin', `Great! I see you need help with "${selectedSubject}". How can I assist you?`);
+      
+      // Focus on input
+      chatInput.focus();
+    });
+  });
+
+  // Send message on button click
+  chatSend.addEventListener('click', sendMessage);
+
+  // Send message on Enter key
+  chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+
+  function sendMessage() {
+    const message = chatInput.value.trim();
+    if (message === '') return;
+
+    // Add user message
+    addMessage('user', message);
+    chatInput.value = '';
+
+    // Show typing indicator
+    showTypingIndicator();
+
+    // Simulate admin response after delay
+    setTimeout(() => {
+      hideTypingIndicator();
+      const response = getAdminResponse(message);
+      addMessage('admin', response);
+    }, 1000 + Math.random() * 1000);
+  }
+
+  function addMessage(sender, text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    
+    const time = new Date().toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    });
+
+    if (sender === 'admin') {
+      messageDiv.innerHTML = `
+        <div class="message-avatar">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="message-content">
+          <div class="message-bubble">
+            <p>${text}</p>
+          </div>
+          <span class="message-time">${time}</span>
+        </div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="message-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="message-content">
+          <div class="message-bubble">
+            <p>${text}</p>
+          </div>
+          <span class="message-time">${time}</span>
+        </div>
+      `;
+    }
+
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-indicator message admin-message';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+      <div class="message-avatar">
+        <i class="fas fa-user-tie"></i>
+      </div>
+      <div class="message-content">
+        <div class="message-bubble">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  function getAdminResponse(userMessage) {
+    const message = userMessage.toLowerCase();
+    
+    // Check for keywords in the message
+    if (message.includes('order') || message.includes('track') || message.includes('delivery')) {
+      return getRandomResponse(responses.order);
+    } else if (message.includes('product') || message.includes('item') || message.includes('buy')) {
+      return getRandomResponse(responses.product);
+    } else if (message.includes('return') || message.includes('refund') || message.includes('exchange')) {
+      return getRandomResponse(responses.return);
+    } else if (message.includes('problem') || message.includes('error') || message.includes('bug') || message.includes('issue')) {
+      return getRandomResponse(responses.technical);
+    } else if (message.includes('pet') || message.includes('dog') || message.includes('cat') || message.includes('care') || message.includes('food')) {
+      return getRandomResponse(responses.pet);
+    } else if (message.includes('price') || message.includes('cost') || message.includes('discount') || message.includes('promo')) {
+      return getRandomResponse(responses.price);
+    } else if (message.includes('ship') || message.includes('deliver')) {
+      return getRandomResponse(responses.shipping);
+    } else if (message.includes('pay') || message.includes('payment')) {
+      return getRandomResponse(responses.payment);
+    } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+      return "Hello! 👋 How can I help you today?";
+    } else if (message.includes('thanks') || message.includes('thank you')) {
+      return "You're welcome! Is there anything else I can help you with? 😊";
+    } else if (message.includes('bye') || message.includes('goodbye')) {
+      return "Thank you for chatting with us! Have a great day! 🐾";
+    } else {
+      return getRandomResponse(responses.default);
+    }
+  }
+
+  function getRandomResponse(responsesArray) {
+    return responsesArray[Math.floor(Math.random() * responsesArray.length)];
+  }
+
+  // Close chat when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
+      if (chatWindow.classList.contains('active')) {
+        chatWindow.classList.remove('active');
+        chatButton.style.display = 'flex';
+      }
+    }
+  });
+});
+
+
+    </script>
     <script src="../../../js/actions.js"></script>
     <script src="../../../js/header.js"></script>
     <script src="../../../data/category.js"></script>

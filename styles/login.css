@@ -252,7 +252,7 @@ body {
 .modal-content {
     background-color: white;
     border-radius: 10px;
-    padding: 30px;
+    padding: 28px;
     max-width: 400px;
     width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -298,6 +298,114 @@ body {
 
 .modal-btn:hover {
     background-color: #679936;
+}
+
+/* ADD THESE NEW STYLES TO YOUR EXISTING login.css FILE */
+
+/* Signup Modal Specific Styles */
+.signup-modal-content {
+    max-width: 600px;
+    max-height: 90vh;
+}
+
+.signup-modal-content .modal-body {
+    max-height: calc(90vh - 150px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h4 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
+    resize: vertical;
+}
+
+.form-group textarea:focus {
+    border-color: #4285f4;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    border-color: #4285f4;
+}
+
+/* Scrollbar styling for modal */
+.signup-modal-content .modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.signup-modal-content .modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.signup-modal-content .modal-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.signup-modal-content .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Success Message Animation */
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Responsive adjustments for signup modal */
+@media (max-width: 650px) {
+    .signup-modal-content {
+        max-width: 95%;
+        margin: 20px;
+    }
+    
+    .form-section h4 {
+        font-size: 16px;
+    }
 }
 
 /* Responsive Styles */
