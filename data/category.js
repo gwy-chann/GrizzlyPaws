@@ -43,7 +43,7 @@ const pageDetails = {
     link: "../../images/cat_banner.png",
   },
   small_pet: {
-    title: "Small Pet Shop: Supplies & Accessories",
+    title: "Small Pet Shop: Supplies & Accessories (Coming Soon)",
     description: `We offer a wide range of products for small pets. Shop <span class="highlight">small pet food</span>, <span class="highlight">cages and enclosures</span>, <span class="highlight">bedding</span>, <span class="highlight">toys</span>, and <span class="highlight">grooming essentials</span> to keep your small companions happy and healthy.`,
     link: "../../images/small_pet_banner.png",
   },

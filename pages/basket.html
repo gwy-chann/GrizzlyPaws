@@ -556,8 +556,8 @@
           <ul class="footer-links">
             <li><a href="#">FAQS</a></li>
             <li><a>Free Shipping & Delivery</a></li>
-            <li><a>Returns</a></li>
-            <li><a href="https://mail.google.com/mail/u/0/#inbox">Contact Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+
           </ul>
         </div>
 
@@ -565,10 +565,9 @@
           <h3>Advantages</h3>
           <ul class="footer-links">
             <li><a>Newsletter</a></li>
-            <li><a href="#features-container">Special Offer</a></li>
-            <li><a href="#">Grizzly Paws Repeat</a></li>
           </ul>
         </div>
+
 
         <div class="footer-section">
           <div>
@@ -607,7 +606,7 @@
           </div>
         </div>
       </div>
-    </footer>
+      </footer>
 
     <!-- Payment Method Modal -->
     <div class="modal" id="paymentModal"> 
@@ -1055,38 +1054,6 @@
       }
     }, 50);
   }
-
-  function removeItem(index) {
-    // Remove item from cart
-    cart.splice(index, 1);
-
-    // Update local storage and re-render items
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCartItems();
-    
-    // Re-initialize checkboxes after render
-    setTimeout(() => {
-      if (window.initializeCheckboxes) {
-        window.initializeCheckboxes();
-      }
-      // Update order summary after removal
-      if (window.updateOrderSummary) {
-        window.updateOrderSummary();
-      }
-    }, 50);
-  }
-
-  // Function to clear all items from basket
-  function clearBasket() {
-    if (confirm('Are you sure you want to clear all items from your basket?')) {
-      localStorage.setItem("cart", JSON.stringify([]));
-      location.reload(); // Reload to reset everything including cart variable
-    }
-  }
-
-  // Expose clearBasket to window
-  window.clearBasket = clearBasket;
-</script>
 
   function removeItem(index) {
     // Remove item from cart
