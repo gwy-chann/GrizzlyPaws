@@ -11,12 +11,12 @@ const category = [
     category_id: 'cat',
     link: "/pages/category/index.html?cat-id=cat",
   },
-  // {
-  //   id: 3,
-  //   name: "Small Pet",
-  //   category_id: 'small_pet',
-  //   link: "/pages/category/index.html?cat-id=small_pet",
-  // },
+  {
+    id: 3,
+    name: "Small Pet",
+    category_id: 'small_pet',
+    link: "/pages/category/index.html?cat-id=small_pet",
+  },
   {
     id: 4,
     name: "Feathered",
