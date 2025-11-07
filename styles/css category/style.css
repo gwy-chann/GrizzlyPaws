@@ -787,14 +787,14 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  display: none;
+  /* display: none; */
 }
 
 .stars {
   color: #ffb100;
   margin-right: 5px;
   font-size: 16px;
-  display: none;
+  /* display: none; */
 }
 
 .review-count {

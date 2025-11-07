@@ -78,5 +78,6 @@ window.addEventListener("click", function(event) {
     }
   });
 
+
 closeBtn.addEventListener("click", closeModal);
 continueShoppingBtn.addEventListener("click", closeModal);

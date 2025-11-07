@@ -172,7 +172,7 @@
   color: #ffc107;
   font-size: 20px;
   margin-right: 10px;
-  display: none;
+  /* display: none; */
 }
 
 .review-count {

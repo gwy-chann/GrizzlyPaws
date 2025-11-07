@@ -4461,176 +4461,176 @@ const products =[
             }
         ]
     },
-    {
-        "id": 201,
-        "category": "small_pet",
-        "sub_category": "Small Pet Cages",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 202,
-        "category": "small_pet",
-        "sub_category": "Rabbit",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 203,
-        "category": "small_pet",
-        "sub_category": "Fencing for Small Pets",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 204,
-        "category": "small_pet",
-        "sub_category": "Small Pet Food",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 205,
-        "category": "small_pet",
-        "sub_category": "Cage Accessories",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 206,
-        "category": "small_pet",
-        "sub_category": "Snacks and Supplements",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 207,
-        "category": "small_pet",
-        "sub_category": "Hay and Straw",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 208,
-        "category": "small_pet",
-        "sub_category": "Small Pet Toys",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 209,
-        "category": "small_pet",
-        "sub_category": "Care and Grooming",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 210,
-        "category": "small_pet",
-        "sub_category": "Small Pet Special Offers",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
+    // {
+    //     "id": 201,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Cages",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 202,
+    //     "category": "small_pet",
+    //     "sub_category": "Rabbit",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 203,
+    //     "category": "small_pet",
+    //     "sub_category": "Fencing for Small Pets",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 204,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Food",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 205,
+    //     "category": "small_pet",
+    //     "sub_category": "Cage Accessories",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 206,
+    //     "category": "small_pet",
+    //     "sub_category": "Snacks and Supplements",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 207,
+    //     "category": "small_pet",
+    //     "sub_category": "Hay and Straw",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 208,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Toys",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 209,
+    //     "category": "small_pet",
+    //     "sub_category": "Care and Grooming",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 210,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Special Offers",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
     {
         "id": 211,
         "category": "feathered",
@@ -6061,32 +6061,32 @@ const products =[
             }
         ]
     },
-    {
-        "id": 288,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/confetti.PNG'
-        ],
-        "name": "Imagitarium Neon Aquarium Gravel Substrate",
-        "description": "Add a vibrant pop of color to your aquarium with these eye-catching neon gravel pieces. This decorative substrate creates a striking contrast against your aquatic plants and fish while providing a stable base for your underwater landscape.",
-        "variations": [
-            {
-                "unit": "Blue Neon, 5 lb bag",
-                "price": 450
-            },
-            {
-                "unit": "Pink Neon, 5 lb bag",
-                "price": 450
-            },
-            {
-                "unit": "Rainbow Mix, 5 lb bag",
-                "price": 480
-            }
-        ]
-    },
+    // {
+    //     "id": 288,
+    //     "category": "aquatic",
+    //     "sub_category": "Aquarium Sand",
+    //     "images": [
+    //       '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - , Turquoise and Yellow, 3.5 oz/Capture.PNG',
+    //       '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
+    //       '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/confetti.PNG'
+    //     ],
+    //     "name": "Imagitarium Neon Aquarium Gravel Substrate",
+    //     "description": "Add a vibrant pop of color to your aquarium with these eye-catching neon gravel pieces. This decorative substrate creates a striking contrast against your aquatic plants and fish while providing a stable base for your underwater landscape.",
+    //     "variations": [
+    //         {
+    //             "unit": "Blue Neon, 5 lb bag",
+    //             "price": 450
+    //         },
+    //         {
+    //             "unit": "Pink Neon, 5 lb bag",
+    //             "price": 450
+    //         },
+    //         {
+    //             "unit": "Rainbow Mix, 5 lb bag",
+    //             "price": 480
+    //         }
+    //     ]
+    // },
     {
         "id": 289,
         "category": "aquatic",
@@ -6244,31 +6244,31 @@ const products =[
             }
         ]
     },
-    {
-        "id": 296,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
-            '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG'
-        ],
-        "name": "Imagitarium Aquarium Gem Gravel Accents",
-        "description": "Decorative gem-like gravel accents that add a touch of elegance to your aquarium. Perfect for creating focal points, paths, or borders within your underwater landscape.",
-        "variations": [
-            {
-                "unit": "Sapphire Blue, 2 lb bag",
-                "price": 320
-            },
-            {
-                "unit": "Ruby Red, 2 lb bag",
-                "price": 320
-            },
-            {
-                "unit": "Emerald Green, 2 lb bag",
-                "price": 320
-            }
-        ]
-    },
+    // {
+    //     "id": 296,
+    //     "category": "aquatic",
+    //     "sub_category": "Aquarium Sand",
+    //     "images": [
+    //       '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
+    //         '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG'
+    //     ],
+    //     "name": "Imagitarium Aquarium Gem Gravel Accents",
+    //     "description": "Decorative gem-like gravel accents that add a touch of elegance to your aquarium. Perfect for creating focal points, paths, or borders within your underwater landscape.",
+    //     "variations": [
+    //         {
+    //             "unit": "Sapphire Blue, 2 lb bag",
+    //             "price": 320
+    //         },
+    //         {
+    //             "unit": "Ruby Red, 2 lb bag",
+    //             "price": 320
+    //         },
+    //         {
+    //             "unit": "Emerald Green, 2 lb bag",
+    //             "price": 320
+    //         }
+    //     ]
+    // },
     {
         "id": 297,
         "category": "aquatic",
@@ -7166,25 +7166,25 @@ const products =[
             }
         ]
     },
-    {
-        "id": 336,
-        "category": "aquatic",
-        "sub_category": "Aquarium Decorations",
-        "images": [
+//     {
+//         "id": 336,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Decorations",
+//         "images": [
           
-'../../../Product Images/Aquatic/Category 5 -  Aquarium Decorations & Substrate/Category 5 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
-'../../../Product Images/Aquatic/Category 5 -  Aquarium Decorations & Substrate/Category 5 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
+// '../../../Product Images/Aquatic/Category 5 -  Aquarium Decorations & Substrate/Category 5 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 5 -  Aquarium Decorations & Substrate/Category 5 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
 
-        ],
-        "name": "Fluval Red Sea Coral Replica",
-        "description": "Meticulously detailed coral reproduction that brings reef-like aesthetics to freshwater tanks. The vibrant colors add visual interest without the maintenance requirements of live coral.",
-        "variations": [
-            {
-                "unit": "Standard",
-                "price": 1000
-            }
-        ]
-    },
+//         ],
+//         "name": "Fluval Red Sea Coral Replica",
+//         "description": "Meticulously detailed coral reproduction that brings reef-like aesthetics to freshwater tanks. The vibrant colors add visual interest without the maintenance requirements of live coral.",
+//         "variations": [
+//             {
+//                 "unit": "Standard",
+//                 "price": 1000
+//             }
+//         ]
+//     },
     {
         "id": 337,
         "category": "aquatic",

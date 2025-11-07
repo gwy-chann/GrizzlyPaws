@@ -185,6 +185,47 @@
   flex: 1;
   margin: 0;
 }
+.select-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 15px; */
+  /* background-color: #f9f9f9; */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.select-all-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clear-basket-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.clear-basket-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.clear-basket-btn svg {
+  width: 18px;
+  height: 18px;
+}
 
 /* Proceed Button */
 /* .checkout-button {
@@ -329,13 +370,17 @@
           </div>
           <div class="cart-items">
             <div class="select-all">
-              <input
-                type="checkbox"
-                id="select-all-checkbox"
-                class="checkbox"
-              />
-              <label for="select-all-checkbox">Select All Items</label>
-            </div>
+  <div class="select-all-left">
+    <input type="checkbox" id="select-all-checkbox" class="checkbox" />
+    <label for="select-all-checkbox">Select All Items</label>
+  </div>
+  <button class="clear-basket-btn" id="clear-basket-btn" onclick="clearBasket()" title="Clear all items from basket">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+    </svg>
+    Clear Basket
+  </button>
+</div>
 
             <table class="item-table" id="item-table">
               <thead>
@@ -511,8 +556,8 @@
           <ul class="footer-links">
             <li><a href="#">FAQS</a></li>
             <li><a>Free Shipping & Delivery</a></li>
-            <li><a>Returns</a></li>
-            <li><a href="https://mail.google.com/mail/u/0/#inbox">Contact Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+
           </ul>
         </div>
 
@@ -520,10 +565,9 @@
           <h3>Advantages</h3>
           <ul class="footer-links">
             <li><a>Newsletter</a></li>
-            <li><a href="#features-container">Special Offer</a></li>
-            <li><a href="#">Grizzly Paws Repeat</a></li>
           </ul>
         </div>
+
 
         <div class="footer-section">
           <div>
@@ -562,7 +606,7 @@
           </div>
         </div>
       </div>
-    </footer>
+      </footer>
 
     <!-- Payment Method Modal -->
     <div class="modal" id="paymentModal"> 
@@ -754,7 +798,7 @@
       </div>
     </div>
 
-    <!-- Chat Widget -->
+    <!-- Chat Widget
     <div class="chat-widget">
       <button class="chat-button" id="chatButton" aria-label="Open chat">
         <i class="fas fa-comment"></i>
@@ -844,25 +888,55 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script src="../../../js/header.js"></script>
     <script src="../../../data/category.js"></script>
     <script src="../../../data/products.js"></script>
     <script src="../../../js/dynamic-display.js"></script>
     <!-- <script src="../js/basket.js"></script> -->
-    <script>
+   <script>
+  const itemTable = document.getElementById("item-table-body");
+  const subtotalElement = document.getElementById("subtotal");
+  const vatElement = document.getElementById("vat-id");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  renderCartItems();
 
-      const itemTable = document.getElementById("item-table-body");
-      const subtotalElement = document.getElementById("subtotal");
-      const vatElement = document.getElementById("vat-id");
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      
-
-      renderCartItems();
-
-    function renderCartItems() {
+  function renderCartItems() {
     itemTable.innerHTML = ""; // Clear existing items
+
+    // Check if cart is empty
+    if (cart.length === 0) {
+      const emptyRow = document.createElement("tr");
+      emptyRow.innerHTML = `
+        <td colspan="5" style="text-align: center; padding: 60px 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; color: #666;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <div style="font-size: 24px; font-weight: 600; color: #333;">Your basket is empty</div>
+            <p style="font-size: 16px; color: #666; margin: 0;">Add items to your basket to get started!</p>
+            <a href="/index.html" style="margin-top: 10px; padding: 12px 30px; background-color: #6baf4c; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s;">
+              Continue Shopping
+            </a>
+          </div>
+        </td>
+      `;
+      itemTable.appendChild(emptyRow);
+      
+      // Hide select all section when empty
+      document.querySelector('.select-all').style.display = 'none';
+      
+      // Update order summary to show zero
+      updateOrderSummary();
+      return;
+    }
+
+    // Show select all section when cart has items
+    document.querySelector('.select-all').style.display = 'flex';
 
     cart.forEach((item, index) => {
       const row = document.createElement("tr");
@@ -896,38 +970,14 @@
         <td>
           <div class="action-icons">
             <button class="delete-icon">
-                <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          x="0px"
-                          y="0px"
-                          width="100"
-                          height="100"
-                          viewBox="0,0,256,256"
-                        >
-                          <g
-                            fill="#333333"
-                            fill-rule="nonzero"
-                            stroke="none"
-                            stroke-width="1"
-                            stroke-linecap="butt"
-                            stroke-linejoin="miter"
-                            stroke-miterlimit="10"
-                            stroke-dasharray=""
-                            stroke-dashoffset="0"
-                            font-family="none"
-                            font-weight="none"
-                            font-size="none"
-                            text-anchor="none"
-                            style="mix-blend-mode: normal"
-                          >
-                            <g transform="scale(5.33333,5.33333)">
-                              <path
-                                d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"
-                              ></path>
-                            </g>
-                          </g>
-                        </svg>
-                      </button>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#333333" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(5.33333,5.33333)">
+                    <path d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
           </div>
         </td>
       `;
@@ -974,8 +1024,6 @@
   // Expose to window for use in event handlers
   window.updateOrderSummary = updateOrderSummary;
 
-
-  
   function updateQuantity(index, change) {
     cart[index].quantity += change;
 
@@ -1007,7 +1055,6 @@
     }, 50);
   }
 
-
   function removeItem(index) {
     // Remove item from cart
     cart.splice(index, 1);
@@ -1027,8 +1074,18 @@
       }
     }, 50);
   }
-  
-    </script>
+
+  // Function to clear all items from basket
+  function clearBasket() {
+    if (confirm('Are you sure you want to clear all items from your basket?')) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      location.reload(); // Reload to reset everything including cart variable
+    }
+  }
+
+  // Expose clearBasket to window
+  window.clearBasket = clearBasket;
+</script>
     <script>
       // Checkbox functionality and Payment Modal
 document.addEventListener('DOMContentLoaded', function() {
@@ -1278,403 +1335,5 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     </script>
 
-    <script>
-      // Footer Modals and Chat Widget JavaScript
-      document.addEventListener('DOMContentLoaded', function() {
-        // Update footer links
-        const faqLink = document.querySelector('.footer-links a[href="#"]');
-        const contactLink = document.querySelector('.footer-links a[href="https://mail.google.com/mail/u/0/#inbox"]');
-        
-        // Function to disable body scroll
-        function disableBodyScroll() {
-          document.body.style.overflow = 'hidden';
-        }
-        
-        // Function to enable body scroll
-        function enableBodyScroll() {
-          document.body.style.overflow = '';
-        }
-        
-        if (faqLink && faqLink.textContent.trim() === 'FAQS') {
-          faqLink.setAttribute('href', '#');
-          faqLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('faqModal').classList.add('active');
-            disableBodyScroll();
-          });
-        }
-        
-        if (contactLink) {
-          contactLink.setAttribute('href', '#');
-          contactLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('contactModal').classList.add('active');
-            disableBodyScroll();
-          });
-        }
-
-        // FAQ Modal Elements
-        const faqModal = document.getElementById('faqModal');
-        const faqModalClose = document.getElementById('faqModalClose');
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        // Contact Modal Elements
-        const contactModal = document.getElementById('contactModal');
-        const contactModalClose = document.getElementById('contactModalClose');
-        const contactCancel = document.getElementById('contactCancel');
-        const contactForm = document.getElementById('contactForm');
-
-        // FAQ Accordion functionality
-        if (faqQuestions.length > 0) {
-          faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-              const isActive = this.classList.contains('active');
-              const answer = this.nextElementSibling;
-              const icon = this.querySelector('.faq-icon');
-
-              // Close all other questions
-              faqQuestions.forEach(q => {
-                q.classList.remove('active');
-                q.querySelector('.faq-icon').textContent = '+';
-                q.nextElementSibling.style.display = 'none';
-              });
-
-              // Toggle current question
-              if (!isActive) {
-                this.classList.add('active');
-                icon.textContent = '−';
-                answer.style.display = 'block';
-              }
-            });
-          });
-        }
-
-        // Close FAQ Modal
-        if (faqModalClose) {
-          faqModalClose.addEventListener('click', function() {
-            faqModal.classList.remove('active');
-            enableBodyScroll();
-          });
-        }
-
-        // Close Contact Modal
-        if (contactModalClose) {
-          contactModalClose.addEventListener('click', function() {
-            contactModal.classList.remove('active');
-            contactForm.reset();
-            enableBodyScroll();
-          });
-        }
-
-        if (contactCancel) {
-          contactCancel.addEventListener('click', function() {
-            contactModal.classList.remove('active');
-            contactForm.reset();
-            enableBodyScroll();
-          });
-        }
-
-        // Handle Contact Form Submission
-        if (contactForm) {
-          contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const subject = document.getElementById('contactSubject').value;
-            const concern = document.getElementById('contactConcern').value;
-
-            alert('Thank you for contacting us!\n\nSubject: ' + subject + '\n\nWe will get back to you soon!');
-            
-            contactModal.classList.remove('active');
-            contactForm.reset();
-            enableBodyScroll();
-          });
-        }
-
-        // Close modals when clicking outside
-        if (faqModal) {
-          faqModal.addEventListener('click', function(e) {
-            if (e.target === faqModal) {
-              faqModal.classList.remove('active');
-              enableBodyScroll();
-            }
-          });
-        }
-
-        if (contactModal) {
-          contactModal.addEventListener('click', function(e) {
-            if (e.target === contactModal) {
-              contactModal.classList.remove('active');
-              contactForm.reset();
-              enableBodyScroll();
-            }
-          });
-        }
-
-        // Prevent closing when clicking inside modal content
-        const faqModalContent = document.querySelector('.faq-modal-content');
-        const contactModalContent = document.querySelector('.contact-modal-content');
-        
-        if (faqModalContent) {
-          faqModalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
-          });
-        }
-
-        if (contactModalContent) {
-          contactModalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
-          });
-        }
-
-        // Close modals with Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            if (faqModal && faqModal.classList.contains('active')) {
-              faqModal.classList.remove('active');
-              enableBodyScroll();
-            }
-            if (contactModal && contactModal.classList.contains('active')) {
-              contactModal.classList.remove('active');
-              contactForm.reset();
-              enableBodyScroll();
-            }
-          }
-        });
-
-        // Chat Widget JavaScript
-        const chatButton = document.getElementById('chatButton');
-        const chatWindow = document.getElementById('chatWindow');
-        const chatClose = document.getElementById('chatClose');
-        const chatInput = document.getElementById('chatInput');
-        const chatSend = document.getElementById('chatSend');
-        const chatMessages = document.getElementById('chatMessages');
-        const subjectSelection = document.getElementById('subjectSelection');
-        const chatInputContainer = document.getElementById('chatInputContainer');
-        const selectedSubjectDiv = document.getElementById('selectedSubject');
-        const subjectOptions = document.querySelectorAll('.subject-option');
-        const notificationBadge = document.querySelector('.chat-notification-badge');
-
-        let selectedSubject = '';
-
-        // Predefined admin responses
-        const responses = {
-          order: [
-            "I can help you track your order! Please provide your order number and I'll check the status for you. 📦",
-            "To check your order status, you can visit 'My Purchase' section in your account or provide your order number here.",
-            "Our typical delivery time is 3-6 working days. Would you like to track a specific order?"
-          ],
-          product: [
-            "I'd be happy to help with product information! Which product are you interested in? 🐾",
-            "We have a wide range of pet food and accessories. What are you looking for specifically?",
-            "You can browse our products by pet type: Dogs, Cats, Small Pets, Birds, or Aquatic pets. What's your pet?"
-          ],
-          return: [
-            "We accept returns within 30 days of purchase. Items must be unused and in original packaging. 📋",
-            "For returns, please go to 'My Purchase' and select the order you'd like to return. We'll guide you through the process.",
-            "Refunds are processed within 5-7 business days after we receive the returned item."
-          ],
-          technical: [
-            "I'm here to help with any technical issues. What problem are you experiencing? 💻",
-            "If you're having trouble with the website, try clearing your browser cache or using a different browser.",
-            "For account-related issues, make sure you're logged in with the correct credentials."
-          ],
-          pet: [
-            "I'd love to help with pet care advice! What would you like to know? 🐕🐈",
-            "We have expert guides on feeding, grooming, and training. What specific advice do you need?",
-            "Every pet is unique! Tell me about your pet and I can provide personalized recommendations."
-          ],
-          price: [
-            "We offer competitive prices and regular promotions! Check our 'Special Offers' section for current deals. 💰",
-            "Sign up for our newsletter to get exclusive discounts and early access to sales!",
-            "We have economy packs that help you save more when you buy in bulk!"
-          ],
-          shipping: [
-            "We offer fast nationwide delivery across the Philippines! 🚚",
-            "Standard shipping takes 3-6 working days. Express shipping is also available for faster delivery.",
-            "Shipping is FREE for orders over ₱1,500!"
-          ],
-          payment: [
-            "We accept credit cards, debit cards, GCash, PayMaya, and cash on delivery. 💳",
-            "All payments are processed securely through our encrypted payment gateway.",
-            "You can also pay cash on delivery for added convenience!"
-          ],
-          default: [
-            "Thank you for your message! Let me help you with that. Can you provide more details? 😊",
-            "I'm here to assist you! Could you please elaborate on your concern?",
-            "Great question! I'd be happy to help. Can you tell me more about what you need?",
-            "I understand. Let me get you the information you need. Could you clarify a bit more?"
-          ]
-        };
-
-        if (chatButton && chatWindow) {
-          // Toggle chat window
-          chatButton.addEventListener('click', function() {
-            chatWindow.classList.add('active');
-            chatButton.style.display = 'none';
-            
-            if (notificationBadge) {
-              notificationBadge.style.display = 'none';
-            }
-          });
-
-          chatClose.addEventListener('click', function() {
-            chatWindow.classList.remove('active');
-            chatButton.style.display = 'flex';
-          });
-
-          // Subject selection
-          subjectOptions.forEach(option => {
-            option.addEventListener('click', function() {
-              selectedSubject = this.dataset.subject;
-              const icon = this.querySelector('i').className;
-              
-              subjectSelection.style.display = 'none';
-              chatMessages.style.display = 'block';
-              chatInputContainer.style.display = 'block';
-              
-              selectedSubjectDiv.innerHTML = `<i class="${icon}"></i> Subject: ${selectedSubject}`;
-              selectedSubjectDiv.style.display = 'flex';
-              
-              addMessage('admin', `Great! I see you need help with "${selectedSubject}". How can I assist you?`);
-              chatInput.focus();
-            });
-          });
-
-          // Send message
-          chatSend.addEventListener('click', sendMessage);
-          chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-              sendMessage();
-            }
-          });
-
-          function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message === '') return;
-
-            addMessage('user', message);
-            chatInput.value = '';
-            showTypingIndicator();
-
-            setTimeout(() => {
-              hideTypingIndicator();
-              const response = getAdminResponse(message);
-              addMessage('admin', response);
-            }, 1000 + Math.random() * 1000);
-          }
-
-          function addMessage(sender, text) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}-message`;
-            
-            const time = new Date().toLocaleTimeString('en-US', { 
-              hour: 'numeric', 
-              minute: '2-digit',
-              hour12: true 
-            });
-
-            if (sender === 'admin') {
-              messageDiv.innerHTML = `
-                <div class="message-avatar">
-                  <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="message-content">
-                  <div class="message-bubble">
-                    <p>${text}</p>
-                  </div>
-                  <span class="message-time">${time}</span>
-                </div>
-              `;
-            } else {
-              messageDiv.innerHTML = `
-                <div class="message-avatar">
-                  <i class="fas fa-user"></i>
-                </div>
-                <div class="message-content">
-                  <div class="message-bubble">
-                    <p>${text}</p>
-                  </div>
-                  <span class="message-time">${time}</span>
-                </div>
-              `;
-            }
-
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
-
-          function showTypingIndicator() {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'typing-indicator message admin-message';
-            typingDiv.id = 'typingIndicator';
-            typingDiv.innerHTML = `
-              <div class="message-avatar">
-                <i class="fas fa-user-tie"></i>
-              </div>
-              <div class="message-content">
-                <div class="message-bubble">
-                  <div class="typing-dot"></div>
-                  <div class="typing-dot"></div>
-                  <div class="typing-dot"></div>
-                </div>
-              </div>
-            `;
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
-
-          function hideTypingIndicator() {
-            const typingIndicator = document.getElementById('typingIndicator');
-            if (typingIndicator) {
-              typingIndicator.remove();
-            }
-          }
-
-          function getAdminResponse(userMessage) {
-            const message = userMessage.toLowerCase();
-            
-            if (message.includes('order') || message.includes('track') || message.includes('delivery')) {
-              return getRandomResponse(responses.order);
-            } else if (message.includes('product') || message.includes('item') || message.includes('buy')) {
-              return getRandomResponse(responses.product);
-            } else if (message.includes('return') || message.includes('refund') || message.includes('exchange')) {
-              return getRandomResponse(responses.return);
-            } else if (message.includes('problem') || message.includes('error') || message.includes('bug') || message.includes('issue')) {
-              return getRandomResponse(responses.technical);
-            } else if (message.includes('pet') || message.includes('dog') || message.includes('cat') || message.includes('care') || message.includes('food')) {
-              return getRandomResponse(responses.pet);
-            } else if (message.includes('price') || message.includes('cost') || message.includes('discount') || message.includes('promo')) {
-              return getRandomResponse(responses.price);
-            } else if (message.includes('ship') || message.includes('deliver')) {
-              return getRandomResponse(responses.shipping);
-            } else if (message.includes('pay') || message.includes('payment')) {
-              return getRandomResponse(responses.payment);
-            } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-              return "Hello! 👋 How can I help you today?";
-            } else if (message.includes('thanks') || message.includes('thank you')) {
-              return "You're welcome! Is there anything else I can help you with? 😊";
-            } else if (message.includes('bye') || message.includes('goodbye')) {
-              return "Thank you for chatting with us! Have a great day! 🐾";
-            } else {
-              return getRandomResponse(responses.default);
-            }
-          }
-
-          function getRandomResponse(responsesArray) {
-            return responsesArray[Math.floor(Math.random() * responsesArray.length)];
-          }
-
-          // Close chat when clicking outside
-          document.addEventListener('click', function(e) {
-            if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
-              if (chatWindow.classList.contains('active')) {
-                chatWindow.classList.remove('active');
-                chatButton.style.display = 'flex';
-              }
-            }
-          });
-  }
-});
-    </script>
   </body>
 </html>

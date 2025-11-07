@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grizzly Paws Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .content {
+            padding: 30px;
+            max-width: 2000px;
+            margin: 0 auto;
+            max-height: calc(100vh - 80px); /* Adjust based on your header height */
+            overflow-y: auto;
+        }
+
+        /* ===== Admin Profile Section ===== */
+        .admin-profile-container {
+        padding: 20px;
+        max-width: 1250px;
+        margin: 0 auto;
+        }
+
+        .admin-profile-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        }
+
+        .admin-profile-header {
+        background: #8baa6d;
+        padding: 15px;
+        color: white;
+      
+        }
+
+        .admin-profile-header h2 {
+        font-size: 28px;
+        margin: 0;
+        font-weight: 600;
+        }
+
+        /* Admin Profile Content Layout - Side by Side */
+        .admin-profile-content {
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 40px;
+        align-items: start;
+        }
+
+        /* Admin Photo Section - Left Side */
+        .admin-photo-section {
+        display: flex;
+        justify-content: center;
+        }
+
+        .admin-photo-wrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #f0f0f0;
+        }
+
+        .admin-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        /* Admin Info Section - Right Side */
+        .admin-info-section {
+        width: 100%;
+        }
+
+        .admin-info-group {
+        margin-bottom: 20px;
+        }
+
+        .admin-info-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px;
+        }
+
+        .admin-info-display {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 15px;
+        background-color: #f9f9f9;
+        color: #333;
+        }
+
+        .admin-info-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 15px;
+        background-color: white;
+        color: #333;
+        }
+
+        .admin-info-input[readonly] {
+        background-color: #f9f9f9;
+        }
+
+        .admin-photo-input {
+        margin-top: 10px;
+        }
+
+        /* Admin Profile Actions */
+        .admin-profile-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        padding-bottom: 20px;
+        }
+
+        .admin-btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        }
+
+        .admin-btn-edit {
+        background-color: #8baa6d;
+        color: white;
+        }
+
+        .admin-btn-edit:hover {
+        background-color: #7a9a5c;
+        transform: translateY(-2px);
+        }
+
+        .admin-btn-save {
+        background-color: #8baa6d;
+        color: white;
+        }
+
+        .admin-btn-save:hover {
+        background-color: #7a9a5c;
+        transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+        .admin-profile-content {
+            padding: 30px 20px;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .admin-profile-header {
+            padding: 20px;
+        }
+
+        .admin-profile-header h2 {
+            font-size: 24px;
+        }
+
+        .admin-profile-actions {
+            flex-direction: column;
+        }
+
+        .admin-btn {
+            width: 100%;
+            justify-content: center;
+        }
+        }
+
+        @media (max-width: 480px) {
+        .admin-profile-container {
+            padding: 10px;
+        }
+
+        .admin-profile-content {
+            padding: 20px 15px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .admin-photo-wrapper {
+            width: 120px;
+            height: 120px;
+        }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-container">
+            <a href="javascript:void(0)" title="Return to Homepage" aria-label="Go to Homepage">
+                <img src="../images/logo3.png" alt="Grizzly Paws Logo" class="logo" />
+            </a>
+        </div>
+
+        <div class="account-dropdown">
+            <a href = "admin.html" class="account-button" href="javascript:void(0)" aria-label="My account">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <div class="menu-item">
+                    <a href="../index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </span>
+                        Homepage
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="dashboard.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </span>
+                        Dashboard
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="products.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </span>
+                        Products
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="manage_order.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </span>
+                        Manage Order
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="manage_reviews.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </span>
+                        Manage Reviews
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="concern.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="8" r="1"></circle>
+                                <path d="M12 10v4"></path>
+                            </svg>
+                        </span>
+                        Concern
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="user-management.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                        <span class="menu-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </span>
+                        User Management
+                    </a>
+                </div>
+            </div>
+            <div class="logout">
+                <a href="../../login.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; width: 100%;">
+                    Log out
+                </a>
+    
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+           
+            <!-- Admin Profile Section -->
+<!-- Admin Profile Section -->
+<!-- Admin Profile Container -->
+<div class="admin-profile-container">
+  <div class="admin-profile-card">
+    <div class="admin-profile-header">
+      <h2>Admin Profile</h2>
+    </div>
+
+    <div class="admin-profile-content">
+      <div class="admin-photo-section">
+        <div class="admin-photo-wrapper">
+          <img src="../images/default-avatar.png" alt="Admin Profile" class="admin-photo" id="admin-photo" />
+        </div>
+<input type="file" id="photo-input" class="admin-photo-input" accept="image/*" style="display: none;" disabled />      </div>
+
+      <div class="admin-info-section">
+        <div class="admin-info-group">
+          <label>First Name</label>
+          <input type="text" class="admin-info-input" id="first-name" value="Admin First Name" readonly />
+        </div>
+
+        <div class="admin-info-group">
+          <label>Middle Name</label>
+          <input type="text" class="admin-info-input" id="middle-name" value="Admin Middle Name" readonly />
+        </div>
+
+        <div class="admin-info-group">
+          <label>Last Name</label>
+          <input type="text" class="admin-info-input" id="last-name" value="Admin Last Name" readonly />
+        </div>
+
+        <div class="admin-info-group">
+          <label>Role</label>
+          <input type="text" class="admin-info-input" id="role" value="Administrator" readonly />
+        </div>
+
+        <div class="admin-info-group">
+          <label>Email</label>
+          <input type="email" class="admin-info-input" id="email" value="admin@gmail.com" readonly />
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-profile-actions">
+      <button class="admin-btn admin-btn-edit" id="edit-btn">
+        <i class="fas fa-edit"></i> Edit Profile
+      </button>
+      <button class="admin-btn admin-btn-save" id="save-btn" style="display: none;">
+        <i class="fas fa-save"></i> Save Changes
+      </button>
+    </div>
+  </div>
+</div>
+
+
+            
+            <div>
+                <div class="footer">
+                    Copyright © 2025 GrizzlyPaws. All rights reserved
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const editBtn = document.getElementById('edit-btn');
+    const saveBtn = document.getElementById('save-btn');
+    const inputs = document.querySelectorAll('.admin-info-input');
+
+    editBtn.addEventListener('click', () => {
+        // Use confirm() to ask the user for confirmation
+        const confirmation = confirm("Are you sure you want to enter Edit Mode?");
+
+        if (confirmation) {
+            // If the user clicks OK (confirmation is true), proceed with edit mode:
+            inputs.forEach(input => input.removeAttribute('readonly'));
+            editBtn.style.display = 'none';
+            saveBtn.style.display = 'inline-flex';
+        } else {
+            // If the user clicks Cancel (confirmation is false), do nothing.
+            alert("Edit mode canceled.");
+        }
+    });
+
+    saveBtn.addEventListener('click', () => {
+        inputs.forEach(input => input.setAttribute('readonly', true));
+        editBtn.style.display = 'inline-flex';
+        saveBtn.style.display = 'none';
+        
+        // Here you would typically send the data to the server to save
+        alert('Profile saved! (Note: In a real application, this would update the backend.)');
+    });
+</script>
+
+</body>
+</html>

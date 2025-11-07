@@ -134,14 +134,56 @@
 
         <div class="shop-layout">
             <!-- Sidebar Navigation -->
-            <div class="sidebar-nav">
-                <div class="category-header">
-                    <h2 class="category-title" id="pet-dyno">Pet</h2>
-                </div>
-                <ul class="category-list" id="categoryList">
-                    <!-- render category -->
-                </ul>
-            </div>
+            <!-- Sidebar Navigation -->
+
+            <!-- Sidebar Navigation -->
+              <div class="sidebar-nav">
+                  <!-- Mobile Filter Toggle Button (only shows on small screens) -->
+                  <button class="filter-toggle-btn" id="filterToggleBtn">
+                      <i class="fas fa-sliders-h"></i>
+                      <span>Filters</span>
+                      <i class="fas fa-chevron-down toggle-icon"></i>
+                  </button>
+                  
+                  <div class="sidebar-content" id="sidebarContent">
+                      <div class="category-header">
+                          <h2 class="category-title" id="pet-dyno">Pet</h2>
+                      </div>
+                      <ul class="category-list" id="categoryList">
+                          <!-- render category -->
+                      </ul>
+                      
+                      <!-- Price Filter Section -->
+                      <div class="filter-section">
+                          <div class="filter-header">
+                              <h3 class="filter-title">Price Range</h3>
+                          </div>
+                          <div class="price-filter-container">
+                              <div class="price-inputs">
+                                  <div class="price-input-group">
+                                      <label for="minPrice">Min</label>
+                                      <input type="number" id="minPrice" placeholder="₱0" min="0">
+                                  </div>
+                                  <span class="price-separator">-</span>
+                                  <div class="price-input-group">
+                                      <label for="maxPrice">Max</label>
+                                      <input type="number" id="maxPrice" placeholder="₱10000" min="0">
+                                  </div>
+                              </div>
+                              <button class="apply-filter-btn" id="applyPriceFilter">Apply</button>
+                              <button class="clear-filter-btn" id="clearPriceFilter">Clear</button>
+                          </div>
+                          
+                          <!-- Quick Price Options -->
+                          <div class="quick-price-options">
+                              <button class="price-option-btn" data-min="0" data-max="500">Under ₱500</button>
+                              <button class="price-option-btn" data-min="500" data-max="1000">₱500 - ₱1,000</button>
+                              <button class="price-option-btn" data-min="1000" data-max="2500">₱1,000 - ₱2,500</button>
+                              <button class="price-option-btn" data-min="2500" data-max="999999">Over ₱2,500</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
             <!-- Main Content -->
             <div class="main-content">
@@ -235,143 +277,86 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#">FAQS</a></li>
-                    <li><a>Free Shipping & Delivery</a></li>
-                   
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">FAQS</a></li>
+            <li><a>Free Shipping & Delivery</a></li>
+            <li><a href="#">Contact Us</a></li>
 
-            <div class="footer-section">
-                <h3>Advantages</h3>
-                <ul class="footer-links">
-                    <li><a>Newsletter</a></li>
-        
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <div>
-                    <h3>Connect with us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Our Team</a></li>
-                    </ul>
-                    <div style="display: flex; gap: 15px; margin-top: 10px">
-                        <a href="#" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#666">
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#666">
-                                <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+          </ul>
         </div>
-    </footer>
 
-    <div class="chat-widget">
-  <!-- Chat Button -->
-  <button class="chat-button" id="chatButton" aria-label="Open chat">
-    <i class="fas fa-comment"></i>
-    <span>Chat</span>
-    <span class="chat-notification-badge">3</span>
-  </button>
-
-  <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <i class="fas fa-headset"></i>
-        <div>
-          <h3>Customer Support</h3>
-          <span class="status-online">● Online</span>
+        <div class="footer-section">
+          <h3>Advantages</h3>
+          <ul class="footer-links">
+            <li><a>Newsletter</a></li>
+          </ul>
         </div>
-      </div>
-      <button class="chat-close" id="chatClose" aria-label="Close chat">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
 
-    <!-- Subject Selection (shown initially) -->
-    <div class="chat-subject-selection" id="subjectSelection">
-      <div class="subject-prompt">
-        <i class="fas fa-comments"></i>
-        <h4>How can we help you today?</h4>
-        <p>Please select a subject to start chatting</p>
-      </div>
-      <div class="subject-options">
-        <button class="subject-option" data-subject="Order Status">
-          <i class="fas fa-box"></i>
-          <span>Order Status</span>
-        </button>
-        <button class="subject-option" data-subject="Product Inquiry">
-          <i class="fas fa-shopping-bag"></i>
-          <span>Product Inquiry</span>
-        </button>
-        <button class="subject-option" data-subject="Returns & Refunds">
-          <i class="fas fa-undo"></i>
-          <span>Returns & Refunds</span>
-        </button>
-        <button class="subject-option" data-subject="Technical Support">
-          <i class="fas fa-tools"></i>
-          <span>Technical Support</span>
-        </button>
-        <button class="subject-option" data-subject="Pet Care Advice">
-          <i class="fas fa-paw"></i>
-          <span>Pet Care Advice</span>
-        </button>
-        <button class="subject-option" data-subject="Other">
-          <i class="fas fa-question-circle"></i>
-          <span>Other</span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Chat Messages (hidden initially) -->
-    <div class="chat-messages" id="chatMessages" style="display: none;">
-      <div class="chat-date-divider">Today</div>
-      <div class="message admin-message">
-        <div class="message-avatar">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <div class="message-content">
-          <div class="message-bubble">
-            <p>Hello! Welcome to Grizzly Paws support. How can I assist you today? 🐾</p>
+        <div class="footer-section">
+          <div>
+            <h3>Connect with us</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Team</a></li>
+            </ul>
+            <div style="display: flex; gap: 15px; margin-top: 10px">
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#666"
+                >
+                  <path
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#666"
+                >
+                  <path
+                    d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-          <span class="message-time">Just now</span>
+        </div>
+      </div>
+      </footer>
+
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="success-message">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Added to Basket! 🐾</h3>
+          <p id="modal-product-info">Your item has been added to the basket.</p>
+          <div class="modal-buttons">
+            <button class="continue-shopping">Continue Shopping</button>
+            <a href="pages/basket.html"
+              ><button class="view-basket">View Basket</button></a
+            >
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Chat Input -->
-    <div class="chat-input-container" id="chatInputContainer" style="display: none;">
-      <div class="selected-subject" id="selectedSubject"></div>
-      <div class="chat-input-wrapper">
-        <button class="chat-attach-btn" aria-label="Attach file">
-          <i class="fas fa-paperclip"></i>
-        </button>
-        <input 
-          type="text" 
-          class="chat-input" 
-          id="chatInput" 
-          placeholder="Type your message..."
-          autocomplete="off"
-        />
-        <button class="chat-send-btn" id="chatSend" aria-label="Send message">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-  </div>
 
+
+    <script src="../../js/actions.js"></script>
     <script src="../../data/products.js"></script>
     <script src="../../data/category.js"></script>
     <script src="../../js/dynamic-display.js"></script>
@@ -379,254 +364,120 @@
     <script src="../../js/header.js"></script>
     <script src="relatedProducts.js"></script>
     <script>
-    // Chat Widget JavaScript
+      // Filter Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
-  const chatButton = document.getElementById('chatButton');
-  const chatWindow = document.getElementById('chatWindow');
-  const chatClose = document.getElementById('chatClose');
-  const chatInput = document.getElementById('chatInput');
-  const chatSend = document.getElementById('chatSend');
-  const chatMessages = document.getElementById('chatMessages');
-  const subjectSelection = document.getElementById('subjectSelection');
-  const chatInputContainer = document.getElementById('chatInputContainer');
-  const selectedSubjectDiv = document.getElementById('selectedSubject');
-  const subjectOptions = document.querySelectorAll('.subject-option');
-  const notificationBadge = document.querySelector('.chat-notification-badge');
-
-  let selectedSubject = '';
-
-  // Predefined admin responses based on keywords
-  const responses = {
-    order: [
-      "I can help you track your order! Please provide your order number and I'll check the status for you. 📦",
-      "To check your order status, you can visit 'My Purchase' section in your account or provide your order number here.",
-      "Our typical delivery time is 3-6 working days. Would you like to track a specific order?"
-    ],
-    product: [
-      "I'd be happy to help with product information! Which product are you interested in? 🐾",
-      "We have a wide range of pet food and accessories. What are you looking for specifically?",
-      "You can browse our products by pet type: Dogs, Cats, Small Pets, Birds, or Aquatic pets. What's your pet?"
-    ],
-    return: [
-      "We accept returns within 30 days of purchase. Items must be unused and in original packaging. 📋",
-      "For returns, please go to 'My Purchase' and select the order you'd like to return. We'll guide you through the process.",
-      "Refunds are processed within 5-7 business days after we receive the returned item."
-    ],
-    technical: [
-      "I'm here to help with any technical issues. What problem are you experiencing? 💻",
-      "If you're having trouble with the website, try clearing your browser cache or using a different browser.",
-      "For account-related issues, make sure you're logged in with the correct credentials."
-    ],
-    pet: [
-      "I'd love to help with pet care advice! What would you like to know? 🐕🐈",
-      "We have expert guides on feeding, grooming, and training. What specific advice do you need?",
-      "Every pet is unique! Tell me about your pet and I can provide personalized recommendations."
-    ],
-    price: [
-      "We offer competitive prices and regular promotions! Check our 'Special Offers' section for current deals. 💰",
-      "Sign up for our newsletter to get exclusive discounts and early access to sales!",
-      "We have economy packs that help you save more when you buy in bulk!"
-    ],
-    shipping: [
-      "We offer fast nationwide delivery across the Philippines! 🚚",
-      "Standard shipping takes 3-6 working days. Express shipping is also available for faster delivery.",
-      "Shipping is FREE for orders over ₱1,500!"
-    ],
-    payment: [
-      "We accept credit cards, debit cards, GCash, PayMaya, and cash on delivery. 💳",
-      "All payments are processed securely through our encrypted payment gateway.",
-      "You can also pay cash on delivery for added convenience!"
-    ],
-    default: [
-      "Thank you for your message! Let me help you with that. Can you provide more details? 😊",
-      "I'm here to assist you! Could you please elaborate on your concern?",
-      "Great question! I'd be happy to help. Can you tell me more about what you need?",
-      "I understand. Let me get you the information you need. Could you clarify a bit more?"
-    ]
-  };
-
-  // Toggle chat window
-  chatButton.addEventListener('click', function() {
-    chatWindow.classList.add('active');
-    chatButton.style.display = 'none';
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    const sidebarContent = document.getElementById('sidebarContent');
     
-    // Remove notification badge when chat opens
-    if (notificationBadge) {
-      notificationBadge.style.display = 'none';
+    if (filterToggleBtn && sidebarContent) {
+        filterToggleBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            sidebarContent.classList.toggle('active');
+        });
     }
-  });
-
-  chatClose.addEventListener('click', function() {
-    chatWindow.classList.remove('active');
-    chatButton.style.display = 'flex';
-  });
-
-  // Subject selection
-  subjectOptions.forEach(option => {
-    option.addEventListener('click', function() {
-      selectedSubject = this.dataset.subject;
-      const icon = this.querySelector('i').className;
-      
-      // Hide subject selection, show chat
-      subjectSelection.style.display = 'none';
-      chatMessages.style.display = 'block';
-      chatInputContainer.style.display = 'block';
-      
-      // Display selected subject
-      selectedSubjectDiv.innerHTML = `<i class="${icon}"></i> Subject: ${selectedSubject}`;
-      selectedSubjectDiv.style.display = 'flex';
-      
-      // Add system message about subject
-      addMessage('admin', `Great! I see you need help with "${selectedSubject}". How can I assist you?`);
-      
-      // Focus on input
-      chatInput.focus();
-    });
-  });
-
-  // Send message on button click
-  chatSend.addEventListener('click', sendMessage);
-
-  // Send message on Enter key
-  chatInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  });
-
-  function sendMessage() {
-    const message = chatInput.value.trim();
-    if (message === '') return;
-
-    // Add user message
-    addMessage('user', message);
-    chatInput.value = '';
-
-    // Show typing indicator
-    showTypingIndicator();
-
-    // Simulate admin response after delay
-    setTimeout(() => {
-      hideTypingIndicator();
-      const response = getAdminResponse(message);
-      addMessage('admin', response);
-    }, 1000 + Math.random() * 1000);
-  }
-
-  function addMessage(sender, text) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${sender}-message`;
-    
-    const time = new Date().toLocaleTimeString('en-US', { 
-      hour: 'numeric', 
-      minute: '2-digit',
-      hour12: true 
-    });
-
-    if (sender === 'admin') {
-      messageDiv.innerHTML = `
-        <div class="message-avatar">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <div class="message-content">
-          <div class="message-bubble">
-            <p>${text}</p>
-          </div>
-          <span class="message-time">${time}</span>
-        </div>
-      `;
-    } else {
-      messageDiv.innerHTML = `
-        <div class="message-avatar">
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="message-content">
-          <div class="message-bubble">
-            <p>${text}</p>
-          </div>
-          <span class="message-time">${time}</span>
-        </div>
-      `;
-    }
-
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function showTypingIndicator() {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'typing-indicator message admin-message';
-    typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `
-      <div class="message-avatar">
-        <i class="fas fa-user-tie"></i>
-      </div>
-      <div class="message-content">
-        <div class="message-bubble">
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-        </div>
-      </div>
-    `;
-    chatMessages.appendChild(typingDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function hideTypingIndicator() {
-    const typingIndicator = document.getElementById('typingIndicator');
-    if (typingIndicator) {
-      typingIndicator.remove();
-    }
-  }
-
-  function getAdminResponse(userMessage) {
-    const message = userMessage.toLowerCase();
-    
-    // Check for keywords in the message
-    if (message.includes('order') || message.includes('track') || message.includes('delivery')) {
-      return getRandomResponse(responses.order);
-    } else if (message.includes('product') || message.includes('item') || message.includes('buy')) {
-      return getRandomResponse(responses.product);
-    } else if (message.includes('return') || message.includes('refund') || message.includes('exchange')) {
-      return getRandomResponse(responses.return);
-    } else if (message.includes('problem') || message.includes('error') || message.includes('bug') || message.includes('issue')) {
-      return getRandomResponse(responses.technical);
-    } else if (message.includes('pet') || message.includes('dog') || message.includes('cat') || message.includes('care') || message.includes('food')) {
-      return getRandomResponse(responses.pet);
-    } else if (message.includes('price') || message.includes('cost') || message.includes('discount') || message.includes('promo')) {
-      return getRandomResponse(responses.price);
-    } else if (message.includes('ship') || message.includes('deliver')) {
-      return getRandomResponse(responses.shipping);
-    } else if (message.includes('pay') || message.includes('payment')) {
-      return getRandomResponse(responses.payment);
-    } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-      return "Hello! 👋 How can I help you today?";
-    } else if (message.includes('thanks') || message.includes('thank you')) {
-      return "You're welcome! Is there anything else I can help you with? 😊";
-    } else if (message.includes('bye') || message.includes('goodbye')) {
-      return "Thank you for chatting with us! Have a great day! 🐾";
-    } else {
-      return getRandomResponse(responses.default);
-    }
-  }
-
-  function getRandomResponse(responsesArray) {
-    return responsesArray[Math.floor(Math.random() * responsesArray.length)];
-  }
-
-  // Close chat when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!chatWindow.contains(e.target) && !chatButton.contains(e.target)) {
-      if (chatWindow.classList.contains('active')) {
-        chatWindow.classList.remove('active');
-        chatButton.style.display = 'flex';
-      }
-    }
-  });
 });
 
+// Price Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    const applyFilterBtn = document.getElementById('applyPriceFilter');
+    const clearFilterBtn = document.getElementById('clearPriceFilter');
+    const quickPriceOptions = document.querySelectorAll('.price-option-btn');
+    const productsGrid = document.getElementById('product_grid');
+    
+    let currentMinPrice = null;
+    let currentMaxPrice = null;
 
+    // Apply custom price filter
+    applyFilterBtn.addEventListener('click', function() {
+        const minPrice = parseFloat(minPriceInput.value) || 0;
+        const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+        
+        if (minPrice > maxPrice && maxPrice !== Infinity) {
+            alert('Minimum price cannot be greater than maximum price');
+            return;
+        }
+        
+        currentMinPrice = minPrice;
+        currentMaxPrice = maxPrice;
+        
+        // Remove active class from quick options
+        quickPriceOptions.forEach(btn => btn.classList.remove('active'));
+        
+        filterProducts(minPrice, maxPrice);
+    });
+
+    // Clear price filter
+    clearFilterBtn.addEventListener('click', function() {
+        minPriceInput.value = '';
+        maxPriceInput.value = '';
+        currentMinPrice = null;
+        currentMaxPrice = null;
+        
+        // Remove active class from quick options
+        quickPriceOptions.forEach(btn => btn.classList.remove('active'));
+        
+        filterProducts(0, Infinity);
+    });
+
+    // Quick price option buttons
+    quickPriceOptions.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const minPrice = parseFloat(this.dataset.min);
+            const maxPrice = parseFloat(this.dataset.max);
+            
+            // Set input values
+            minPriceInput.value = minPrice === 0 ? '' : minPrice;
+            maxPriceInput.value = maxPrice === 999999 ? '' : maxPrice;
+            
+            currentMinPrice = minPrice;
+            currentMaxPrice = maxPrice;
+            
+            // Toggle active class
+            quickPriceOptions.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            filterProducts(minPrice, maxPrice);
+        });
+    });
+
+    // Filter products based on price range
+    function filterProducts(minPrice, maxPrice) {
+        const productCards = productsGrid.querySelectorAll('.product-card');
+        let visibleCount = 0;
+        
+        productCards.forEach(card => {
+            const priceElement = card.querySelector('.price');
+            if (priceElement) {
+                // Extract price value (remove ₱ symbol, commas and parse)
+                const priceText = priceElement.textContent.replace(/₱|,/g, '').trim();
+                const price = parseFloat(priceText);
+                
+                if (price >= minPrice && price <= maxPrice) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+        
+        // Optional: Show message if no products match
+        let noResultsMsg = document.getElementById('noResultsMessage');
+        if (visibleCount === 0) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('p');
+                noResultsMsg.id = 'noResultsMessage';
+                noResultsMsg.style.cssText = 'text-align: center; color: #999; padding: 20px; grid-column: 1 / -1;';
+                noResultsMsg.textContent = 'No products found in this price range.';
+                productsGrid.appendChild(noResultsMsg);
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    }
+});
     </script>
 </body>
 </html>

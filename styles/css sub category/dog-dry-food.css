@@ -248,7 +248,7 @@ h1 {
   color: #ffb100;
   margin-right: 5px;
   font-size: 16px;
-  display: none;
+  /* display: none; */
 }
 
 .review-count {

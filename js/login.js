@@ -119,7 +119,7 @@ loginForm.addEventListener('submit', (e) => {
             sessionStorage.setItem('isAdmin', 'true');
             setTimeout(() => {
                 // Redirect to admin panel (change this to your admin page)
-                window.location.href = 'admin.html';
+                window.location.href = 'Admin/php-folders/admin.html';
             }, 1500);
         }
         // Check if user exists
