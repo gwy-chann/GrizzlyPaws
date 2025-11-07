@@ -185,6 +185,47 @@
   flex: 1;
   margin: 0;
 }
+.select-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 15px; */
+  /* background-color: #f9f9f9; */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.select-all-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clear-basket-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.clear-basket-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.clear-basket-btn svg {
+  width: 18px;
+  height: 18px;
+}
 
 /* Proceed Button */
 /* .checkout-button {
@@ -329,13 +370,17 @@
           </div>
           <div class="cart-items">
             <div class="select-all">
-              <input
-                type="checkbox"
-                id="select-all-checkbox"
-                class="checkbox"
-              />
-              <label for="select-all-checkbox">Select All Items</label>
-            </div>
+  <div class="select-all-left">
+    <input type="checkbox" id="select-all-checkbox" class="checkbox" />
+    <label for="select-all-checkbox">Select All Items</label>
+  </div>
+  <button class="clear-basket-btn" id="clear-basket-btn" onclick="clearBasket()" title="Clear all items from basket">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+    </svg>
+    Clear Basket
+  </button>
+</div>
 
             <table class="item-table" id="item-table">
               <thead>
@@ -754,7 +799,7 @@
       </div>
     </div>
 
-    <!-- Chat Widget -->
+    <!-- Chat Widget
     <div class="chat-widget">
       <button class="chat-button" id="chatButton" aria-label="Open chat">
         <i class="fas fa-comment"></i>
@@ -844,25 +889,55 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script src="../../../js/header.js"></script>
     <script src="../../../data/category.js"></script>
     <script src="../../../data/products.js"></script>
     <script src="../../../js/dynamic-display.js"></script>
     <!-- <script src="../js/basket.js"></script> -->
-    <script>
+   <script>
+  const itemTable = document.getElementById("item-table-body");
+  const subtotalElement = document.getElementById("subtotal");
+  const vatElement = document.getElementById("vat-id");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  renderCartItems();
 
-      const itemTable = document.getElementById("item-table-body");
-      const subtotalElement = document.getElementById("subtotal");
-      const vatElement = document.getElementById("vat-id");
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      
-
-      renderCartItems();
-
-    function renderCartItems() {
+  function renderCartItems() {
     itemTable.innerHTML = ""; // Clear existing items
+
+    // Check if cart is empty
+    if (cart.length === 0) {
+      const emptyRow = document.createElement("tr");
+      emptyRow.innerHTML = `
+        <td colspan="5" style="text-align: center; padding: 60px 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; color: #666;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <div style="font-size: 24px; font-weight: 600; color: #333;">Your basket is empty</div>
+            <p style="font-size: 16px; color: #666; margin: 0;">Add items to your basket to get started!</p>
+            <a href="/index.html" style="margin-top: 10px; padding: 12px 30px; background-color: #6baf4c; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s;">
+              Continue Shopping
+            </a>
+          </div>
+        </td>
+      `;
+      itemTable.appendChild(emptyRow);
+      
+      // Hide select all section when empty
+      document.querySelector('.select-all').style.display = 'none';
+      
+      // Update order summary to show zero
+      updateOrderSummary();
+      return;
+    }
+
+    // Show select all section when cart has items
+    document.querySelector('.select-all').style.display = 'flex';
 
     cart.forEach((item, index) => {
       const row = document.createElement("tr");
@@ -896,38 +971,14 @@
         <td>
           <div class="action-icons">
             <button class="delete-icon">
-                <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          x="0px"
-                          y="0px"
-                          width="100"
-                          height="100"
-                          viewBox="0,0,256,256"
-                        >
-                          <g
-                            fill="#333333"
-                            fill-rule="nonzero"
-                            stroke="none"
-                            stroke-width="1"
-                            stroke-linecap="butt"
-                            stroke-linejoin="miter"
-                            stroke-miterlimit="10"
-                            stroke-dasharray=""
-                            stroke-dashoffset="0"
-                            font-family="none"
-                            font-weight="none"
-                            font-size="none"
-                            text-anchor="none"
-                            style="mix-blend-mode: normal"
-                          >
-                            <g transform="scale(5.33333,5.33333)">
-                              <path
-                                d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"
-                              ></path>
-                            </g>
-                          </g>
-                        </svg>
-                      </button>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#333333" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(5.33333,5.33333)">
+                    <path d="M24,4c-3.50831,0 -6.4296,2.62143 -6.91992,6h-10.58008c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h2.13672l2.51953,26.0293c0.274,2.833 2.62956,4.9707 5.47656,4.9707h14.73438c2.847,0 5.20156,-2.1377 5.47656,-4.9707l2.51953,-26.0293h2.13672c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-10.58008c-0.49032,-3.37857 -3.41161,-6 -6.91992,-6zM24,7c1.87916,0 3.42077,1.26816 3.86133,3h-7.72266c0.44056,-1.73184 1.98217,-3 3.86133,-3zM19.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5zM28.5,18c0.828,0 1.5,0.671 1.5,1.5v15c0,0.829 -0.672,1.5 -1.5,1.5c-0.828,0 -1.5,-0.671 -1.5,-1.5v-15c0,-0.829 0.672,-1.5 1.5,-1.5z"></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
           </div>
         </td>
       `;
@@ -974,8 +1025,6 @@
   // Expose to window for use in event handlers
   window.updateOrderSummary = updateOrderSummary;
 
-
-  
   function updateQuantity(index, change) {
     cart[index].quantity += change;
 
@@ -1007,6 +1056,37 @@
     }, 50);
   }
 
+  function removeItem(index) {
+    // Remove item from cart
+    cart.splice(index, 1);
+
+    // Update local storage and re-render items
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCartItems();
+    
+    // Re-initialize checkboxes after render
+    setTimeout(() => {
+      if (window.initializeCheckboxes) {
+        window.initializeCheckboxes();
+      }
+      // Update order summary after removal
+      if (window.updateOrderSummary) {
+        window.updateOrderSummary();
+      }
+    }, 50);
+  }
+
+  // Function to clear all items from basket
+  function clearBasket() {
+    if (confirm('Are you sure you want to clear all items from your basket?')) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      location.reload(); // Reload to reset everything including cart variable
+    }
+  }
+
+  // Expose clearBasket to window
+  window.clearBasket = clearBasket;
+</script>
 
   function removeItem(index) {
     // Remove item from cart
@@ -1027,8 +1107,18 @@
       }
     }, 50);
   }
-  
-    </script>
+
+  // Function to clear all items from basket
+  function clearBasket() {
+    if (confirm('Are you sure you want to clear all items from your basket?')) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      location.reload(); // Reload to reset everything including cart variable
+    }
+  }
+
+  // Expose clearBasket to window
+  window.clearBasket = clearBasket;
+</script>
     <script>
       // Checkbox functionality and Payment Modal
 document.addEventListener('DOMContentLoaded', function() {
