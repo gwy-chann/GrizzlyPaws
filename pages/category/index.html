@@ -134,14 +134,56 @@
 
         <div class="shop-layout">
             <!-- Sidebar Navigation -->
-            <div class="sidebar-nav">
-                <div class="category-header">
-                    <h2 class="category-title" id="pet-dyno">Pet</h2>
-                </div>
-                <ul class="category-list" id="categoryList">
-                    <!-- render category -->
-                </ul>
-            </div>
+            <!-- Sidebar Navigation -->
+
+            <!-- Sidebar Navigation -->
+              <div class="sidebar-nav">
+                  <!-- Mobile Filter Toggle Button (only shows on small screens) -->
+                  <button class="filter-toggle-btn" id="filterToggleBtn">
+                      <i class="fas fa-sliders-h"></i>
+                      <span>Filters</span>
+                      <i class="fas fa-chevron-down toggle-icon"></i>
+                  </button>
+                  
+                  <div class="sidebar-content" id="sidebarContent">
+                      <div class="category-header">
+                          <h2 class="category-title" id="pet-dyno">Pet</h2>
+                      </div>
+                      <ul class="category-list" id="categoryList">
+                          <!-- render category -->
+                      </ul>
+                      
+                      <!-- Price Filter Section -->
+                      <div class="filter-section">
+                          <div class="filter-header">
+                              <h3 class="filter-title">Price Range</h3>
+                          </div>
+                          <div class="price-filter-container">
+                              <div class="price-inputs">
+                                  <div class="price-input-group">
+                                      <label for="minPrice">Min</label>
+                                      <input type="number" id="minPrice" placeholder="₱0" min="0">
+                                  </div>
+                                  <span class="price-separator">-</span>
+                                  <div class="price-input-group">
+                                      <label for="maxPrice">Max</label>
+                                      <input type="number" id="maxPrice" placeholder="₱10000" min="0">
+                                  </div>
+                              </div>
+                              <button class="apply-filter-btn" id="applyPriceFilter">Apply</button>
+                              <button class="clear-filter-btn" id="clearPriceFilter">Clear</button>
+                          </div>
+                          
+                          <!-- Quick Price Options -->
+                          <div class="quick-price-options">
+                              <button class="price-option-btn" data-min="0" data-max="500">Under ₱500</button>
+                              <button class="price-option-btn" data-min="500" data-max="1000">₱500 - ₱1,000</button>
+                              <button class="price-option-btn" data-min="1000" data-max="2500">₱1,000 - ₱2,500</button>
+                              <button class="price-option-btn" data-min="2500" data-max="999999">Over ₱2,500</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
             <!-- Main Content -->
             <div class="main-content">
@@ -277,101 +319,7 @@
         </div>
     </footer>
 
-    <div class="chat-widget">
-  <!-- Chat Button -->
-  <button class="chat-button" id="chatButton" aria-label="Open chat">
-    <i class="fas fa-comment"></i>
-    <span>Chat</span>
-    <span class="chat-notification-badge">3</span>
-  </button>
-
-  <!-- Chat Window -->
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <i class="fas fa-headset"></i>
-        <div>
-          <h3>Customer Support</h3>
-          <span class="status-online">● Online</span>
-        </div>
-      </div>
-      <button class="chat-close" id="chatClose" aria-label="Close chat">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-
-    <!-- Subject Selection (shown initially) -->
-    <div class="chat-subject-selection" id="subjectSelection">
-      <div class="subject-prompt">
-        <i class="fas fa-comments"></i>
-        <h4>How can we help you today?</h4>
-        <p>Please select a subject to start chatting</p>
-      </div>
-      <div class="subject-options">
-        <button class="subject-option" data-subject="Order Status">
-          <i class="fas fa-box"></i>
-          <span>Order Status</span>
-        </button>
-        <button class="subject-option" data-subject="Product Inquiry">
-          <i class="fas fa-shopping-bag"></i>
-          <span>Product Inquiry</span>
-        </button>
-        <button class="subject-option" data-subject="Returns & Refunds">
-          <i class="fas fa-undo"></i>
-          <span>Returns & Refunds</span>
-        </button>
-        <button class="subject-option" data-subject="Technical Support">
-          <i class="fas fa-tools"></i>
-          <span>Technical Support</span>
-        </button>
-        <button class="subject-option" data-subject="Pet Care Advice">
-          <i class="fas fa-paw"></i>
-          <span>Pet Care Advice</span>
-        </button>
-        <button class="subject-option" data-subject="Other">
-          <i class="fas fa-question-circle"></i>
-          <span>Other</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Chat Messages (hidden initially) -->
-    <div class="chat-messages" id="chatMessages" style="display: none;">
-      <div class="chat-date-divider">Today</div>
-      <div class="message admin-message">
-        <div class="message-avatar">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <div class="message-content">
-          <div class="message-bubble">
-            <p>Hello! Welcome to Grizzly Paws support. How can I assist you today? 🐾</p>
-          </div>
-          <span class="message-time">Just now</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chat Input -->
-    <div class="chat-input-container" id="chatInputContainer" style="display: none;">
-      <div class="selected-subject" id="selectedSubject"></div>
-      <div class="chat-input-wrapper">
-        <button class="chat-attach-btn" aria-label="Attach file">
-          <i class="fas fa-paperclip"></i>
-        </button>
-        <input 
-          type="text" 
-          class="chat-input" 
-          id="chatInput" 
-          placeholder="Type your message..."
-          autocomplete="off"
-        />
-        <button class="chat-send-btn" id="chatSend" aria-label="Send message">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
+    
     <script src="../../data/products.js"></script>
     <script src="../../data/category.js"></script>
     <script src="../../js/dynamic-display.js"></script>
@@ -627,6 +575,122 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+    </script>
+    <script>
+      // Filter Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    const sidebarContent = document.getElementById('sidebarContent');
+    
+    if (filterToggleBtn && sidebarContent) {
+        filterToggleBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            sidebarContent.classList.toggle('active');
+        });
+    }
+});
+
+// Price Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    const applyFilterBtn = document.getElementById('applyPriceFilter');
+    const clearFilterBtn = document.getElementById('clearPriceFilter');
+    const quickPriceOptions = document.querySelectorAll('.price-option-btn');
+    const productsGrid = document.getElementById('product_grid');
+    
+    let currentMinPrice = null;
+    let currentMaxPrice = null;
+
+    // Apply custom price filter
+    applyFilterBtn.addEventListener('click', function() {
+        const minPrice = parseFloat(minPriceInput.value) || 0;
+        const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+        
+        if (minPrice > maxPrice && maxPrice !== Infinity) {
+            alert('Minimum price cannot be greater than maximum price');
+            return;
+        }
+        
+        currentMinPrice = minPrice;
+        currentMaxPrice = maxPrice;
+        
+        // Remove active class from quick options
+        quickPriceOptions.forEach(btn => btn.classList.remove('active'));
+        
+        filterProducts(minPrice, maxPrice);
+    });
+
+    // Clear price filter
+    clearFilterBtn.addEventListener('click', function() {
+        minPriceInput.value = '';
+        maxPriceInput.value = '';
+        currentMinPrice = null;
+        currentMaxPrice = null;
+        
+        // Remove active class from quick options
+        quickPriceOptions.forEach(btn => btn.classList.remove('active'));
+        
+        filterProducts(0, Infinity);
+    });
+
+    // Quick price option buttons
+    quickPriceOptions.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const minPrice = parseFloat(this.dataset.min);
+            const maxPrice = parseFloat(this.dataset.max);
+            
+            // Set input values
+            minPriceInput.value = minPrice === 0 ? '' : minPrice;
+            maxPriceInput.value = maxPrice === 999999 ? '' : maxPrice;
+            
+            currentMinPrice = minPrice;
+            currentMaxPrice = maxPrice;
+            
+            // Toggle active class
+            quickPriceOptions.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            filterProducts(minPrice, maxPrice);
+        });
+    });
+
+    // Filter products based on price range
+    function filterProducts(minPrice, maxPrice) {
+        const productCards = productsGrid.querySelectorAll('.product-card');
+        let visibleCount = 0;
+        
+        productCards.forEach(card => {
+            const priceElement = card.querySelector('.price');
+            if (priceElement) {
+                // Extract price value (remove ₱ symbol, commas and parse)
+                const priceText = priceElement.textContent.replace(/₱|,/g, '').trim();
+                const price = parseFloat(priceText);
+                
+                if (price >= minPrice && price <= maxPrice) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+        
+        // Optional: Show message if no products match
+        let noResultsMsg = document.getElementById('noResultsMessage');
+        if (visibleCount === 0) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('p');
+                noResultsMsg.id = 'noResultsMessage';
+                noResultsMsg.style.cssText = 'text-align: center; color: #999; padding: 20px; grid-column: 1 / -1;';
+                noResultsMsg.textContent = 'No products found in this price range.';
+                productsGrid.appendChild(noResultsMsg);
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    }
+});
     </script>
 </body>
 </html>
