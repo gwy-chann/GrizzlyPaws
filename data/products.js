@@ -4461,176 +4461,176 @@ const products =[
             }
         ]
     },
-    {
-        "id": 201,
-        "category": "small_pet",
-        "sub_category": "Small Pet Cages",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 202,
-        "category": "small_pet",
-        "sub_category": "Rabbit",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 203,
-        "category": "small_pet",
-        "sub_category": "Fencing for Small Pets",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 204,
-        "category": "small_pet",
-        "sub_category": "Small Pet Food",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 205,
-        "category": "small_pet",
-        "sub_category": "Cage Accessories",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 206,
-        "category": "small_pet",
-        "sub_category": "Snacks and Supplements",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 207,
-        "category": "small_pet",
-        "sub_category": "Hay and Straw",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 208,
-        "category": "small_pet",
-        "sub_category": "Small Pet Toys",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 209,
-        "category": "small_pet",
-        "sub_category": "Care and Grooming",
-        "images": [
-                    '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
-    {
-        "id": 210,
-        "category": "small_pet",
-        "sub_category": "Small Pet Special Offers",
-        "images": [
-          '../../../Product Images/default-product-image.png',
-          '../../../Product Images/default-product-image.png',
-        ],
-        "name": "Ferplast Vital Rabbit Cage",
-        "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
-        "variations": [
-            {
-                "unit": " 151 x 80 x 107 cm (L x W x H)",
-                "price": 1500
-            }
-        ]
-    },
+    // {
+    //     "id": 201,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Cages",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 202,
+    //     "category": "small_pet",
+    //     "sub_category": "Rabbit",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 203,
+    //     "category": "small_pet",
+    //     "sub_category": "Fencing for Small Pets",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 204,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Food",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 205,
+    //     "category": "small_pet",
+    //     "sub_category": "Bird Cage Accessories",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 206,
+    //     "category": "small_pet",
+    //     "sub_category": "Snacks and Supplements",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 207,
+    //     "category": "small_pet",
+    //     "sub_category": "Hay and Straw",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 208,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Toys",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 209,
+    //     "category": "small_pet",
+    //     "sub_category": "Care and Grooming",
+    //     "images": [
+    //                 '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this Ferplast Vital Rabbit Cage 120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
+    // {
+    //     "id": 210,
+    //     "category": "small_pet",
+    //     "sub_category": "Small Pet Special Offers",
+    //     "images": [
+    //       '../../../Product Images/default-product-image.png',
+    //       '../../../Product Images/default-product-image.png',
+    //     ],
+    //     "name": "Ferplast Vital Rabbit Cage",
+    //     "description": " Give your rabbits a home to be proud of with this  120. The two-story cage has plenty of room for rabbits to run around and comes complete with all of the basic equipment that you need to look after a rabbit, including two drinking bottles, two bowls, two hay racks, a plastic ramp, and a house.",
+    //     "variations": [
+    //         {
+    //             "unit": " 151 x 80 x 107 cm (L x W x H)",
+    //             "price": 1500
+    //         }
+    //     ]
+    // },
     {
         "id": 211,
         "category": "feathered",
@@ -6061,214 +6061,214 @@ const products =[
             }
         ]
     },
-    {
-        "id": 288,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/confetti.PNG'
-        ],
-        "name": "Imagitarium Neon Aquarium Gravel Substrate",
-        "description": "Add a vibrant pop of color to your aquarium with these eye-catching neon gravel pieces. This decorative substrate creates a striking contrast against your aquatic plants and fish while providing a stable base for your underwater landscape.",
-        "variations": [
-            {
-                "unit": "Blue Neon, 5 lb bag",
-                "price": 450
-            },
-            {
-                "unit": "Pink Neon, 5 lb bag",
-                "price": 450
-            },
-            {
-                "unit": "Rainbow Mix, 5 lb bag",
-                "price": 480
-            }
-        ]
-    },
-    {
-        "id": 289,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/green.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/pink.PNG',
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 3 - GloFish Black Multi-Color Lagoon Aquarium Gravel, 5 lbs/Capture.PNG'
-        ],
-        "name": "GloFish Black Multi-Color Lagoon Aquarium Gravel",
-        "description": "Specially designed to complement GloFish and other fluorescent fish species. This dramatic black substrate contains vibrant colored pieces that glow dramatically under aquarium lighting, creating a mesmerizing underwater effect.",
-        "variations": [
-            {
-                "unit": "5 lb bag",
-                "price": 550
-            }
-        ]
-    },
-    {
-        "id": 290,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 3 - GloFish Black Multi-Color Lagoon Aquarium Gravel, 5 lbs/Capture2.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture1.PNG',
+//     {
+//         "id": 288,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG',
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/confetti.PNG'
+//         ],
+//         "name": "Imagitarium Neon Aquarium Gravel Substrate",
+//         "description": "Add a vibrant pop of color to your aquarium with these eye-catching neon gravel pieces. This decorative substrate creates a striking contrast against your aquatic plants and fish while providing a stable base for your underwater landscape.",
+//         "variations": [
+//             {
+//                 "unit": "Blue Neon, 5 lb bag",
+//                 "price": 450
+//             },
+//             {
+//                 "unit": "Pink Neon, 5 lb bag",
+//                 "price": 450
+//             },
+//             {
+//                 "unit": "Rainbow Mix, 5 lb bag",
+//                 "price": 480
+//             }
+//         ]
+//     },
+//     {
+//         "id": 289,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/green.PNG',
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 2 - Imagitarium Neon Aquarium Gravel Substrate, Pink, 5 lbs/pink.PNG',
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 3 - GloFish Black Multi-Color Lagoon Aquarium Gravel, 5 lbs/Capture.PNG'
+//         ],
+//         "name": "GloFish Black Multi-Color Lagoon Aquarium Gravel",
+//         "description": "Specially designed to complement GloFish and other fluorescent fish species. This dramatic black substrate contains vibrant colored pieces that glow dramatically under aquarium lighting, creating a mesmerizing underwater effect.",
+//         "variations": [
+//             {
+//                 "unit": "5 lb bag",
+//                 "price": 550
+//             }
+//         ]
+//     },
+//     {
+//         "id": 290,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 3 - GloFish Black Multi-Color Lagoon Aquarium Gravel, 5 lbs/Capture2.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture1.PNG',
 
-        ],
-        "name": "Aqua Natural Midnight Pearl Gravel",
-        "description": "Premium dark substrate with iridescent flecks that create a subtle, sophisticated shimmer in your aquarium. This natural-looking gravel adds depth and elegance to any freshwater setup.",
-        "variations": [
-            {
-                "unit": "5 lb bag",
-                "price": 520
-            }
-        ]
-    },
-    {
-        "id": 291,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture2.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture1.PNG',
+//         ],
+//         "name": "Aqua Natural Midnight Pearl Gravel",
+//         "description": "Premium dark substrate with iridescent flecks that create a subtle, sophisticated shimmer in your aquarium. This natural-looking gravel adds depth and elegance to any freshwater setup.",
+//         "variations": [
+//             {
+//                 "unit": "5 lb bag",
+//                 "price": 520
+//             }
+//         ]
+//     },
+//     {
+//         "id": 291,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 4 - Aqua Natural Midnight Pearl Gravel, 10 lbs/Capture2.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture1.PNG',
 
-        ],
-        "name": "Dennerle Shrimp King Active Soil",
-        "description": "Professional-grade aquarium soil specially formulated for breeding and keeping sensitive freshwater shrimp species. Stabilizes water parameters and provides essential minerals for healthy molting and vibrant coloration.",
-        "variations": [
-            {
-                "unit": "4 lb bag",
-                "price": 950
-            },
-            {
-                "unit": "8 lb bag",
-                "price": 1750
-            },
-            {
-                "unit": "16 lb bag",
-                "price": 3200
-            }
-        ]
-    },
-    {
-        "id": 292,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
+//         ],
+//         "name": "Dennerle Shrimp King Active Soil",
+//         "description": "Professional-grade aquarium soil specially formulated for breeding and keeping sensitive freshwater shrimp species. Stabilizes water parameters and provides essential minerals for healthy molting and vibrant coloration.",
+//         "variations": [
+//             {
+//                 "unit": "4 lb bag",
+//                 "price": 950
+//             },
+//             {
+//                 "unit": "8 lb bag",
+//                 "price": 1750
+//             },
+//             {
+//                 "unit": "16 lb bag",
+//                 "price": 3200
+//             }
+//         ]
+//     },
+//     {
+//         "id": 292,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
           
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture2.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 6 - Pure Water Pebbles Bio-Activ Live African Cichlid Substrates, 20 lbs/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 6 - Pure Water Pebbles Bio-Activ Live African Cichlid Substrates, 20 lbs/Capture1.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 5 - Dennerle Shrimp King Active Soil, 8 Liters/Capture2.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 6 - Pure Water Pebbles Bio-Activ Live African Cichlid Substrates, 20 lbs/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 6 - Pure Water Pebbles Bio-Activ Live African Cichlid Substrates, 20 lbs/Capture1.PNG',
 
-        ],
-        "name": "Pure Water Pebbles Bio-Activ Live African Cichlid Substrates",
-        "description": "Specialized substrate containing beneficial bacteria and essential minerals that help create the ideal water chemistry for African cichlids. Helps maintain alkaline pH levels while promoting healthy bacterial colonies.",
-        "variations": [
-            {
-                "unit": "10 lb bag",
-                "price": 1250
-            }
-        ]
-    },
-    {
-        "id": 293,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture1.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture2.PNG',
+//         ],
+//         "name": "Pure Water Pebbles Bio-Activ Live African Cichlid Substrates",
+//         "description": "Specialized substrate containing beneficial bacteria and essential minerals that help create the ideal water chemistry for African cichlids. Helps maintain alkaline pH levels while promoting healthy bacterial colonies.",
+//         "variations": [
+//             {
+//                 "unit": "10 lb bag",
+//                 "price": 1250
+//             }
+//         ]
+//     },
+//     {
+//         "id": 293,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture1.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 7 - Aqua Natural Betta World Tutti Frutti Gravel, Small/Capture2.PNG',
 
-        ],
-        "name": "Aqua Natural Betta World Tutti Frutti Gravel",
-        "description": "Colorful, smooth-edged gravel mix designed specifically for betta tanks. The bright, playful colors enhance your betta's environment without sharp edges that could damage delicate fins.",
-        "variations": [
-            {
-                "unit": "Tropical Blend, 3 lb bag",
-                "price": 380
-            },
-            {
-                "unit": "Ocean Mix, 3 lb bag",
-                "price": 380
-            },
-            {
-                "unit": "Sunset Collection, 3 lb bag",
-                "price": 400
-            }
-        ]
-    },
-    {
-        "id": 294,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture1.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture2.PNG',
+//         ],
+//         "name": "Aqua Natural Betta World Tutti Frutti Gravel",
+//         "description": "Colorful, smooth-edged gravel mix designed specifically for betta tanks. The bright, playful colors enhance your betta's environment without sharp edges that could damage delicate fins.",
+//         "variations": [
+//             {
+//                 "unit": "Tropical Blend, 3 lb bag",
+//                 "price": 380
+//             },
+//             {
+//                 "unit": "Ocean Mix, 3 lb bag",
+//                 "price": 380
+//             },
+//             {
+//                 "unit": "Sunset Collection, 3 lb bag",
+//                 "price": 400
+//             }
+//         ]
+//     },
+//     {
+//         "id": 294,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture1.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 8 - Aqua Natural Diamond Black Quartz, 10 lbs/Capture2.PNG',
 
-        ],
-        "name": "Aqua Natural Diamond Black Quartz",
-        "description": "Premium jet-black quartz substrate that creates a dramatic, contemporary look in any aquarium. The fine grain size is ideal for planted tanks and helps prevent debris from settling between particles.",
-        "variations": [
-            {
-                "unit": "5 lb bag",
-                "price": 850
-            }
-        ]
-    },
-    {
-        "id": 295,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture1.PNG',
-'../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture2.PNG',
+//         ],
+//         "name": "Aqua Natural Diamond Black Quartz",
+//         "description": "Premium jet-black quartz substrate that creates a dramatic, contemporary look in any aquarium. The fine grain size is ideal for planted tanks and helps prevent debris from settling between particles.",
+//         "variations": [
+//             {
+//                 "unit": "5 lb bag",
+//                 "price": 850
+//             }
+//         ]
+//     },
+//     {
+//         "id": 295,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture1.PNG',
+// '../../../Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 9 - Fluval Bio Stratum Aquarium, 8.8 lbs/Capture2.PNG',
 
-        ],
-        "name": "Fluval Bio Stratum Aquarium",
-        "description": "Advanced biological substrate that supports beneficial bacteria growth while providing an ideal foundation for live plants. Its spherical shape allows optimal water flow and prevents harmful gas pockets.",
-        "variations": [
-            {
-                "unit": "4.4 lb bag",
-                "price": 780
-            },
-            {
-                "unit": "8.8 lb bag",
-                "price": 1400
-            },
-            {
-                "unit": "17.6 lb bag",
-                "price": 2500
-            }
-        ]
-    },
-    {
-        "id": 296,
-        "category": "aquatic",
-        "sub_category": "Aquarium Sand",
-        "images": [
-          '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
-            '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG'
-        ],
-        "name": "Imagitarium Aquarium Gem Gravel Accents",
-        "description": "Decorative gem-like gravel accents that add a touch of elegance to your aquarium. Perfect for creating focal points, paths, or borders within your underwater landscape.",
-        "variations": [
-            {
-                "unit": "Sapphire Blue, 2 lb bag",
-                "price": 320
-            },
-            {
-                "unit": "Ruby Red, 2 lb bag",
-                "price": 320
-            },
-            {
-                "unit": "Emerald Green, 2 lb bag",
-                "price": 320
-            }
-        ]
-    },
+//         ],
+//         "name": "Fluval Bio Stratum Aquarium",
+//         "description": "Advanced biological substrate that supports beneficial bacteria growth while providing an ideal foundation for live plants. Its spherical shape allows optimal water flow and prevents harmful gas pockets.",
+//         "variations": [
+//             {
+//                 "unit": "4.4 lb bag",
+//                 "price": 780
+//             },
+//             {
+//                 "unit": "8.8 lb bag",
+//                 "price": 1400
+//             },
+//             {
+//                 "unit": "17.6 lb bag",
+//                 "price": 2500
+//             }
+//         ]
+//     },
+//     {
+//         "id": 296,
+//         "category": "aquatic",
+//         "sub_category": "Aquarium Sand",
+//         "images": [
+//           '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture.PNG',
+//             '../../../Product Images/Aquatic/Product Images/Aquatic/Category 1 - Aquarium Sand, Gravel & Substrates/Category 1 - Products/Product 10 - Imagitarium Aquarium Gem Gravel Accents, Turquoise and Yellow, 3.5 oz/Capture1.PNG'
+//         ],
+//         "name": "Imagitarium Aquarium Gem Gravel Accents",
+//         "description": "Decorative gem-like gravel accents that add a touch of elegance to your aquarium. Perfect for creating focal points, paths, or borders within your underwater landscape.",
+//         "variations": [
+//             {
+//                 "unit": "Sapphire Blue, 2 lb bag",
+//                 "price": 320
+//             },
+//             {
+//                 "unit": "Ruby Red, 2 lb bag",
+//                 "price": 320
+//             },
+//             {
+//                 "unit": "Emerald Green, 2 lb bag",
+//                 "price": 320
+//             }
+//         ]
+//     },
     {
         "id": 297,
         "category": "aquatic",
