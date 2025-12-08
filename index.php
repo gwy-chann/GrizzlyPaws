@@ -17,6 +17,8 @@
     />
   </head>
   <body>
+
+
     <header>
       <div class="header-top">
         <div class="logo-container">
@@ -27,7 +29,7 @@
             aria-label="Go to Homepage"
           >
             <img
-              src="../../../../../images/logo3.png"
+              src="images/logo3.png"
               alt="Logo"
               class="logo"
             />
@@ -106,14 +108,13 @@
               <div class="dropdown-tail"></div>
               <a href="pages/account.html">My Account</a>
               <a href="pages/Purchase/purchase.html">My Purchase</a>
-              <a href="/pages/Purchase/wishlist.html">Wishlist</a>
+              <a href="pages/Purchase/wishlist.html">Wishlist</a>
               <a href="login.html">Logout</a>
             </div>
           </div>
         </div>
       </div>
-
-      <nav aria-label="Main navigation" id="main-nav"></nav>
+      <?php include 'includes/header.php'; ?>
     </header>
 
     <main class="container">
@@ -211,7 +212,7 @@
           Shop for your pet
         </h2>
         <div class="pet-categories">
-          <a href="/pages/category/index.html?cat-id=dog" class="pet-category">
+          <a href="pages/category/index.html?cat-id=dog" class="pet-category">
             <div class="pet-image-container dog-bg">
               <img
                 src="images/CategoryImages/dog_cat.png"
@@ -223,7 +224,7 @@
             <div class="pet-name">Dog</div>
           </a>
 
-          <a href="/pages/category/index.html?cat-id=cat" class="pet-category">
+          <a href="pages/category/index.html?cat-id=cat" class="pet-category">
             <div class="pet-image-container cat-bg">
               <img
                 src="images/CategoryImages/cat_cat.png"
@@ -236,7 +237,7 @@
           </a>
 
           <a
-            href="/pages/category/index.html?cat-id=small_pet"
+            href="pages/category/index.html?cat-id=small_pet"
             class="pet-category"
           >
             <div class="pet-image-container small_pet-bg">
@@ -251,7 +252,7 @@
           </a>
 
           <a
-            href="/pages/category/index.html?cat-id=feathered"
+            href="pages/category/index.html?cat-id=feathered"
             class="pet-category"
           >
             <div class="pet-image-container bird-bg">
@@ -266,7 +267,7 @@
           </a>
 
           <a
-            href="/pages/category/index.html?cat-id=aquatic"
+            href="pages/category/index.html?cat-id=aquatic"
             class="pet-category"
           >
             <div class="pet-image-container fish-bg">
@@ -365,9 +366,9 @@
             <div class="products-grid" id="product_grid">
               <div class="product-card">
                 <div class="product-image">
-                  <a href="/pages/products/item/index.html?id=1">
+                  <a href="pages/products/item/index.html?id=1">
                     <img
-                      src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
+                      src="images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
                       alt="Hill's Prescription Diet Canine Metabolic"
                     />
                   </a>
@@ -380,7 +381,7 @@
                 </div>
 
                 <a
-                  href="/pages/products/item/index.html?id=1"
+                  href="pages/products/item/index.html?id=1"
                   class="product-details-link"
                 >
                   <div class="product-details">
@@ -417,9 +418,9 @@
       <div class="products_display" id="product_display">
             <div class="product-card">
               <div class="product-image">
-                <a href="/pages/products/item/index.html?id=1">
+                <a href="pages/products/item/index.html?id=1">
                   <img
-                    src="../../images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
+                    src="images/Hill'sPrescriptionDietCanineDigestiveCare1.jpg"
                     alt="Hill's Prescription Diet Canine Metabolic"
                   />
                 </a>
@@ -429,7 +430,7 @@
               </div>
 
               <a
-                href="/pages/products/item/index.html?id=1"
+                href="pages/products/item/index.html?id=1"
                 class="product-details-link"
               >
                 <div class="product-details">
@@ -911,165 +912,165 @@
 
 
 
-    <script src="..././../data/products.js"></script>
-    <script src="..././../data/category.js"></script>
-    <script src="/js/dynamic-display.js"></script>
+    <script src="data/products.js"></script>
+    <script src="data/category.js"></script>
+    <script src="js/dynamic-display.js"></script>
     <script src="js/actions.js"></script>
     <script src="pages/Purchase/wishlist.js"></script>
-    <script src="/js/moreProducts.js"></script>
+    <script src="js/moreProducts.js"></script>
     <script src="js/script.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-  // Update footer links
-  const faqLink = document.querySelector('.footer-links a[href="#"]');
-  const contactLink = document.querySelector('.footer-links a[href="https://mail.google.com/mail/u/0/#inbox"]');
-  
-  // Function to disable body scroll
-  function disableBodyScroll() {
-    document.body.style.overflow = 'hidden';
-  }
-  
-  if (faqLink && faqLink.textContent.trim() === 'FAQS') {
-    faqLink.setAttribute('href', '#');
-    faqLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('faqModal').classList.add('active');
-      disableBodyScroll();
-    });
-  }
-  
-  if (contactLink) {
-    contactLink.setAttribute('href', '#');
-    contactLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('contactModal').classList.add('active');
-      disableBodyScroll();
-    });
-  }
-});
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update footer links
+            const faqLink = document.querySelector('.footer-links a[href="#"]');
+            const contactLink = document.querySelector('.footer-links a[href="https://mail.google.com/mail/u/0/#inbox"]');
+            
+            // Function to disable body scroll
+            function disableBodyScroll() {
+              document.body.style.overflow = 'hidden';
+            }
+            
+            if (faqLink && faqLink.textContent.trim() === 'FAQS') {
+              faqLink.setAttribute('href', '#');
+              faqLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('faqModal').classList.add('active');
+                disableBodyScroll();
+              });
+            }
+            
+            if (contactLink) {
+              contactLink.setAttribute('href', '#');
+              contactLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('contactModal').classList.add('active');
+                disableBodyScroll();
+              });
+            }
+          });
 
-// Footer Modals JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-  // FAQ Modal Elements
-  const faqModal = document.getElementById('faqModal');
-  const faqModalClose = document.getElementById('faqModalClose');
-  const faqQuestions = document.querySelectorAll('.faq-question');
+          // Footer Modals JavaScript
+          document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Modal Elements
+            const faqModal = document.getElementById('faqModal');
+            const faqModalClose = document.getElementById('faqModalClose');
+            const faqQuestions = document.querySelectorAll('.faq-question');
 
-  // Contact Modal Elements
-  const contactModal = document.getElementById('contactModal');
-  const contactModalClose = document.getElementById('contactModalClose');
-  const contactCancel = document.getElementById('contactCancel');
-  const contactForm = document.getElementById('contactForm');
+            // Contact Modal Elements
+            const contactModal = document.getElementById('contactModal');
+            const contactModalClose = document.getElementById('contactModalClose');
+            const contactCancel = document.getElementById('contactCancel');
+            const contactForm = document.getElementById('contactForm');
 
-  // Function to disable body scroll
-  function disableBodyScroll() {
-    document.body.style.overflow = 'hidden';
-  }
+            // Function to disable body scroll
+            function disableBodyScroll() {
+              document.body.style.overflow = 'hidden';
+            }
 
-  // Function to enable body scroll
-  function enableBodyScroll() {
-    document.body.style.overflow = '';
-  }
+            // Function to enable body scroll
+            function enableBodyScroll() {
+              document.body.style.overflow = '';
+            }
 
-  // FAQ Accordion functionality
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', function() {
-      const isActive = this.classList.contains('active');
-      const answer = this.nextElementSibling;
-      const icon = this.querySelector('.faq-icon');
+            // FAQ Accordion functionality
+            faqQuestions.forEach(question => {
+              question.addEventListener('click', function() {
+                const isActive = this.classList.contains('active');
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
 
-      // Close all other questions
-      faqQuestions.forEach(q => {
-        q.classList.remove('active');
-        q.querySelector('.faq-icon').textContent = '+';
-        q.nextElementSibling.style.display = 'none';
-      });
+                // Close all other questions
+                faqQuestions.forEach(q => {
+                  q.classList.remove('active');
+                  q.querySelector('.faq-icon').textContent = '+';
+                  q.nextElementSibling.style.display = 'none';
+                });
 
-      // Toggle current question
-      if (!isActive) {
-        this.classList.add('active');
-        icon.textContent = '−';
-        answer.style.display = 'block';
-      }
-    });
-  });
+                // Toggle current question
+                if (!isActive) {
+                  this.classList.add('active');
+                  icon.textContent = '−';
+                  answer.style.display = 'block';
+                }
+              });
+            });
 
-  // Close FAQ Modal
-  faqModalClose.addEventListener('click', function() {
-    faqModal.classList.remove('active');
-    enableBodyScroll();
-  });
+            // Close FAQ Modal
+            faqModalClose.addEventListener('click', function() {
+              faqModal.classList.remove('active');
+              enableBodyScroll();
+            });
 
-  // Close Contact Modal
-  contactModalClose.addEventListener('click', function() {
-    contactModal.classList.remove('active');
-    contactForm.reset();
-    enableBodyScroll();
-  });
+            // Close Contact Modal
+            contactModalClose.addEventListener('click', function() {
+              contactModal.classList.remove('active');
+              contactForm.reset();
+              enableBodyScroll();
+            });
 
-  contactCancel.addEventListener('click', function() {
-    contactModal.classList.remove('active');
-    contactForm.reset();
-    enableBodyScroll();
-  });
+            contactCancel.addEventListener('click', function() {
+              contactModal.classList.remove('active');
+              contactForm.reset();
+              enableBodyScroll();
+            });
 
-  // Handle Contact Form Submission
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const subject = document.getElementById('contactSubject').value;
-    const concern = document.getElementById('contactConcern').value;
+            // Handle Contact Form Submission
+            contactForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const subject = document.getElementById('contactSubject').value;
+              const concern = document.getElementById('contactConcern').value;
 
-    // Here you can add your form submission logic
-    // For now, we'll just show an alert
-    alert('Thank you for contacting us!\n\nSubject: ' + subject + '\n\nWe will get back to you soon!');
-    
-    contactModal.classList.remove('active');
-    contactForm.reset();
-    enableBodyScroll();
-  });
+              // Here you can add your form submission logic
+              // For now, we'll just show an alert
+              alert('Thank you for contacting us!\n\nSubject: ' + subject + '\n\nWe will get back to you soon!');
+              
+              contactModal.classList.remove('active');
+              contactForm.reset();
+              enableBodyScroll();
+            });
 
-  // Close modals when clicking outside
-  faqModal.addEventListener('click', function(e) {
-    if (e.target === faqModal) {
-      faqModal.classList.remove('active');
-      enableBodyScroll();
-    }
-  });
+            // Close modals when clicking outside
+            faqModal.addEventListener('click', function(e) {
+              if (e.target === faqModal) {
+                faqModal.classList.remove('active');
+                enableBodyScroll();
+              }
+            });
 
-  contactModal.addEventListener('click', function(e) {
-    if (e.target === contactModal) {
-      contactModal.classList.remove('active');
-      contactForm.reset();
-      enableBodyScroll();
-    }
-  });
+            contactModal.addEventListener('click', function(e) {
+              if (e.target === contactModal) {
+                contactModal.classList.remove('active');
+                contactForm.reset();
+                enableBodyScroll();
+              }
+            });
 
-  // Prevent closing when clicking inside modal content
-  document.querySelector('.faq-modal-content').addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
+            // Prevent closing when clicking inside modal content
+            document.querySelector('.faq-modal-content').addEventListener('click', function(e) {
+              e.stopPropagation();
+            });
 
-  document.querySelector('.contact-modal-content').addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
+            document.querySelector('.contact-modal-content').addEventListener('click', function(e) {
+              e.stopPropagation();
+            });
 
-  // Close modals with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      if (faqModal.classList.contains('active')) {
-        faqModal.classList.remove('active');
-        enableBodyScroll();
-      }
-      if (contactModal.classList.contains('active')) {
-        contactModal.classList.remove('active');
-        contactForm.reset();
-        enableBodyScroll();
-      }
-    }
-  });
-});
+            // Close modals with Escape key
+            document.addEventListener('keydown', function(e) {
+              if (e.key === 'Escape') {
+                if (faqModal.classList.contains('active')) {
+                  faqModal.classList.remove('active');
+                  enableBodyScroll();
+                }
+                if (contactModal.classList.contains('active')) {
+                  contactModal.classList.remove('active');
+                  contactForm.reset();
+                  enableBodyScroll();
+                }
+              }
+            });
+          });
     </script>
 
   </body>

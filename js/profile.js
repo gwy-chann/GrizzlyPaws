@@ -256,7 +256,7 @@ logoutBtn.addEventListener('click', () => {
         sessionStorage.removeItem('loggedInUser');
         showSuccessMessage('Logged out successfully!');
         setTimeout(() => {
-            window.location.href = '../login.html';
+            window.location.href = 'login.html';
         }, 1000);
     }
 });
